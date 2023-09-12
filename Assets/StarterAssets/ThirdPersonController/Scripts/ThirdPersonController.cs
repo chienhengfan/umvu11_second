@@ -227,12 +227,8 @@ namespace StarterAssets
             }
         }
 
-        IEnumerator timer(float seconds = 1f)
-        {
-             yield return new WaitForSeconds(seconds);
-        }
 
-        IEnumerator FreezeCharacterMove(float second = 2f)
+        IEnumerator FreezeCharacterMove(float second = 3f)
         {
             canMove = false;
             yield return new WaitForSeconds(second);
@@ -311,20 +307,26 @@ namespace StarterAssets
 
         private void QuickBowAttack()
         {
+
+
             float forceStrengh = 0f;
             if (Input.GetMouseButtonDown(0))
             {
+                mState = motionState.QuickAttack;
                 //prohibit character move
-                _controller.enabled = false;
+                StartCoroutine(FreezeCharacterMove(1f));
                 forceStrengh += Time.deltaTime;
             }
 
-            if (forceStrengh == 0) return;
-            if(forceStrengh < forceStrenghTrigger)
+            if (forceStrengh == 0)
             {
-                StartCoroutine(FreezeCharacterMove());
-                mState = motionState.QuickAttack;
+                return;
+            }
+            if(forceStrengh < forceStrenghTrigger)
+            {                
                 _animator.SetTrigger("QuickAttackTri");
+                
+
             }
             else
             {
@@ -439,7 +441,9 @@ namespace StarterAssets
 
         private void Move()
         {
+
             _controller.enabled = canMove;
+
             
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
@@ -497,9 +501,12 @@ namespace StarterAssets
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
             // move the player
-
-            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+            if(mState != motionState.QuickAttack)
+            {
+                _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            }
+            
 
             
 
