@@ -232,7 +232,7 @@ namespace StarterAssets
              yield return new WaitForSeconds(seconds);
         }
 
-        IEnumerator FreezeCharacterMove(float second = 3f)
+        IEnumerator FreezeCharacterMove(float second = 2f)
         {
             canMove = false;
             yield return new WaitForSeconds(second);
@@ -318,6 +318,8 @@ namespace StarterAssets
                 _controller.enabled = false;
                 forceStrengh += Time.deltaTime;
             }
+
+            if (forceStrengh == 0) return;
             if(forceStrengh < forceStrenghTrigger)
             {
                 StartCoroutine(FreezeCharacterMove());
@@ -328,22 +330,17 @@ namespace StarterAssets
             {
                 // force strengh attack
             }
-            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            if(stateInfo.shortNameHash == _animIDQuickAttack01 || stateInfo.shortNameHash == _animIDTakeBow)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    StartCoroutine(FreezeCharacterMove(5f));
-                    _animator.SetTrigger("SecondQAtt");
-                    Debug.Log("Second Quick Attack");
+            //AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            //if(stateInfo.shortNameHash == _animIDQuickAttack01 || stateInfo.shortNameHash == _animIDTakeBow)
+            //{
+            //    if (Input.GetMouseButtonDown(0))
+            //    {
+            //        StartCoroutine(FreezeCharacterMove(5f));
+            //        _animator.SetTrigger("SecondQAtt");
+            //        Debug.Log("Second Quick Attack");
 
-                }
-            }
-
-            if (mState == motionState.QuickAttack)
-            {
-                _controller.Move(transform.forward * 0.01f);
-            }
+            //    }
+            //}
         }
 
         private void AimBowAttack()
