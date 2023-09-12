@@ -236,6 +236,23 @@ namespace StarterAssets
 
         }
 
+        private void AutoAim(float aimRadius = 10f)
+        {
+            float closeDistance = aimRadius * 10;
+            Collider[] colliders = Physics.OverlapSphere(transform.position, aimRadius);
+            foreach(var hitcollider in colliders)
+            {
+                if(hitcollider.tag == "Enemy")
+                {
+                    float distance = Vector3.Distance(transform.position, hitcollider.transform.position);
+                    closeDistance = Mathf.Min(distance, closeDistance);
+                }
+
+            }
+
+        }
+
+
         private void intervalPass(float interval)
         {
             float curTime = 0.0f;
