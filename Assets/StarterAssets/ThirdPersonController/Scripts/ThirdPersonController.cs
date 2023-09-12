@@ -1,6 +1,7 @@
 ﻿using RPGCharacterAnims.Actions;
 using StarterAssets;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
@@ -239,15 +240,25 @@ namespace StarterAssets
         private void AutoAim(float aimRadius = 10f)
         {
             float closeDistance = aimRadius * 10;
+            IDictionary<Collider,float> temp = new Dictionary<Collider,float>();
             Collider[] colliders = Physics.OverlapSphere(transform.position, aimRadius);
             foreach(var hitcollider in colliders)
             {
                 if(hitcollider.tag == "Enemy")
                 {
                     float distance = Vector3.Distance(transform.position, hitcollider.transform.position);
+                    temp.Add(hitcollider, distance);
                     closeDistance = Mathf.Min(distance, closeDistance);
                 }
 
+            }
+            foreach(var target in temp)
+            {
+                if(target.Value == closeDistance)
+                {
+                    Vector3 aimPoint = new Vector3(target.Key.transform.position.x, transform.position.y, target.Key.transform.position.z);
+                    transform.LookAt(aimPoint);
+                }
             }
 
         }
@@ -329,6 +340,7 @@ namespace StarterAssets
             float forceStrengh = 0f;
             if (Input.GetMouseButtonDown(0))
             {
+                AutoAim();
                 mState = motionState.QuickAttack;
                 //prohibit character move
                 StartCoroutine(FreezeCharacterMove(1f));
