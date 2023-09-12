@@ -1,0 +1,9 @@
+Assets/Sun_Temple/Content/Textures/bricks_solid_N.tiff filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Content/Textures/pavementB_tiling_dirty_N.tif filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Scenes/DemoScene_Terrain.asset filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Content/Textures/ground_redclay_A.tif filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Content/Textures/wood_tiling_N.tiff filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Content/Textures/bricks_solid_A.tiff filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Content/Textures/pavementB_tiling_A.tiff filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Content/Textures/pavementB_tiling_dirty_A.tif filter=lfs diff=lfs merge=lfs -text
+Assets/Sun_Temple/Content/Textures/pavementB_tiling_N.tiff filter=lfs diff=lfs merge=lfs -text
