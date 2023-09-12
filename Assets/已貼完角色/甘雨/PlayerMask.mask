@@ -1,0 +1,683 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerMask
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: "000_\u97621"
+    m_Weight: 0
+  - m_Path: "00A_\u53D1"
+    m_Weight: 0
+  - m_Path: "00B_\u89D2"
+    m_Weight: 0
+  - m_Path: "00C_\u670D"
+    m_Weight: 0
+  - m_Path: "00D_\u65B0\u898F"
+    m_Weight: 0
+  - m_Path: "00E_\u8170\u9970"
+    m_Weight: 0
+  - m_Path: "00F_\u795E\u4E4B\u773C"
+    m_Weight: 0
+  - m_Path: "00G_\u808C"
+    m_Weight: 0
+  - m_Path: "00H_\u88D9\u6446"
+    m_Weight: 0
+  - m_Path: "00I_\u8138\u7EA2"
+    m_Weight: 0
+  - m_Path: "001_\u97622"
+    m_Weight: 0
+  - m_Path: "002_\u776B"
+    m_Weight: 0
+  - m_Path: "003_\u4E8C\u91CD"
+    m_Weight: 0
+  - m_Path: "004_\u7709"
+    m_Weight: 0
+  - m_Path: "005_\u76EE"
+    m_Weight: 0
+  - m_Path: "006_\u76EE\u661F"
+    m_Weight: 0
+  - m_Path: "007_\u53E3\u820C"
+    m_Weight: 0
+  - m_Path: "008_\u9F7F"
+    m_Weight: 0
+  - m_Path: "009_\u767D\u76EE"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/_shadow_thighD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/_shadow_thighD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_0/front\u6446_1_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_0/front\u6446_1_0/front\u6446_2_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_0/front\u6446_1_0/front\u6446_2_0/front\u6446_3_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_0/front\u6446_1_0/front\u6446_2_0/front\u6446_3_0/front\u6446_4_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_0/front\u6446_1_0/front\u6446_2_0/front\u6446_3_0/front\u6446_4_0/front\u6446_5_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_1/front\u6446_1_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_1/front\u6446_1_1/front\u6446_2_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_1/front\u6446_1_1/front\u6446_2_1/front\u6446_3_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_1/front\u6446_1_1/front\u6446_2_1/front\u6446_3_1/front\u6446_4_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_1/front\u6446_1_1/front\u6446_2_1/front\u6446_3_1/front\u6446_4_1/front\u6446_5_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_2/front\u6446_1_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_2/front\u6446_1_2/front\u6446_2_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_2/front\u6446_1_2/front\u6446_2_2/front\u6446_3_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_2/front\u6446_1_2/front\u6446_2_2/front\u6446_3_2/front\u6446_4_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_2/front\u6446_1_2/front\u6446_2_2/front\u6446_3_2/front\u6446_4_2/front\u6446_5_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_3/front\u6446_1_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_3/front\u6446_1_3/front\u6446_2_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_3/front\u6446_1_3/front\u6446_2_3/front\u6446_3_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_3/front\u6446_1_3/front\u6446_2_3/front\u6446_3_3/front\u6446_4_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_3/front\u6446_1_3/front\u6446_2_3/front\u6446_3_3/front\u6446_4_3/front\u6446_5_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_4/front\u6446_1_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_4/front\u6446_1_4/front\u6446_2_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_4/front\u6446_1_4/front\u6446_2_4/front\u6446_3_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_4/front\u6446_1_4/front\u6446_2_4/front\u6446_3_4/front\u6446_4_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_4/front\u6446_1_4/front\u6446_2_4/front\u6446_3_4/front\u6446_4_4/front\u6446_5_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_5/front\u6446_1_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_5/front\u6446_1_5/front\u6446_2_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_5/front\u6446_1_5/front\u6446_2_5/front\u6446_3_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_5/front\u6446_1_5/front\u6446_2_5/front\u6446_3_5/front\u6446_4_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/front\u6446_0_5/front\u6446_1_5/front\u6446_2_5/front\u6446_3_5/front\u6446_4_5/front\u6446_5_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/_dummy_thighD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/_shadow_calfD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/calf_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/calf_l/_dummy_calfD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/calf_l/_shadow_footD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/calf_l/foot_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/calf_l/foot_l/_dummy_footD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_l/calf_l/foot_l/\u3064\u307E\u5148_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/_dummy_thighD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/_shadow_calfD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/calf_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/calf_r/_dummy_calfD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/calf_r/_shadow_footD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/calf_r/foot_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/calf_r/foot_r/_dummy_footD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thigh_r/calf_r/foot_r/\u3064\u307E\u5148_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_l/calfD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_l/calfD_l/footD_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_l/calfD_l/footD_l/thigh\u5148EX_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_r/calfD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_r/calfD_r/footD_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/thighD_r/calfD_r/footD_r/thigh\u5148EX_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0/\u540E\u6446_2_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0/\u540E\u6446_2_0/\u540E\u6446_3_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0/\u540E\u6446_2_0/\u540E\u6446_3_0/\u540E\u6446_4_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0/\u540E\u6446_2_0/\u540E\u6446_3_0/\u540E\u6446_4_0/\u540E\u6446_5_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0/\u540E\u6446_2_0/\u540E\u6446_3_0/\u540E\u6446_4_0/\u540E\u6446_5_0/\u540E\u6446_6_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0/\u540E\u6446_2_0/\u540E\u6446_3_0/\u540E\u6446_4_0/\u540E\u6446_5_0/\u540E\u6446_6_0/\u540E\u6446_7_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_0/\u540E\u6446_1_0/\u540E\u6446_2_0/\u540E\u6446_3_0/\u540E\u6446_4_0/\u540E\u6446_5_0/\u540E\u6446_6_0/\u540E\u6446_7_0/\u540E\u6446_8_0"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1/\u540E\u6446_2_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1/\u540E\u6446_2_1/\u540E\u6446_3_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1/\u540E\u6446_2_1/\u540E\u6446_3_1/\u540E\u6446_4_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1/\u540E\u6446_2_1/\u540E\u6446_3_1/\u540E\u6446_4_1/\u540E\u6446_5_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1/\u540E\u6446_2_1/\u540E\u6446_3_1/\u540E\u6446_4_1/\u540E\u6446_5_1/\u540E\u6446_6_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1/\u540E\u6446_2_1/\u540E\u6446_3_1/\u540E\u6446_4_1/\u540E\u6446_5_1/\u540E\u6446_6_1/\u540E\u6446_7_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_1/\u540E\u6446_1_1/\u540E\u6446_2_1/\u540E\u6446_3_1/\u540E\u6446_4_1/\u540E\u6446_5_1/\u540E\u6446_6_1/\u540E\u6446_7_1/\u540E\u6446_8_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2/\u540E\u6446_2_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2/\u540E\u6446_2_2/\u540E\u6446_3_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2/\u540E\u6446_2_2/\u540E\u6446_3_2/\u540E\u6446_4_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2/\u540E\u6446_2_2/\u540E\u6446_3_2/\u540E\u6446_4_2/\u540E\u6446_5_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2/\u540E\u6446_2_2/\u540E\u6446_3_2/\u540E\u6446_4_2/\u540E\u6446_5_2/\u540E\u6446_6_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2/\u540E\u6446_2_2/\u540E\u6446_3_2/\u540E\u6446_4_2/\u540E\u6446_5_2/\u540E\u6446_6_2/\u540E\u6446_7_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_2/\u540E\u6446_1_2/\u540E\u6446_2_2/\u540E\u6446_3_2/\u540E\u6446_4_2/\u540E\u6446_5_2/\u540E\u6446_6_2/\u540E\u6446_7_2/\u540E\u6446_8_2"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3/\u540E\u6446_2_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3/\u540E\u6446_2_3/\u540E\u6446_3_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3/\u540E\u6446_2_3/\u540E\u6446_3_3/\u540E\u6446_4_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3/\u540E\u6446_2_3/\u540E\u6446_3_3/\u540E\u6446_4_3/\u540E\u6446_5_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3/\u540E\u6446_2_3/\u540E\u6446_3_3/\u540E\u6446_4_3/\u540E\u6446_5_3/\u540E\u6446_6_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3/\u540E\u6446_2_3/\u540E\u6446_3_3/\u540E\u6446_4_3/\u540E\u6446_5_3/\u540E\u6446_6_3/\u540E\u6446_7_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_3/\u540E\u6446_1_3/\u540E\u6446_2_3/\u540E\u6446_3_3/\u540E\u6446_4_3/\u540E\u6446_5_3/\u540E\u6446_6_3/\u540E\u6446_7_3/\u540E\u6446_8_3"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4/\u540E\u6446_2_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4/\u540E\u6446_2_4/\u540E\u6446_3_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4/\u540E\u6446_2_4/\u540E\u6446_3_4/\u540E\u6446_4_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4/\u540E\u6446_2_4/\u540E\u6446_3_4/\u540E\u6446_4_4/\u540E\u6446_5_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4/\u540E\u6446_2_4/\u540E\u6446_3_4/\u540E\u6446_4_4/\u540E\u6446_5_4/\u540E\u6446_6_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4/\u540E\u6446_2_4/\u540E\u6446_3_4/\u540E\u6446_4_4/\u540E\u6446_5_4/\u540E\u6446_6_4/\u540E\u6446_7_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_4/\u540E\u6446_1_4/\u540E\u6446_2_4/\u540E\u6446_3_4/\u540E\u6446_4_4/\u540E\u6446_5_4/\u540E\u6446_6_4/\u540E\u6446_7_4/\u540E\u6446_8_4"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5/\u540E\u6446_2_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5/\u540E\u6446_2_5/\u540E\u6446_3_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5/\u540E\u6446_2_5/\u540E\u6446_3_5/\u540E\u6446_4_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5/\u540E\u6446_2_5/\u540E\u6446_3_5/\u540E\u6446_4_5/\u540E\u6446_5_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5/\u540E\u6446_2_5/\u540E\u6446_3_5/\u540E\u6446_4_5/\u540E\u6446_5_5/\u540E\u6446_6_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5/\u540E\u6446_2_5/\u540E\u6446_3_5/\u540E\u6446_4_5/\u540E\u6446_5_5/\u540E\u6446_6_5/\u540E\u6446_7_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_5/\u540E\u6446_1_5/\u540E\u6446_2_5/\u540E\u6446_3_5/\u540E\u6446_4_5/\u540E\u6446_5_5/\u540E\u6446_6_5/\u540E\u6446_7_5/\u540E\u6446_8_5"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6/\u540E\u6446_2_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6/\u540E\u6446_2_6/\u540E\u6446_3_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6/\u540E\u6446_2_6/\u540E\u6446_3_6/\u540E\u6446_4_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6/\u540E\u6446_2_6/\u540E\u6446_3_6/\u540E\u6446_4_6/\u540E\u6446_5_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6/\u540E\u6446_2_6/\u540E\u6446_3_6/\u540E\u6446_4_6/\u540E\u6446_5_6/\u540E\u6446_6_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6/\u540E\u6446_2_6/\u540E\u6446_3_6/\u540E\u6446_4_6/\u540E\u6446_5_6/\u540E\u6446_6_6/\u540E\u6446_7_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_6/\u540E\u6446_1_6/\u540E\u6446_2_6/\u540E\u6446_3_6/\u540E\u6446_4_6/\u540E\u6446_5_6/\u540E\u6446_6_6/\u540E\u6446_7_6/\u540E\u6446_8_6"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7/\u540E\u6446_2_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7/\u540E\u6446_2_7/\u540E\u6446_3_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7/\u540E\u6446_2_7/\u540E\u6446_3_7/\u540E\u6446_4_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7/\u540E\u6446_2_7/\u540E\u6446_3_7/\u540E\u6446_4_7/\u540E\u6446_5_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7/\u540E\u6446_2_7/\u540E\u6446_3_7/\u540E\u6446_4_7/\u540E\u6446_5_7/\u540E\u6446_6_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7/\u540E\u6446_2_7/\u540E\u6446_3_7/\u540E\u6446_4_7/\u540E\u6446_5_7/\u540E\u6446_6_7/\u540E\u6446_7_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u540E\u6446_0_7/\u540E\u6446_1_7/\u540E\u6446_2_7/\u540E\u6446_3_7/\u540E\u6446_4_7/\u540E\u6446_5_7/\u540E\u6446_6_7/\u540E\u6446_7_7/\u540E\u6446_8_7"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF1_0_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF1_0_1/\u6D41\u82CF1_1_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF1_0_1/\u6D41\u82CF1_1_1/\u6D41\u82CF1_2_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF1_0_1/\u6D41\u82CF1_1_1/\u6D41\u82CF1_2_1/\u6D41\u82CF1_3_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF1_0_1/\u6D41\u82CF1_1_1/\u6D41\u82CF1_2_1/\u6D41\u82CF1_3_1/\u6D41\u82CF1_4_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF1_0_1/\u6D41\u82CF1_1_1/\u6D41\u82CF1_2_1/\u6D41\u82CF1_3_1/\u6D41\u82CF1_4_1/\u6D41\u82CF1_5_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF1_0_1/\u6D41\u82CF1_1_1/\u6D41\u82CF1_2_1/\u6D41\u82CF1_3_1/\u6D41\u82CF1_4_1/\u6D41\u82CF1_5_1/\u6D41\u82CF1_6_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1/\u6D41\u82CF2_1_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1/\u6D41\u82CF2_1_1/\u6D41\u82CF2_2_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1/\u6D41\u82CF2_1_1/\u6D41\u82CF2_2_1/\u6D41\u82CF2_3_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1/\u6D41\u82CF2_1_1/\u6D41\u82CF2_2_1/\u6D41\u82CF2_3_1/\u6D41\u82CF2_4_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1/\u6D41\u82CF2_1_1/\u6D41\u82CF2_2_1/\u6D41\u82CF2_3_1/\u6D41\u82CF2_4_1/\u6D41\u82CF2_5_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1/\u6D41\u82CF2_1_1/\u6D41\u82CF2_2_1/\u6D41\u82CF2_3_1/\u6D41\u82CF2_4_1/\u6D41\u82CF2_5_1/\u6D41\u82CF2_6_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/pelvis/\u6D41\u82CF2_0_1/\u6D41\u82CF2_1_1/\u6D41\u82CF2_2_1/\u6D41\u82CF2_3_1/\u6D41\u82CF2_4_1/\u6D41\u82CF2_5_1/\u6D41\u82CF2_6_1/\u6D41\u82CF2_7_1"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/_shadow_clavicleC_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/_shadow_clavicleC_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/_dummy_clavicleC_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/_shadow_upperarm_twist_011_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/_shadow_upperarm_twist_012_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/_shadow_upperarm_twist_013_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/_dummy_upperarm_twist_011_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/_dummy_upperarm_twist_012_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/_dummy_upperarm_twist_013_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/_shadow_lowerarm_twist_011_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/_shadow_lowerarm_twist_012_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/_shadow_lowerarm_twist_013_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/_dummy_lowerarm_twist_011_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/_dummy_lowerarm_twist_012_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/_dummy_lowerarm_twist_013_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/index_01_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/index_01_l/index_02_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/index_01_l/index_02_l/index_03_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/index_01_l/index_02_l/index_03_l/index\u5148_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/middle_01_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/middle_01_l/middle_02_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/middle_01_l/middle_02_l/middle_03_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/middle_01_l/middle_02_l/middle_03_l/middle\u5148_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/pinky_01_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/pinky_01_l/pinky_02_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/pinky_01_l/pinky_02_l/pinky_03_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/pinky_01_l/pinky_02_l/pinky_03_l/pinky\u5148_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/ring_01_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/ring_01_l/ring_02_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/ring_01_l/ring_02_l/ring_03_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/ring_01_l/ring_02_l/ring_03_l/ring\u5148_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/thumb_01_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/thumb_01_l/thumb_02_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/thumb_01_l/thumb_02_l/thumb_03_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/thumb_01_l/thumb_02_l/thumb_03_l/\u89AA\u6307\u5148_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/WeaponL"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_01_l/hand_l/\u30C0\u30DF\u30FC_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_011_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_012_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_01_l/lowerarm_l/lowerarm_twist_013_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_011_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_012_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_l/clavicle_l/clavicleC_l/upperarm_l/upperarm_twist_013_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/_dummy_clavicleC_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/_shadow_upperarm_twist_011_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/_shadow_upperarm_twist_012_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/_shadow_upperarm_twist_013_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/_dummy_upperarm_twist_011_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/_dummy_upperarm_twist_012_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/_dummy_upperarm_twist_013_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/_shadow_lowerarm_twist_011_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/_shadow_lowerarm_twist_012_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/_shadow_lowerarm_twist_013_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/_dummy_lowerarm_twist_011_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/_dummy_lowerarm_twist_012_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/_dummy_lowerarm_twist_013_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/index_01_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/index_01_r/index_02_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/index_01_r/index_02_r/index_03_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/index_01_r/index_02_r/index_03_r/index\u5148_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/middle_01_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/middle_01_r/middle_02_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/middle_01_r/middle_02_r/middle_03_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/middle_01_r/middle_02_r/middle_03_r/middle\u5148_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/pinky_01_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/pinky_01_r/pinky_02_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/pinky_01_r/pinky_02_r/pinky_03_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/pinky_01_r/pinky_02_r/pinky_03_r/pinky\u5148_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/ring_01_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/ring_01_r/ring_02_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/ring_01_r/ring_02_r/ring_03_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/ring_01_r/ring_02_r/ring_03_r/ring\u5148_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/thumb_01_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/thumb_01_r/thumb_02_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/thumb_01_r/thumb_02_r/thumb_03_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/thumb_01_r/thumb_02_r/thumb_03_r/\u89AA\u6307\u5148_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/WeaponR"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_01_r/hand_r/\u30C0\u30DF\u30FC_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_011_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_012_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_01_r/lowerarm_r/lowerarm_twist_013_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_011_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_012_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/clavicleP_r/clavicle_r/clavicleC_r/upperarm_r/upperarm_twist_013_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/eye_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/eye_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/eyes"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u30A2\u30DB\u6BDB_0_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u30A2\u30DB\u6BDB_0_1/\u30A2\u30DB\u6BDB_1_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u30A2\u30DB\u6BDB_0_1/\u30A2\u30DB\u6BDB_1_1/\u30A2\u30DB\u6BDB_2_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u30A2\u30DB\u6BDB_0_1/\u30A2\u30DB\u6BDB_1_1/\u30A2\u30DB\u6BDB_2_1/\u30A2\u30DB\u6BDB_3_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u30A2\u30DB\u6BDB_0_1/\u30A2\u30DB\u6BDB_1_1/\u30A2\u30DB\u6BDB_2_1/\u30A2\u30DB\u6BDB_3_1/\u30A2\u30DB\u6BDB_4_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u4E0A\u9F7F"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u4E0B\u9F7F"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1/\u53D1_3_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1/\u53D1_3_1/\u53D1_4_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1/\u53D1_3_1/\u53D1_4_1/\u53D1_5_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1/\u53D1_3_1/\u53D1_4_1/\u53D1_5_1/\u53D1_6_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1/\u53D1_3_1/\u53D1_4_1/\u53D1_5_1/\u53D1_6_1/\u53D1_7_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1/\u53D1_3_1/\u53D1_4_1/\u53D1_5_1/\u53D1_6_1/\u53D1_7_1/\u53D1_8_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1/\u53D1_1_1/\u53D1_2_1/\u53D1_3_1/\u53D1_4_1/\u53D1_5_1/\u53D1_6_1/\u53D1_7_1/\u53D1_8_1/\u53D1_9_1"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_l/\u53D1_1_1_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_l/\u53D1_1_1_l/\u53D1_2_1_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_l/\u53D1_1_1_l/\u53D1_2_1_l/\u53D1_3_1_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_l/\u53D1_1_1_l/\u53D1_2_1_l/\u53D1_3_1_l/\u53D1_4_1_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_l/\u53D1_1_1_l/\u53D1_2_1_l/\u53D1_3_1_l/\u53D1_4_1_l/\u53D1_5_1_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_l/\u53D1_1_1_l/\u53D1_2_1_l/\u53D1_3_1_l/\u53D1_4_1_l/\u53D1_5_1_l/\u53D1_6_1_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_r/\u53D1_1_1_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_r/\u53D1_1_1_r/\u53D1_2_1_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_r/\u53D1_1_1_r/\u53D1_2_1_r/\u53D1_3_1_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_r/\u53D1_1_1_r/\u53D1_2_1_r/\u53D1_3_1_r/\u53D1_4_1_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_r/\u53D1_1_1_r/\u53D1_2_1_r/\u53D1_3_1_r/\u53D1_4_1_r/\u53D1_5_1_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/neck_01/head/\u53D1_0_1_r/\u53D1_1_1_r/\u53D1_2_1_r/\u53D1_3_1_r/\u53D1_4_1_r/\u53D1_5_1_r/\u53D1_6_1_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u304A\u3063\u3071\u3044\u8ABF\u6574"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u304A\u3063\u3071\u3044\u8ABF\u6574/\u80F8\u4E0A_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u304A\u3063\u3071\u3044\u8ABF\u6574/\u80F8\u4E0A_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u304A\u3063\u3071\u3044\u8ABF\u6574/\u80F8\u4E0B_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u304A\u3063\u3071\u3044\u8ABF\u6574/\u80F8\u4E0B_l/\u80F8\u4E0B\u5148_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u304A\u3063\u3071\u3044\u8ABF\u6574/\u80F8\u4E0B_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u304A\u3063\u3071\u3044\u8ABF\u6574/\u80F8\u4E0B_r/\u80F8\u4E0B\u5148_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u80F8\u4E0A2_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u80F8\u4E0A2_l/\u80F8\u5148_l"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u80F8\u4E0A2_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/spine_01/spine_012/\u30B0\u30EB\u30FC\u30D6/\u30B0\u30EB\u30FC\u30D62/\u8170/spine_02/spine_023/spine_022/\u80F8\u4E0A2_r/\u80F8\u5148_r"
+    m_Weight: 0
+  - m_Path: "\u7518\u96E8_arm/root/thighIK\u89AA_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/thighIK\u89AA_l/ik_foot_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/thighIK\u89AA_l/ik_foot_l/ik_ball_l"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/thighIK\u89AA_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/thighIK\u89AA_r/ik_foot_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/root/thighIK\u89AA_r/ik_foot_r/ik_ball_r"
+    m_Weight: 1
+  - m_Path: "\u7518\u96E8_arm/\u64CD\u4F5C\u4E2D\u5FC3"
+    m_Weight: 0
