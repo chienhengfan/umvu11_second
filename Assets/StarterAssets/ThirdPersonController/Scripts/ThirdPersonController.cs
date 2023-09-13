@@ -222,8 +222,9 @@ namespace StarterAssets
             if (other.gameObject.CompareTag("Attack") && mState != motionState.Dead)
             {
                 mState = motionState.KnockBack;
-                Debug.Log("Player is Attacked");
+                //Debug.Log("Player is Attacked");
                 playerHP -= damageAmount;
+                StartCoroutine(FreezeCharacterMove(0.5f));
                 _animator.SetTrigger("IsDamaged");
             }
         }
@@ -237,7 +238,7 @@ namespace StarterAssets
 
         }
 
-        private void AutoAim(float aimRadius = 10f)
+        private void AutoAim(float aimRadius = 20f)
         {
             float closeDistance = aimRadius * 10;
             IDictionary<Collider,float> temp = new Dictionary<Collider,float>();
