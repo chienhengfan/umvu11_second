@@ -229,6 +229,11 @@ namespace StarterAssets
             }
         }
 
+        public void TakeDamage(float damage)
+        {
+            playerHP -= damage;
+        }
+
 
         IEnumerator FreezeCharacterMove(float second = 3f)
         {
