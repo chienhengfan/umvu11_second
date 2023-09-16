@@ -1,6 +1,8 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class KeepDistance : MonoBehaviour
 {
@@ -15,36 +17,78 @@ public class KeepDistance : MonoBehaviour
 
     private float radius;
     private float yPos;
+    private Transform tCrossbowFront = null;
+    private Transform tCrossbowEnd =null;
+    public GameObject crossbowObj;
 
     LayerMask unwalkLayerMask;
     // Start is called before the first frame update
     void Start()
     {
+        Component[] tr = this.gameObject.GetComponentsInChildren(typeof(Transform), true);
+        foreach(Component t in tr)
+        {
+            if(t.transform.name == "bowFront")
+            {
+                tCrossbowFront = t.transform;
+                Debug.Log("bowFront add: " + tCrossbowFront.transform.position);
+            }
+            if (t.transform.name == "bowSite")
+            {
+                tCrossbowEnd = t.transform;
+                Debug.Log("bowSite add: " + tCrossbowEnd.transform.position);
+            }
+
+        }
+        
         unwalkLayerMask = LayerMask.GetMask("UnwalkLayer");
         Debug.Log("unwalkLayerMaskValue:  " +unwalkLayerMask);
-        float fDist = 50.0f;
-        GameObject[] allenemy = GameObject.FindGameObjectsWithTag("Enemy");
         
+
+        yPos = gameObject.transform.position.y;
+        sfm = this.GetComponent<SimpleFSM2>();
+        radius = this.GetComponent<SimpleFSM2>().m_Data.m_fRadius;
+
+        GameObject[] allenemy = GameObject.FindGameObjectsWithTag("Enemy");
+
         if (allenemy != null || allenemy.Length > 0)
         {
             foreach (GameObject go in allenemy)
             {
-                Vector3 vDis = go.transform.position - transform.position;
-                if(vDis.magnitude <= fDist)
+                if (go.GetComponent<SimpleFSM2>() != null)
                 {
                     enemyAround.Add(go);
                 }
             }
             enemyAround.Remove(this.gameObject);
         }
-        sfm = this.GetComponent<SimpleFSM2>();
-        radius = this.GetComponent<SimpleFSM2>().m_Data.m_fRadius;
-        yPos = gameObject.transform.position.y;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if (crossbowObj != null)
+        //{
+        //    Transform bowEnd = transform.Find("ãƒ€ãƒŸãƒ¼_r");
+        //    Vector3 vE = bowEnd.position;
+
+        //    Transform bowFront = transform.Find("ãƒ€ãƒŸãƒ¼_l");
+        //    Vector3 vF = bowEnd.position;
+        //    Vector3 vBow = vF - vE;
+        //    Vector3 bowFor = -crossbowObj.transform.right;
+        //    bowFor = vBow;
+        //}
+        
+        if(tCrossbowFront!= null & tCrossbowEnd!= null)
+        {
+            Vector3 vBowFromTo = tCrossbowFront.position - tCrossbowEnd.position;
+            Debug.Log("bowForwardVec: " + vBowFromTo);
+            if (crossbowObj != null)
+            {
+                crossbowObj.transform.right = -vBowFromTo;
+            }
+        }
 
         for (int i = 0; i < numofRay; i++)
         {
@@ -60,12 +104,12 @@ public class KeepDistance : MonoBehaviour
                 if (1 << hitInfo.collider.gameObject.layer == unwalkLayerMask)
                 {
                     hitVec = hitInfo.normal; // hitVec is normal vec
-                    Vector3 vToCol = hitInfo.collider.gameObject.transform.position - transform.position; //vToCol ©¹¸I¼²Åé¤¤¤ß
+                    Vector3 vToCol = hitInfo.collider.gameObject.transform.position - transform.position; //vToCol å¾€ç¢°æ’žé«”ä¸­å¿ƒ
                     vToCol.y = 0;
                     float fDis = vToCol.magnitude;
                     vToCol.Normalize();
                     Vector3 vFor = transform.forward;
-                    float fColWay = Vector3.Dot(vFor, vToCol); //§PÂ_¬O§_´Â¦V¸I¼²Åé
+                    float fColWay = Vector3.Dot(vFor, vToCol); //åˆ¤æ–·æ˜¯å¦æœå‘ç¢°æ’žé«”
                     float fDot = Vector3.Dot(vFor, hitVec);
                     Vector3 vTurn = hitVec * fDot;
                     Vector3 vFinal = vFor + vTurn;
@@ -85,11 +129,15 @@ public class KeepDistance : MonoBehaviour
             }
         }
 
+        Vector3 keepPos = this.transform.position;
+        keepPos.y = yPos;
+        transform.position = keepPos;
+
         if (enemyAround != null && enemyAround.Count > 0)
         {
             foreach (var go in enemyAround)
             {
-
+                Debug.Log("EnemyaroundName: " + go.name);
                 Vector3 vDis = go.transform.position - transform.position;
                 float fDis = vDis.magnitude;
                 vDis.Normalize();
@@ -97,7 +145,7 @@ public class KeepDistance : MonoBehaviour
 
                 if (fDis < radius + otherR +0.1f)
                 {
-                    Vector3 keepPos = this.transform.position + vDis * (radius + otherR + 0.1f);
+                    keepPos = this.transform.position + vDis * (radius + otherR + 0.1f);
                     keepPos.y = yPos;
                     go.transform.position = keepPos;
                 }
@@ -106,8 +154,12 @@ public class KeepDistance : MonoBehaviour
         
     }
 
+    
+
     private void OnDrawGizmos()
     {
+        
+
         for (int i = 0; i < numofRay; i++)
         {
             var rotation = this.transform.rotation;

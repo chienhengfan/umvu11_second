@@ -1,6 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e433c9b7807a7cb41a747738902bf2f1
 PrefabImporter:
+=======
+<<<<<<<< HEAD:Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Meshes.meta
+guid: 869785f887ca9d74f972d5727c91e1c8
+folderAsset: yes
+DefaultImporter:
+========
+guid: 593bc588f7f845d468d8ea42a0a015be
+PrefabImporter:
+>>>>>>>> 1fe33db6a215ce7d9b4321f9328a78da9fefadaf:Assets/Enemy/女士/LaSignora_Harbinger.prefab.meta
+>>>>>>> 1fe33db6a215ce7d9b4321f9328a78da9fefadaf
   externalObjects: {}
   userData: 
   assetBundleName: 
