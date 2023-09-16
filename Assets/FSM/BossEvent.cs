@@ -1,96 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class BossEvent : MonoBehaviour
 {
-    private List<GameObject> meteoriteList;
-    private int numberMeteorite = 7;
-    private int currentNum = 0;
-    public GameObject meteorite;
 
-    [SerializeField]
-    private float evokeRange = 3f;
+    public ParticleSystem energyBall;
+    public Vector3 vMove;
 
-    private Transform evokePosition;
-    private float evokeHieght = 0f;
+    private Transform shootStart;
+    private ParticleSystem[] EnergyBalls = null;
+    private int ballNum = 10;
+    private int currentBallNum = 0;
+
+    public float directAttackRange = 4f;
+
+    public ThirdPersonController playerScript;
     private void Start()
     {
-        meteoriteList = new List<GameObject>();
 
-        for(int i = 0; i < numberMeteorite; i++)
+
+        EnergyBalls = new ParticleSystem[ballNum];
+
+        for (int i = 0; i < EnergyBalls.Length; i++)
         {
-            meteoriteList[i] = Instantiate(meteorite);
-            meteoriteList[i].gameObject.SetActive(false);
+            EnergyBalls[i] = Instantiate(energyBall);
+            EnergyBalls[i].gameObject.SetActive(false);
         }
     }
-    public void Me01()
+
+
+
+    void EnergyBallControlEvent()
     {
-        currentNum = currentNum % numberMeteorite;
-        evokePosition.position = Random.insideUnitCircle * evokeRange;
-        evokePosition.position += new Vector3(0, evokeHieght, 0);
-        meteoriteList[currentNum].transform.position = evokePosition.position;
-        meteoriteList[currentNum].transform.forward = -evokePosition.up;
-        meteoriteList[currentNum].gameObject.SetActive(true);
-        currentNum++;
+        shootStart = gameObject.transform.Find("ShootStart");
+        //Debug.Log("Event Ball");
+        currentBallNum = currentBallNum % ballNum;
+        EnergyBalls[currentBallNum].gameObject.transform.position = shootStart.position;
+        EnergyBalls[currentBallNum].gameObject.transform.forward = shootStart.forward;
+        EnergyBalls[currentBallNum].gameObject.SetActive(true);
+
+        currentBallNum++;
     }
 
-    public void Me02()
+    void DirectAttack()
     {
-        currentNum = currentNum % numberMeteorite;
-        evokePosition.position = Random.insideUnitCircle * evokeRange;
-        evokePosition.position += new Vector3(0, evokeHieght, 0);
-        meteoriteList[currentNum].transform.position = evokePosition.position;
-        meteoriteList[currentNum].transform.forward = -evokePosition.up;
-        meteoriteList[currentNum].gameObject.SetActive(true);
-        currentNum++;
-    }
-
-    public void Me03()
-    {
-        currentNum = currentNum % numberMeteorite;
-        evokePosition.position = Random.insideUnitCircle * evokeRange;
-        evokePosition.position += new Vector3(0, evokeHieght, 0);
-        meteoriteList[currentNum].transform.position = evokePosition.position;
-        meteoriteList[currentNum].transform.forward = -evokePosition.up;
-        meteoriteList[currentNum].gameObject.SetActive(true);
-        currentNum++;
-    }
-
-    public void Me04()
-    {
-        currentNum = currentNum % numberMeteorite;
-        evokePosition.position = Random.insideUnitCircle * evokeRange;
-        evokePosition.position += new Vector3(0, evokeHieght, 0);
-        meteoriteList[currentNum].transform.position = evokePosition.position;
-        meteoriteList[currentNum].transform.forward = -evokePosition.up;
-        meteoriteList[currentNum].gameObject.SetActive(true);
-        currentNum++;
-    }
-    public void MeLast()
-    {
-        currentNum = currentNum % numberMeteorite;
-        evokePosition.position = Random.insideUnitCircle * evokeRange;
-        evokePosition.position += new Vector3(0, evokeHieght, 0);
-        meteoriteList[currentNum].transform.position = evokePosition.position;
-        meteoriteList[currentNum].transform.forward = -evokePosition.up;
-        meteoriteList[currentNum].gameObject.SetActive(true);
-        currentNum++;
-
-        currentNum = currentNum % numberMeteorite;
-        evokePosition.position = Random.insideUnitCircle * evokeRange;
-        evokePosition.position += new Vector3(0, evokeHieght, 0);
-        meteoriteList[currentNum].transform.position = evokePosition.position;
-        meteoriteList[currentNum].transform.forward = -evokePosition.up;
-        meteoriteList[currentNum].gameObject.SetActive(true);
-        currentNum++;
-
-        currentNum = currentNum % numberMeteorite;
-        evokePosition.position = Random.insideUnitCircle * evokeRange;
-        evokePosition.position += new Vector3(0, evokeHieght, 0);
-        meteoriteList[currentNum].transform.position = evokePosition.position;
-        meteoriteList[currentNum].transform.forward = -evokePosition.up;
-        meteoriteList[currentNum].gameObject.SetActive(true);
-        currentNum++;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(Vector3.Distance(gameObject.transform.position, player.transform.position) < directAttackRange)
+        {
+            playerScript.TakeDamage(10f);
+        }
     }
 }

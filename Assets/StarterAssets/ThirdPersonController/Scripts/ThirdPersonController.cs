@@ -224,14 +224,15 @@ namespace StarterAssets
                 mState = motionState.KnockBack;
                 //Debug.Log("Player is Attacked");
                 playerHP -= damageAmount;
-                StartCoroutine(FreezeCharacterMove(0.5f));
                 _animator.SetTrigger("IsDamaged");
             }
         }
 
         public void TakeDamage(float damage)
         {
+            mState = motionState.KnockBack;
             playerHP -= damage;
+            _animator.SetTrigger("IsDamaged");
         }
 
 
@@ -336,6 +337,7 @@ namespace StarterAssets
                 mState = motionState.Dead;
                 Debug.Log("Player Dead");
                 _animator.SetBool("IsDead", true);
+                Cursor.lockState = CursorLockMode.None;
             }
         }
 
