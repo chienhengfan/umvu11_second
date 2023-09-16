@@ -17,14 +17,30 @@ public class KeepDistance : MonoBehaviour
 
     private float radius;
     private float yPos;
-    private Transform tCrossbowFront;
-    private Transform tCrossbowEnd;
+    private Transform tCrossbowFront = null;
+    private Transform tCrossbowEnd =null;
     public GameObject crossbowObj;
 
     LayerMask unwalkLayerMask;
     // Start is called before the first frame update
     void Start()
     {
+        Component[] tr = this.gameObject.GetComponentsInChildren(typeof(Transform), true);
+        foreach(Component t in tr)
+        {
+            if(t.transform.name == "bowFront")
+            {
+                tCrossbowFront = t.transform;
+                Debug.Log("bowFront add: " + tCrossbowFront.transform.position);
+            }
+            if (t.transform.name == "bowSite")
+            {
+                tCrossbowEnd = t.transform;
+                Debug.Log("bowSite add: " + tCrossbowEnd.transform.position);
+            }
+
+        }
+        
         unwalkLayerMask = LayerMask.GetMask("UnwalkLayer");
         Debug.Log("unwalkLayerMaskValue:  " +unwalkLayerMask);
         
@@ -52,16 +68,26 @@ public class KeepDistance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (crossbowObj != null)
-        {
-            Transform bowEnd = transform.Find("ダミー_r");
-            Vector3 vE = bowEnd.position;
+        //if (crossbowObj != null)
+        //{
+        //    Transform bowEnd = transform.Find("ダミー_r");
+        //    Vector3 vE = bowEnd.position;
 
-            Transform bowFront = transform.Find("ダミー_l");
-            Vector3 vF = bowEnd.position;
-            Vector3 vBow = vF - vE;
-            Vector3 bowFor = -crossbowObj.transform.right;
-            bowFor = vBow;
+        //    Transform bowFront = transform.Find("ダミー_l");
+        //    Vector3 vF = bowEnd.position;
+        //    Vector3 vBow = vF - vE;
+        //    Vector3 bowFor = -crossbowObj.transform.right;
+        //    bowFor = vBow;
+        //}
+        
+        if(tCrossbowFront!= null & tCrossbowEnd!= null)
+        {
+            Vector3 vBowFromTo = tCrossbowFront.position - tCrossbowEnd.position;
+            Debug.Log("bowForwardVec: " + vBowFromTo);
+            if (crossbowObj != null)
+            {
+                crossbowObj.transform.right = -vBowFromTo;
+            }
         }
 
         for (int i = 0; i < numofRay; i++)

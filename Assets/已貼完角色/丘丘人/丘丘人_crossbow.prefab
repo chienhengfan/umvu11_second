@@ -2630,6 +2630,7 @@ GameObject:
   - component: {fileID: 9005153908256951842}
   - component: {fileID: 6289254038052343547}
   - component: {fileID: 8165776735907412987}
+  - component: {fileID: 4583037626921111600}
   m_Layer: 0
   m_Name: "\u4E18\u4E18\u4EBA_crossbow"
   m_TagString: Enemy
@@ -2726,14 +2727,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Data:
     m_fRadius: 0.5
-    m_fProbeLength: 5
+    m_fProbeLength: 7
     m_Speed: 2
     m_fMaxSpeed: 4
     m_fRot: 10
     m_fMaxRot: 50
     m_Go: {fileID: 3628899219703555706}
     m_fSight: 10
-    m_fAttackRange: 1.1
+    m_fAttackRange: 10
     m_fAttackTime: 0
     m_fHp: 100
     m_TargetObject: {fileID: 0}
@@ -2819,6 +2820,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossbowObj: {fileID: 1490330415080489897}
+--- !u!114 &4583037626921111600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628899219703555706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fef1bb63ecbf448b7136e9ef1af348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackWeapon: {fileID: 0}
 --- !u!1 &3630415296112229947
 GameObject:
   m_ObjectHideFlags: 0
@@ -8797,7 +8811,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 18e6e4bd081f59a419efe631379afe14,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.050000012
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18e6e4bd081f59a419efe631379afe14,
         type: 3}
