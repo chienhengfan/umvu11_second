@@ -147,7 +147,7 @@ public class SimpleFSM2 : MonoBehaviour{
     }
     void CheckMoveToState()
     {
-        // Check Dead.
+        
         Debug.Log("Current State: " + m_eCurrentState);
         if (m_Data.m_fHp <= 0.0f)
         {
@@ -377,6 +377,10 @@ public class SimpleFSM2 : MonoBehaviour{
     }
     void DoMoveToState()
     {
+        //if (SteeringBehavior.NPCCollisionAvoid(m_Data) == false)
+        //{
+        //    SteeringBehavior.Seek(m_Data);
+        //}
         if (SteeringBehavior.CollisionAvoid(m_Data) == false)
         {
             SteeringBehavior.Seek(m_Data);
@@ -390,9 +394,13 @@ public class SimpleFSM2 : MonoBehaviour{
     void DoChaseState()
     {
         m_Data.m_vTarget = m_Data.m_TargetObject.transform.position;
+        //if (SteeringBehavior.NPCCollisionAvoid(m_Data) == false)
+        //{
+        //    SteeringBehavior.Seek(m_Data);
+        //}
         if (SteeringBehavior.CollisionAvoid(m_Data) == false)
         {
-            SteeringBehavior.Seek(m_Data);
+            SteeringBehavior.SeekEnemy(m_Data);
         }
 
         SteeringBehavior.Move(m_Data);
@@ -428,45 +436,43 @@ public class SimpleFSM2 : MonoBehaviour{
         m_CheckState();
         Debug.Log("m_eCurrentState: " + m_eCurrentState);
         m_DoState();
-		
-		
 	}
 
 	private void OnDrawGizmos()
 	{
-		if(m_Data == null)
-		{
-			return;
-		}
-		Gizmos.color = Color.cyan;
-		Gizmos.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 2.0f);
-		if (m_eCurrentState == eFSMState.Idle)
-		{
-			Gizmos.color = Color.green;
-		} else if(m_eCurrentState == eFSMState.MoveToTarget)
-		{
-			Gizmos.color = Color.blue;
-			Gizmos.DrawLine(this.transform.position, m_Data.m_vTarget);
-		}
-		else if (m_eCurrentState == eFSMState.Chase)
-		{
-			Gizmos.color = Color.yellow;
-			Gizmos.DrawLine(this.transform.position, m_Data.m_vTarget);
-		}
-		else if (m_eCurrentState == eFSMState.Attack)
-		{
-			Gizmos.color = Color.red;
-		}
-		else if (m_eCurrentState == eFSMState.Dead)
-		{
-			Gizmos.color = Color.gray;
-		}
-		Gizmos.DrawWireSphere(this.transform.position, m_Data.m_fSight);
+		//if(m_Data == null)
+		//{
+		//	return;
+		//}
+		//Gizmos.color = Color.cyan;
+		//Gizmos.DrawLine(this.transform.position, this.transform.position + this.transform.forward * 2.0f);
+		//if (m_eCurrentState == eFSMState.Idle)
+		//{
+		//	Gizmos.color = Color.green;
+		//} else if(m_eCurrentState == eFSMState.MoveToTarget)
+		//{
+		//	Gizmos.color = Color.blue;
+		//	Gizmos.DrawLine(this.transform.position, m_Data.m_vTarget);
+		//}
+		//else if (m_eCurrentState == eFSMState.Chase)
+		//{
+		//	Gizmos.color = Color.yellow;
+		//	Gizmos.DrawLine(this.transform.position, m_Data.m_vTarget);
+		//}
+  //      else if (m_eCurrentState == eFSMState.Attack)
+  //      {
+  //          Gizmos.color = Color.red;
+  //      }
+  //      else if (m_eCurrentState == eFSMState.Dead)
+  //      {
+  //          Gizmos.color = Color.gray;
+  //      }
+  //      Gizmos.DrawWireSphere(this.transform.position, m_Data.m_fSight);
 
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(this.transform.position, m_Data.m_fAttackRange);
+  //      Gizmos.color = Color.red;
+  //      Gizmos.DrawWireSphere(this.transform.position, m_Data.m_fAttackRange);
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(this.transform.position, m_Data.m_fRadius);
+  //      Gizmos.color = Color.blue;
+  //      Gizmos.DrawWireSphere(this.transform.position, m_Data.m_fRadius);
     }
 }
