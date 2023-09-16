@@ -26,6 +26,9 @@ public class SimpleFSM2 : MonoBehaviour{
 	private GameObject m_CurrentEnemyTarget;
 	private int m_iCurrentWanderPt;
 	private GameObject [] m_WanderPoints;
+    private List<GameObject> enemiesList;
+
+    public int ChuNo = 0;
     [HideInInspector]
     public Animator m_Am;
 
@@ -67,6 +70,7 @@ public class SimpleFSM2 : MonoBehaviour{
 		GameObject go = target;
 		Vector3 v = go.transform.position - this.transform.position;
 		float fDist = v.magnitude;
+        
 		if (fDist < m_Data.m_fAttackRange)
 		{
 			bAttack = true;
@@ -79,6 +83,7 @@ public class SimpleFSM2 : MonoBehaviour{
 		}
 		return false;
 	}
+
     void CheckAttackState()
     {
         // Check Dead
