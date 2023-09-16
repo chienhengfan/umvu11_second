@@ -52,11 +52,17 @@ public class KeepDistance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(crossbowObj != null)
-        //{
-        //    Transform bowEnd = transform.Find("ダミー_r");
-        //    Transform bowFront = transform.Find("ダミー_l");
-        //}
+        if (crossbowObj != null)
+        {
+            Transform bowEnd = transform.Find("ダミー_r");
+            Vector3 vE = bowEnd.position;
+
+            Transform bowFront = transform.Find("ダミー_l");
+            Vector3 vF = bowEnd.position;
+            Vector3 vBow = vF - vE;
+            Vector3 bowFor = -crossbowObj.transform.right;
+            bowFor = vBow;
+        }
 
         for (int i = 0; i < numofRay; i++)
         {
@@ -126,12 +132,7 @@ public class KeepDistance : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //if (crossbowObj != null)
-        //{
-        //    Transform bowEnd = transform.Find("ダミー_r");
-        //    Transform bowFront = transform.Find("ダミー_l");
-
-        //}
+        
 
         for (int i = 0; i < numofRay; i++)
         {
