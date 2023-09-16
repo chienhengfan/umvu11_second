@@ -36,6 +36,8 @@ public class BossFSM : MonoBehaviour
     public GameObject meteorite;
     public ThirdPersonController playerScript;
 
+    private int actionThreshold;
+
     // Use this for initialization
     public void Start()
     {
@@ -257,9 +259,9 @@ public class BossFSM : MonoBehaviour
     void DoIdleState()
     {
         m_fCurrentTime += Time.deltaTime;
-        m_Am.SetBool("IsDead", false);
-        m_Am.SetBool("RunBool", false);
-        m_Am.SetBool("AttackBool", false);
+        //m_Am.SetBool("IsDead", false);
+        //m_Am.SetBool("RunBool", false);
+        //m_Am.SetBool("AttackBool", false);
         Debug.Log("Do Idle State");
     }
     void DoMoveToState()
@@ -270,8 +272,8 @@ public class BossFSM : MonoBehaviour
         }
 
         SteeringBehavior.Move(m_Data);
-        m_Am.SetBool("RunBool", true);
-        m_Am.SetBool("AttackBool", false);
+        //m_Am.SetBool("RunBool", true);
+        //m_Am.SetBool("AttackBool", false);
     }
 
     void DoChaseState()
@@ -283,8 +285,8 @@ public class BossFSM : MonoBehaviour
         }
 
         SteeringBehavior.Move(m_Data);
-        m_Am.SetBool("RunBool", true);
-        m_Am.SetBool("AttackBool", false);
+        //m_Am.SetBool("RunBool", true);
+        //m_Am.SetBool("AttackBool", false);
     }
     void DoAttackState()
     {
@@ -299,8 +301,8 @@ public class BossFSM : MonoBehaviour
         //Vector3 v = go.transform.position - transform.position;
         //v.Normalize();
         //transform.forward = Vector3.Lerp(transform.forward, v, 0.1f);
-        m_Am.SetBool("RunBool", false);
-        m_Am.SetBool("AttackBool", true);
+        //m_Am.SetBool("RunBool", false);
+        //m_Am.SetBool("AttackBool", true);
     }
 
     void DoDeadState()
@@ -312,6 +314,8 @@ public class BossFSM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        actionThreshold = Random.Range(0, 5);
+
         Debug.Log("Update State");
         m_CheckState();
         Debug.Log("m_eCurrentState: " + m_eCurrentState);
@@ -322,9 +326,12 @@ public class BossFSM : MonoBehaviour
 
     /// <summary>
     /// 追蹤火球攻擊
+    /// actionThreshold = 1
     /// </summary>
     void DoChaseFireAttackState(float fireSpeed = 5f, float attackRange = 3f, float chaseTimeThreshold = 10f)
     {
+        m_Am.SetFloat("ActionThreshold", actionThreshold);
+
         bool IsHit = false;
         float currentTime = 0f;
         GameObject player = Main.m_Instance.GetPlayer();
@@ -352,9 +359,11 @@ public class BossFSM : MonoBehaviour
 
     /// <summary>
     /// 在範圍內召喚隕石攻擊
+    /// actionThreshold = 0
     /// </summary>
     void DoMeteoriteAttackState(float evokeRange = 10f, int numberOfMeterite = 3, float attackRange = 3f)
     {
+        m_Am.SetFloat("ActionThreshold", actionThreshold);
         GameObject player = Main.m_Instance.GetPlayer();
 
         for (int i = 0; i <= numberOfMeterite; i++)
