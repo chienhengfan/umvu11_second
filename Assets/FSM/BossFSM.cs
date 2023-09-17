@@ -324,57 +324,6 @@ public class BossFSM : MonoBehaviour
 
 
 
-    /// <summary>
-    /// 追蹤火球攻擊
-    /// actionThreshold = 1
-    /// </summary>
-    void DoChaseFireAttackState(float fireSpeed = 5f, float attackRange = 3f, float chaseTimeThreshold = 10f)
-    {
-        //bool IsHit = false;
-        //float currentTime = 0f;
-        //GameObject player = Main.m_Instance.GetPlayer();
-        //GameObject chaseFie = Instantiate(chaseFire, transform.position, Quaternion.identity);
-        //while (!IsHit)
-        //{
-        //    chaseFire.transform.position = Vector3.MoveTowards(chaseFire.transform.position, player.transform.position, fireSpeed * Time.deltaTime);
-        //    currentTime += Time.deltaTime;
-        //    if(Vector3.Distance(chaseFire.transform.position, player.transform.position) <= attackRange)
-        //    {
-        //        //player take damage
-        //        playerScript.TakeDamage(15f);
-        //        Destroy(chaseFie);
-        //        IsHit = true;
-
-        //    }
-        //    else if(currentTime > chaseTimeThreshold)
-        //    {
-        //        Destroy(chaseFie);
-        //        break;
-        //    }
-        //}
-
-    }
-
-    /// <summary>
-    /// 在範圍內召喚隕石攻擊
-    /// actionThreshold = 0
-    /// </summary>
-    void DoMeteoriteAttackState(float evokeRange = 10f, int numberOfMeterite = 3, float attackRange = 3f)
-    {
-        //GameObject player = Main.m_Instance.GetPlayer();
-
-        //for (int i = 0; i <= numberOfMeterite; i++)
-        //{
-        //    GameObject m = Instantiate(meteorite, Random.insideUnitCircle * evokeRange, Quaternion.identity);
-        //    if(Vector3.Distance(m.transform.position, player.transform.position) <= attackRange)
-        //    {
-        //        //player take damage
-        //        playerScript.TakeDamage(10f);
-        //    }
-        //    Destroy(m);
-        //}
-    }
-
 
 
     private void OnDrawGizmos()

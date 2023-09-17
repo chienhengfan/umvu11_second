@@ -153,6 +153,10 @@ namespace StarterAssets
         [SerializeField]
         private float forceStrenghTrigger = 3f;
 
+        //jack
+        [SerializeField] GameObject Deadmenu = null;
+
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -196,6 +200,9 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            //jack
+            Deadmenu.SetActive(false);
 
         }
 
@@ -337,7 +344,9 @@ namespace StarterAssets
                 mState = motionState.Dead;
                 Debug.Log("Player Dead");
                 _animator.SetBool("IsDead", true);
+                Deadmenu.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
+
             }
         }
 

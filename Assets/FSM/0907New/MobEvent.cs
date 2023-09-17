@@ -14,7 +14,7 @@ public class MobEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = Main.m_Instance.GetPlayer();
+        player = GameObject.FindGameObjectWithTag("Player");
         Transform[] trs = this.GetComponentsInChildren<Transform>();
         foreach (Transform t in trs)
         {
@@ -44,6 +44,12 @@ public class MobEvent : MonoBehaviour
             Debug.Log("Mob Shoot Arrow");
 
             float fArrowToPlayer = Vector3.Distance(AttackWeapon.transform.position, player.transform.position);
+
+            //Instantiate(AttackWeapon, arrowStart.position, transform.rotation);
+            AttackWeapon.transform.forward = transform.forward;
+            Debug.Log("Shoot Sth");
+            //iceArrow.transform.forward = arrowStart.forward;
+
             if (fArrowToPlayer < 0.001f)
             {
                 ThirdPersonController tpc = player.GetComponent<ThirdPersonController>();

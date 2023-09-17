@@ -1,7 +1,9 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
+using StarterAssets;
 
 public class BallControl : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class BallControl : MonoBehaviour
     public ParticleSystem explosion;
 
     private float ballSpeed = 5.0f;
-
+    public ThirdPersonController playerScript;
     private Transform playerT;
     private float ballDropTime = 0.0f;
     private float fLifeTime = 2.0f;
@@ -22,13 +24,15 @@ public class BallControl : MonoBehaviour
     void Start()
     {
         playerT = GameObject.FindGameObjectWithTag("Player").transform;
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<ThirdPersonController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 vFOr = transform.forward;
-        Vector3 vToP = playerT.position - transform.position;
+        Vector3 vPlayerChasePoint = playerT.transform.position + playerT.transform.up * 1.0f;
+        Vector3 vToP = vPlayerChasePoint - transform.position;
         vFOr = Vector3.Lerp(vFOr, vToP, 0.1f);
         Collider[] cols = Physics.OverlapSphere(transform.position, radius, mask);
         if (cols.Length > 0)
@@ -92,10 +96,12 @@ public class BallControl : MonoBehaviour
                 //fPassTime += Time.deltaTime;
             }
         }
-        if(vToP.magnitude < radius*0.5 && vToP.y < -0.1f )
+        if(vToP.magnitude < 0.1f )
         {
+            Debug.Log("FireBallHit Sth");
             //¤õ²y¸I¨ìª±®aÃz¬µ
             Instantiate(explosion, transform.position, Quaternion.identity);
+            playerScript.TakeDamage(10);
             Debug.Log("explosionInstance: " +explosion.transform.position);
             gameObject.SetActive(false);
         }

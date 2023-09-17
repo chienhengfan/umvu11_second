@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
@@ -15,19 +16,33 @@ public class Health : MonoBehaviour
     //[HideInInspector]
     public float currentHealth; // 当前生命值
     public RectTransform hpUI;
-
+    public GameObject hpBarUI;
     private bool isDead = false; // 是否死亡
     [HideInInspector]
     public SimpleFSM2 fSM2;
-
+    public GameObject hitNumberPrefab;
     [SerializeField] TextPooler TextPool;
+
+    public BossFSM bossFSM;
 
     void Start()
     {
-        maxHealth = GetComponent<SimpleFSM2>().m_Data.m_fHp;
+        if (this.gameObject.name == "LaSignora_Harbinger")
+        {
+            maxHealth = GetComponent<BossFSM>().m_Data.m_fHp;
+        }
+        else
+        {
+            maxHealth = GetComponent<SimpleFSM2>().m_Data.m_fHp;
+        }
+        
         currentHealth = maxHealth; // 初始化当前生命值为最大生命值
         fSM2 = GetComponent<SimpleFSM2>();
+        bossFSM = GetComponent<BossFSM>();
     }
+
+
+
 
     private void Update()
     {
@@ -42,14 +57,31 @@ public class Health : MonoBehaviour
         if (isDead) return; // 如果已经死亡，不再受伤
 
         currentHealth -= damage; // 减去受伤值
-        fSM2.m_Am.SetTrigger("IsDamaged");
 
+
+        if (this.gameObject.name == "LaSignora_Harbinger")
+        {
+            bossFSM.m_Am.SetTrigger("IsDamaged");
+        }
+        else
+        {
+            fSM2.m_Am.SetTrigger("IsDamaged");
+        }
+
+        
         // 更新UI、播放受伤动画或其他受伤反馈
-
         if (currentHealth <= 0)
         {
             Die(); // 如果生命值小于等于0，触发死亡
         }
+        var Arrow = gameObject.transform.GetComponent<ArrowDamage>();
+        if (Arrow)
+        {
+            //damage = damageAmount;
+        }
+        int damageAmount = 10; // 假设伤害数值是10
+        GenerateHitNumber(damageAmount, this.transform.position + Vector3.up * 0.5f);
+        GenerateHitNumber(damage, this.transform.position + Vector3.up * 0.5f);
     }
 
     // 死亡函数
@@ -61,8 +93,20 @@ public class Health : MonoBehaviour
 
         // 可以在这里写额外的死亡逻辑
         Debug.Log("Dead moment");
-        fSM2.m_Data.m_fHp = 0;
-        fSM2.m_Am.SetTrigger("IsDead");
+
+        if (this.gameObject.name == "LaSignora_Harbinger")
+        {
+            bossFSM.m_Data.m_fHp = 0;
+            bossFSM.m_Am.SetTrigger("IsDead");
+        }
+        else
+        {
+            fSM2.m_Data.m_fHp = 0;
+            fSM2.m_Am.SetTrigger("IsDead");
+        }
+
+
+        hpBarUI.SetActive(false);
     }
 
     // 增加生命值的函数
@@ -77,6 +121,29 @@ public class Health : MonoBehaviour
         // 确保不超过最大生命值
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
+
+    public void GenerateHitNumber(int damage, Vector3 pos)
+    {
+        var numberObject = Instantiate(hitNumberPrefab, pos, Quaternion.identity);
+        var textComponent = numberObject.GetComponentInChildren<TMP_Text>();
+        Debug.Log("GenerateHitNumber======");
+        if (textComponent != null)
+        {
+            Debug.Log("GenerateHitNumber1================");
+            textComponent.text = damage.ToString();
+        }
+    }
+
+    //public void GenerateHitNumber(int number, Vector3 pos)
+    //{
+    //    var numberObject = Instantiate(hitNumberPrefab, pos, Quaternion.identity);
+    //    numberObject.GetComponentInChildren<TextMesh>().text = number.ToString();
+    //if (numberObject != null)
+    //{
+    //    Debug.Log("number: " + number);
+    //    Debug.Log(numberObject.GetComponentInChildren<Text>().text);
+    //}
+
     void PopDamageText(float amount)
     {
         // 从Text对象池中，获取一个未激活的Text

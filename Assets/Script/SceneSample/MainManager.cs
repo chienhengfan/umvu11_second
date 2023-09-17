@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
-    private static MainManager _instance = null;
+    public static MainManager _instance = null;
     public static MainManager Instance() { return _instance; }
-
 
     private void Awake()
     {
