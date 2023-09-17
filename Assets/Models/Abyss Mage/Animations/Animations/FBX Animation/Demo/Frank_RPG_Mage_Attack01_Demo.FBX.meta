@@ -823,7 +823,11 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+<<<<<<< HEAD
+      - time: 0.6305085
+=======
       - time: 0.6004464
+>>>>>>> 1fe33db6a215ce7d9b4321f9328a78da9fefadaf
         functionName: EnergyBallControlEvent
         data: 
         objectReferenceParameter: {instanceID: 0}

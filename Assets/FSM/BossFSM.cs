@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StarterAssets;
+
 
 public class BossFSM : MonoBehaviour
 {
@@ -32,9 +32,11 @@ public class BossFSM : MonoBehaviour
     public Animator m_Am;
 
 
-    public GameObject chaseFire;
-    public GameObject meteorite;
-    public ThirdPersonController playerScript;
+    //public GameObject chaseFire;
+    //public GameObject meteorite;
+
+
+    private int attackndex = 3;
 
     // Use this for initialization
     public void Start()
@@ -301,6 +303,7 @@ public class BossFSM : MonoBehaviour
         //transform.forward = Vector3.Lerp(transform.forward, v, 0.1f);
         m_Am.SetBool("RunBool", false);
         m_Am.SetBool("AttackBool", true);
+        m_Am.SetInteger("AttackIndex", Random.Range(0, attackndex));
     }
 
     void DoDeadState()
@@ -312,61 +315,64 @@ public class BossFSM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         Debug.Log("Update State");
         m_CheckState();
         Debug.Log("m_eCurrentState: " + m_eCurrentState);
         m_DoState();
-
-
     }
+
+
 
     /// <summary>
     /// 追蹤火球攻擊
+    /// actionThreshold = 1
     /// </summary>
     void DoChaseFireAttackState(float fireSpeed = 5f, float attackRange = 3f, float chaseTimeThreshold = 10f)
     {
-        bool IsHit = false;
-        float currentTime = 0f;
-        GameObject player = Main.m_Instance.GetPlayer();
-        GameObject chaseFie = Instantiate(chaseFire, transform.position, Quaternion.identity);
-        while (!IsHit)
-        {
-            chaseFire.transform.position = Vector3.MoveTowards(chaseFire.transform.position, player.transform.position, fireSpeed * Time.deltaTime);
-            currentTime += Time.deltaTime;
-            if(Vector3.Distance(chaseFire.transform.position, player.transform.position) <= attackRange)
-            {
-                //player take damage
-                playerScript.TakeDamage(15f);
-                Destroy(chaseFie);
-                IsHit = true;
+        //bool IsHit = false;
+        //float currentTime = 0f;
+        //GameObject player = Main.m_Instance.GetPlayer();
+        //GameObject chaseFie = Instantiate(chaseFire, transform.position, Quaternion.identity);
+        //while (!IsHit)
+        //{
+        //    chaseFire.transform.position = Vector3.MoveTowards(chaseFire.transform.position, player.transform.position, fireSpeed * Time.deltaTime);
+        //    currentTime += Time.deltaTime;
+        //    if(Vector3.Distance(chaseFire.transform.position, player.transform.position) <= attackRange)
+        //    {
+        //        //player take damage
+        //        playerScript.TakeDamage(15f);
+        //        Destroy(chaseFie);
+        //        IsHit = true;
 
-            }
-            else if(currentTime > chaseTimeThreshold)
-            {
-                Destroy(chaseFie);
-                break;
-            }
-        }
+        //    }
+        //    else if(currentTime > chaseTimeThreshold)
+        //    {
+        //        Destroy(chaseFie);
+        //        break;
+        //    }
+        //}
 
     }
 
     /// <summary>
     /// 在範圍內召喚隕石攻擊
+    /// actionThreshold = 0
     /// </summary>
     void DoMeteoriteAttackState(float evokeRange = 10f, int numberOfMeterite = 3, float attackRange = 3f)
     {
-        GameObject player = Main.m_Instance.GetPlayer();
+        //GameObject player = Main.m_Instance.GetPlayer();
 
-        for (int i = 0; i <= numberOfMeterite; i++)
-        {
-            GameObject m = Instantiate(meteorite, Random.insideUnitCircle * evokeRange, Quaternion.identity);
-            if(Vector3.Distance(m.transform.position, player.transform.position) <= attackRange)
-            {
-                //player take damage
-                playerScript.TakeDamage(10f);
-            }
-            Destroy(m);
-        }
+        //for (int i = 0; i <= numberOfMeterite; i++)
+        //{
+        //    GameObject m = Instantiate(meteorite, Random.insideUnitCircle * evokeRange, Quaternion.identity);
+        //    if(Vector3.Distance(m.transform.position, player.transform.position) <= attackRange)
+        //    {
+        //        //player take damage
+        //        playerScript.TakeDamage(10f);
+        //    }
+        //    Destroy(m);
+        //}
     }
 
 
