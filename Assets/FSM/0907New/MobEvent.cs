@@ -34,12 +34,12 @@ public class MobEvent : MonoBehaviour
         arrowList = new List<GameObject>();
         for (int i = 0; i < weaponNum; i++)
         {
-            GameObject arrow = Instantiate(AttackWeapon, this.transform);
+            GameObject arrow = Instantiate(AttackWeapon, transform.position, Quaternion.identity);
             arrow.SetActive(false);
-            ObjManager.AddToList(arrow);
+            //objM.AddToList(arrow);
             arrowList.Add(arrow);
         }
-
+        Debug.Log("arrowListCount: " + arrowList.Count);
     }
 
     // Update is called once per frame
@@ -61,8 +61,14 @@ public class MobEvent : MonoBehaviour
                 return;
             }
             GameObject curArrow = arrowList[shootwpNum];
-            ObjManager.ActivateArrow(curArrow, tShootStart.position, player.transform.position);
-            Debug.Log("playerPos: " + player.transform.position);
+            curArrow.transform.position = tShootStart.transform.position;
+            Vector3 vPlayer = player.transform.position + player.transform.up*1.0f;
+            Vector3 vFor = vPlayer - tShootStart.transform.position;
+            curArrow.transform.forward = vFor;
+            curArrow.SetActive(true);
+
+            //objM.ActivateArrow(curArrow, tShootStart.position, vPlayer);
+            
         }
         shootwpNum++;
     }
