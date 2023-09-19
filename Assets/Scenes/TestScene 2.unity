@@ -1006,7 +1006,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6367924, g: 1, b: 0.9872558, a: 0.3137255}
+      maxColor: {r: 0.7783019, g: 1, b: 0.9917889, a: 0.19607843}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1534,7 +1534,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.9
       mode: 0
       spread: 0
       speed:
@@ -4723,7 +4723,7 @@ ParticleSystem:
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4775,7 +4775,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    textureScale: {x: 0.5, y: 1}
+    textureScale: {x: 0.5, y: 0.3}
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0
