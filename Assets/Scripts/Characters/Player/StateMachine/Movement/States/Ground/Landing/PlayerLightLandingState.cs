@@ -16,6 +16,8 @@ namespace Movementsystem
             base.Enter();
             stateMachine.ReusableData.MovementOnSlopesSpeedModifier = 0f;
 
+            stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StationaryForce;
+
             ResetVelocity();
         }
 

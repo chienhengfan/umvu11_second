@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+namespace Movementsystem
+{
+    [Serializable]
+    public class PlayerRollData : MonoBehaviour
+    {
+        [field: SerializeField] [field: Range(0f, 3f)] public float SpeedModifier { get; private set; } = 1f;
+    }
+
+}
