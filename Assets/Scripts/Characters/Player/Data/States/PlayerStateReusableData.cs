@@ -14,6 +14,7 @@ namespace Movementsystem
         public PlayerRotationData RotationData { get; set; }
 
         public bool ShouldWalk { get; set; }
+        public bool ShouldSprint { get; set; }
 
         private Vector3 currentTargetRotation;
         private Vector3 timeToReachTargetRotation;

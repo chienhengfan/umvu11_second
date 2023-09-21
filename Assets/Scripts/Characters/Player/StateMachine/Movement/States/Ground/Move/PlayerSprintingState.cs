@@ -13,6 +13,7 @@ namespace Movementsystem
         private float startTime;
 
         private bool keepSprinting;
+        private bool shouldResetSprintState;
         public PlayerSprintingState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {
             sprintData = movementData.SprintData;
@@ -25,12 +26,20 @@ namespace Movementsystem
             stateMachine.ReusableData.MovementSpeedModifier = sprintData.SpeedModifier;
             stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StrongForce;
             startTime = Time.time;
+
+            shouldResetSprintState = true;
         }
 
         public override void Exit()
         {
             base.Exit();
-            keepSprinting = false;
+            if (shouldResetSprintState)
+            {
+                keepSprinting = false;
+                shouldResetSprintState = false;
+            }
+
+            
         }
 
         public override void Update()
@@ -80,6 +89,12 @@ namespace Movementsystem
             stateMachine.Player.Input.PlayerActions.Sprint.performed -= OnSprintPerformed;
         }
 
+        protected override void OnFall()
+        {
+
+            shouldResetSprintState = false;
+            base.OnFall();
+        }
         #endregion
 
         #region Input Methods
@@ -87,9 +102,16 @@ namespace Movementsystem
         {
             stateMachine.ChangeState(stateMachine.HardStoppingState);
         }
+
+        protected override void OnJumpStarted(InputAction.CallbackContext context)
+        {
+            shouldResetSprintState = false;
+            base.OnJumpStarted(context);
+        }
         private void OnSprintPerformed(InputAction.CallbackContext context)
         {
             keepSprinting = true;
+            stateMachine.ReusableData.ShouldSprint = true;
 
         }
         #endregion

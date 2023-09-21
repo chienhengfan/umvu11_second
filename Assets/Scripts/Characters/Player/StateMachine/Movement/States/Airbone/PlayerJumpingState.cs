@@ -9,6 +9,7 @@ namespace Movementsystem
     {
         private PlayerJumpData jumpData;
         private bool shouldKeepRotating;
+        private bool canStartFalling;
 
         public PlayerJumpingState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {
@@ -21,9 +22,27 @@ namespace Movementsystem
             base.Enter();
             stateMachine.ReusableData.MovementSpeedModifier = 0f;
 
+            stateMachine.ReusableData.MovementDecelerationForce = jumpData.DecelerationForce;
+
             shouldKeepRotating = stateMachine.ReusableData.MovementInput != Vector2.zero;
 
             Jump();
+        }
+        public override void Update()
+        {
+            base.Update();
+
+            if(!canStartFalling && IsMovingUp(0f))
+            {
+                canStartFalling = true;
+            }
+
+            if(!canStartFalling || GetPlayerVerticalVelecity().y > 0)
+            {
+                return;
+            }
+
+            stateMachine.ChangeState(stateMachine.FallingState);
         }
 
         public override void Exit()
@@ -31,6 +50,8 @@ namespace Movementsystem
             base.Exit();
 
             SetBaseRotationData();
+
+            canStartFalling = false;
         }
         public override void PhysicsUpdate()
         {
@@ -39,9 +60,22 @@ namespace Movementsystem
             {
                 RotateTowardsTargetRotation();
             }
+
+            if (IsMovingUp())
+            {
+                DecelerateVertically();
+            }
         }
 
         #endregion
+
+        #region Reusable Methods
+
+        protected override void ResetSprintState()
+        {
+        }
+        #endregion
+
         #region MainMethods
         private void Jump()
         {

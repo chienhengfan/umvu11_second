@@ -32,6 +32,7 @@ namespace Movementsystem
         #region IState Method
         public virtual void Enter()
         {
+            Debug.LogError("State: " + GetType().Name);
             AddInputActionCallbacks();
         }
 
@@ -78,6 +79,16 @@ namespace Movementsystem
                 return;
             }
         }
+
+        public void OnTriggerExit(Collider collider)
+        {
+            if (stateMachine.Player.LayerData.IsGroundLayer(collider.gameObject.layer))
+            {
+                OnContactWithGroundExited(collider);
+                return;
+            }
+        }
+
 
         #endregion
 
@@ -196,6 +207,13 @@ namespace Movementsystem
 
         protected void ResetVelocity()
         {
+            Vector3 playerHorizontalVelocity = GetPlayerHorizontalVelocity();
+
+            stateMachine.Player.Rigidbody.velocity = playerHorizontalVelocity;
+        }
+
+        protected void ResetVerticalVelocity()
+        {
             stateMachine.Player.Rigidbody.velocity = Vector3.zero;
         }
         protected virtual void AddInputActionCallbacks()
@@ -217,6 +235,13 @@ namespace Movementsystem
             stateMachine.Player.Rigidbody.AddForce(-playerHorizontalVelecity * stateMachine.ReusableData.MovementDecelerationForce, ForceMode.Acceleration);
         }
 
+        protected void DecelerateVertically()
+        {
+            Vector3 playerVertitalVelecity = GetPlayerVerticalVelecity();
+
+            stateMachine.Player.Rigidbody.AddForce(-playerVertitalVelecity * stateMachine.ReusableData.MovementDecelerationForce, ForceMode.Acceleration);
+        }
+
         protected bool IsMovingHorizontally(float minimumMagnitude = 0.1f)
         {
             Vector3 playerHorizontalVelecity = GetPlayerHorizontalVelocity();
@@ -230,7 +255,10 @@ namespace Movementsystem
             stateMachine.ReusableData.TimeToReachTargetRotation = stateMachine.ReusableData.RotationData.TargetRotationReachTime;
         }
 
+        protected virtual void OnContactWithGroundExited(Collider collider)
+        {
 
+        }
         protected virtual void OnContactWithGround(Collider collider)
         {
         }
@@ -252,7 +280,6 @@ namespace Movementsystem
         {
             stateMachine.ReusableData.ShouldWalk = !stateMachine.ReusableData.ShouldWalk;
         }
-
 
 
 
