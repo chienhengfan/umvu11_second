@@ -18,6 +18,9 @@ namespace Movementsystem
         public PlayerMediumStoppingState MediumStoppingState { get; }
         public PlayerHardStoppingState HardStoppingState { get; }
 
+        public PlayerJumpingState JumpingState { get; }
+
+        public PlayerAirboneState AirboneState { get; }
         public PlayerGlidingState GlidingState { get; }
         public PlayerClimbingState ClimbingState { get; }
         public PlayerMovementStateMachine(Player player)
@@ -38,6 +41,9 @@ namespace Movementsystem
             LightStoppingState = new PlayerLightStoppingState(this);
             MediumStoppingState = new PlayerMediumStoppingState(this);
             HardStoppingState = new PlayerHardStoppingState(this);
+
+            JumpingState = new PlayerJumpingState(this);
+            AirboneState = new PlayerAirboneState(this);
         }
 
     }

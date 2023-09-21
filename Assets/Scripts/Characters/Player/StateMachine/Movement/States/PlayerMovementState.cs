@@ -11,19 +11,24 @@ namespace Movementsystem
         protected PlayerMovementStateMachine stateMachine;
 
         protected PlayerGroundedData movementData;
+        protected PlayerAirboneData airboneData;
 
 
         public PlayerMovementState(PlayerMovementStateMachine playerMovementStateMachine)
         {
             stateMachine = playerMovementStateMachine;
             movementData = stateMachine.Player.Data.GroundedData;
-            InitializeDate();
+            airboneData = stateMachine.Player.Data.AirboneData;
+            InitializeData();
         }
 
-        private void InitializeDate()
+        private void InitializeData()
         {
-            stateMachine.ReusableData.TimeToReachTargetRotation = movementData.BaseRotationData.TargetRotationReachTime;
+            SetBaseRotationData();
+
         }
+
+
         #region IState Method
         public virtual void Enter()
         {
@@ -64,6 +69,16 @@ namespace Movementsystem
         public virtual void OnAnimationTransitionEvent()
         {
         }
+
+        public virtual void OnTriggerEnter(Collider collider)
+        {
+            if (stateMachine.Player.LayerData.IsGroundLayer(collider.gameObject.layer))
+            {
+                OnContactWithGround(collider);
+                return;
+            }
+        }
+
         #endregion
 
         #region Main Methods
@@ -209,6 +224,27 @@ namespace Movementsystem
             return playerHorizontalMovement.magnitude > minimumMagnitude;
         }
 
+        protected void SetBaseRotationData()
+        {
+            stateMachine.ReusableData.RotationData = movementData.BaseRotationData;
+            stateMachine.ReusableData.TimeToReachTargetRotation = stateMachine.ReusableData.RotationData.TargetRotationReachTime;
+        }
+
+
+        protected virtual void OnContactWithGround(Collider collider)
+        {
+        }
+
+        protected bool IsMovingUp(float minimumVelecity = 0.1f)
+        {
+            return GetPlayerVerticalVelecity().y > minimumVelecity;
+        }
+
+        protected bool IsMovingDown(float minimumVelecity = 0.1f)
+        {
+            return GetPlayerVerticalVelecity().y < -minimumVelecity;
+        }
+
         #endregion
 
         #region Input Methobs
@@ -216,6 +252,8 @@ namespace Movementsystem
         {
             stateMachine.ReusableData.ShouldWalk = !stateMachine.ReusableData.ShouldWalk;
         }
+
+
 
 
         #endregion

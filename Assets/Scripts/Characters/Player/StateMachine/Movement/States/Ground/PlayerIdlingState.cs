@@ -19,6 +19,8 @@ namespace Movementsystem
             base.Enter();
 
             stateMachine.ReusableData.MovementSpeedModifier = 0f;
+
+            stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StationaryForce;
             ResetVelocity();
         }
         public override void Update()

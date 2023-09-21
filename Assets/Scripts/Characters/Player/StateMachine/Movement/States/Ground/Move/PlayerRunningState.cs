@@ -19,9 +19,12 @@ namespace Movementsystem
         {
             base.Enter();
             stateMachine.ReusableData.MovementSpeedModifier = movementData.RunData.SpeedModifier;
+
+            stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.MediumForce;
             startTime = Time.time;
         }
         #endregion
+        
         public override void Update()
         {
             base.Update();

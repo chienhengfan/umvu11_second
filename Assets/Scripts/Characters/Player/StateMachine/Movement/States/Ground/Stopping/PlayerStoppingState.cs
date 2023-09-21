@@ -23,6 +23,9 @@ namespace Movementsystem
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
+
+            RotateTowardsTargetRotation();
+
             if (!IsMovingHorizontally())
             {
                 return;

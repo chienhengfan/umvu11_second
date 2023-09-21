@@ -19,6 +19,7 @@ namespace Movementsystem
             base.Enter();
 
             stateMachine.ReusableData.MovementSpeedModifier = movementData.WalkData.SpeedModifier;
+            stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.WeakForce;
         }
         #endregion
 

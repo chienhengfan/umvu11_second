@@ -23,6 +23,7 @@ namespace Movementsystem
         {
             base.Enter();
             stateMachine.ReusableData.MovementSpeedModifier = sprintData.SpeedModifier;
+            stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StrongForce;
             startTime = Time.time;
         }
 

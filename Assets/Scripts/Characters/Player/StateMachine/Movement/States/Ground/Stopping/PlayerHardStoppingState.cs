@@ -14,6 +14,7 @@ namespace Movementsystem
         {
             base.Enter();
             stateMachine.ReusableData.MovementDecelerationForce = movementData.StopData.HardDecelerationForce;
+            stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StrongForce;
         }
 
         #endregion
