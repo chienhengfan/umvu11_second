@@ -5922,6 +5922,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u7518\u96E8\u7403"
       objectReference: {fileID: 0}
+    - target: {fileID: 4160418641106213217, guid: 9af902542211a2f42968d0a4eab9a53d,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103114149335515659, guid: 9af902542211a2f42968d0a4eab9a53d,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103114149335515659, guid: 9af902542211a2f42968d0a4eab9a53d,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Name
+      value: Gravity Strength
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103114149335515659, guid: 9af902542211a2f42968d0a4eab9a53d,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103114149335515659, guid: 9af902542211a2f42968d0a4eab9a53d,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Overridden
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7210844541091216793, guid: 9af902542211a2f42968d0a4eab9a53d,
         type: 3}
       propertyPath: m_LocalPosition.x
