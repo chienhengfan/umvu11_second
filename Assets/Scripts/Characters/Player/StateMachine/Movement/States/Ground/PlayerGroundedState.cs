@@ -21,6 +21,8 @@ namespace Movementsystem
         {
             base.Enter();
             UpdateShouldSprintState();
+
+            UpdateCameraRecentingState(stateMachine.ReusableData.MovementInput);
         }
 
         public override void PhysicsUpdate()
@@ -79,7 +81,15 @@ namespace Movementsystem
         private float SetSlopeSpeedModifierOnAngle(float angle)
         {
             float slopeSpeedModifier = movementData.SlopeSpeedAngles.Evaluate(angle);
-            stateMachine.ReusableData.MovementOnSlopesSpeedModifier = slopeSpeedModifier;
+
+            if(stateMachine.ReusableData.MovementSpeedModifier != slopeSpeedModifier)
+            {
+                stateMachine.ReusableData.MovementOnSlopesSpeedModifier = slopeSpeedModifier;
+
+                UpdateCameraRecentingState(stateMachine.ReusableData.MovementInput);
+            }
+
+
 
             return slopeSpeedModifier;
         }
@@ -88,7 +98,7 @@ namespace Movementsystem
         {
             BoxCollider groundCheckCollider = stateMachine.Player.ColliderUtility.TriggerColliderData.GroundCheckCollider;
             Vector3 groundColliderCenterInWorldSpace = groundCheckCollider.bounds.center;
-            Collider[] overlappedGroundColliders = Physics.OverlapBox(groundColliderCenterInWorldSpace, groundCheckCollider.bounds.extents, groundCheckCollider.transform.rotation, stateMachine.Player.LayerData.GroundLayer, QueryTriggerInteraction.Ignore);
+            Collider[] overlappedGroundColliders = Physics.OverlapBox(groundColliderCenterInWorldSpace, stateMachine.Player.ColliderUtility.TriggerColliderData.GroundCheckColliderExtents, groundCheckCollider.transform.rotation, stateMachine.Player.LayerData.GroundLayer, QueryTriggerInteraction.Ignore);
 
             return overlappedGroundColliders.Length > 0;
         }
@@ -101,7 +111,6 @@ namespace Movementsystem
         protected override void AddInputActionCallbacks()
         {
             base.AddInputActionCallbacks();
-            stateMachine.Player.Input.PlayerActions.Movement.canceled += OnMovementCanceled;
 
             stateMachine.Player.Input.PlayerActions.Dash.started += OnDashStarted;
 
@@ -112,7 +121,6 @@ namespace Movementsystem
         protected override void RemoveInputActionCallbacks()
         {
             base.RemoveInputActionCallbacks();
-            stateMachine.Player.Input.PlayerActions.Movement.canceled -= OnMovementCanceled;
 
             stateMachine.Player.Input.PlayerActions.Dash.started -= OnDashStarted;
 
@@ -170,10 +178,7 @@ namespace Movementsystem
             base.OnWalkToggleStarted(context);
             stateMachine.ChangeState(stateMachine.RunningState);
         }
-        protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
-        {
-            stateMachine.ChangeState(stateMachine.IdlingState);
-        }
+
 
         protected virtual void OnDashStarted(InputAction.CallbackContext context)
         {

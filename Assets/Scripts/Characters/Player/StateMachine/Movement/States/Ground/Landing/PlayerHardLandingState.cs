@@ -15,10 +15,24 @@ namespace Movementsystem
         #region IState Method
         public override void Enter()
         {
+            stateMachine.ReusableData.MovementOnSlopesSpeedModifier = 0f;
+
             base.Enter();
 
             stateMachine.Player.Input.PlayerActions.Movement.Disable();
-            stateMachine.ReusableData.MovementOnSlopesSpeedModifier = 0f;
+
+
+            ResetVelocity();
+        }
+
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
+
+            if (!IsMovingHorizontally())
+            {
+                return;
+            }
 
             ResetVelocity();
         }

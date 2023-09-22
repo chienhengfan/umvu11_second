@@ -20,6 +20,13 @@ namespace Movementsystem
             CapsuleColliderData = new CapsuleColliderData();
 
             CapsuleColliderData.Initialize(gameObject);
+
+            OnInitialize();
+        }
+
+        protected virtual void OnInitialize()
+        {
+
         }
         public void CalculateCapuleColliderDimensions()
         {

@@ -15,9 +15,12 @@ namespace Movementsystem
         #region IState Methods
         public override void Enter()
         {
+            stateMachine.ReusableData.MovementSpeedModifier = 0f;
+
+            SetBaseCameraRecentingData();
+
             base.Enter();
 
-            stateMachine.ReusableData.MovementSpeedModifier = 0f;
         }
 
         public override void PhysicsUpdate()
@@ -60,10 +63,6 @@ namespace Movementsystem
         #endregion
 
         #region Input Methods
-        protected override void OnMovementCanceled(InputAction.CallbackContext context)
-        {
-            base.OnMovementCanceled(context);
-        }
 
         private void OnMovementStared(InputAction.CallbackContext context)
         {

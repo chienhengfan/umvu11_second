@@ -8,17 +8,21 @@ namespace Movementsystem
 {
     public class PlayerIdlingState : PlayerGroundedState
     {
+        private PlayerIdleData idleData;
         public PlayerIdlingState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {
+            idleData = movementData.IdleData;
         }
 
 
         #region IState Methods
         public override void Enter()
         {
-            base.Enter();
-
             stateMachine.ReusableData.MovementSpeedModifier = 0f;
+
+            stateMachine.ReusableData.BackwardsCameraRecentingData = idleData.BackwardsCameraRecentingData;
+
+            base.Enter();
 
             stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StationaryForce;
             ResetVelocity();
@@ -33,6 +37,18 @@ namespace Movementsystem
             }
             OnMove();
          }
+
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
+
+            if (!IsMovingHorizontally())
+            {
+                return;
+            }
+
+            ResetVelocity();
+        }
 
         #endregion
     }

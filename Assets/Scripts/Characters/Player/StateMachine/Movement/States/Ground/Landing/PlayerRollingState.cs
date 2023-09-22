@@ -16,9 +16,10 @@ namespace Movementsystem
         #region IState Methods
         public override void Enter()
         {
+            stateMachine.ReusableData.MovementSpeedModifier = rollData.SpeedModifier;
+
             base.Enter();
 
-            stateMachine.ReusableData.MovementSpeedModifier = rollData.SpeedModifier;
             stateMachine.ReusableData.ShouldSprint = false;
         }
 

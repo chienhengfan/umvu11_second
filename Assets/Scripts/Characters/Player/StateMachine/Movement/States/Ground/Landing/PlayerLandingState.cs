@@ -11,12 +11,6 @@ namespace Movementsystem
         {
         }
 
-        #region Input Method
-        protected override void OnMovementCanceled(InputAction.CallbackContext context)
-        {
-
-        }
-        #endregion
     }
 
 }

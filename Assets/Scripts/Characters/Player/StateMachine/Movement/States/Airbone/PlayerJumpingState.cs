@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Movementsystem
 {
@@ -85,6 +86,8 @@ namespace Movementsystem
 
             if (shouldKeepRotating)
             {
+                UpdateTargetRotation(GetMovementInputDirection());
+
                 JumpDirection = GetTargetRotationDirection(stateMachine.ReusableData.CurrentTargetRotation.y);
             }
 
@@ -118,6 +121,12 @@ namespace Movementsystem
             ResetVelocity();
 
             stateMachine.Player.Rigidbody.AddForce(jumpForce, ForceMode.VelocityChange);
+        }
+        #endregion
+
+        #region Input Method
+        protected override void OnMovementCanceled(InputAction.CallbackContext context)
+        {
         }
         #endregion
     }

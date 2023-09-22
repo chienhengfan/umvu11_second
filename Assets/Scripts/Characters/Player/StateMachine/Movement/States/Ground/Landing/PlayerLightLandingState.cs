@@ -13,8 +13,9 @@ namespace Movementsystem
         #region IState Methods
         public override void Enter()
         {
-            base.Enter();
             stateMachine.ReusableData.MovementOnSlopesSpeedModifier = 0f;
+            
+            base.Enter();
 
             stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StationaryForce;
 
@@ -30,6 +31,18 @@ namespace Movementsystem
             }
 
             OnMove();
+        }
+
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
+
+            if (!IsMovingHorizontally())
+            {
+                return;
+            }
+
+            ResetVelocity();
         }
 
         public override void OnAnimationTransitionEvent()

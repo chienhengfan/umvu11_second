@@ -20,14 +20,16 @@ namespace Movementsystem
         #region IState Method
         public override void Enter()
         {
-            base.Enter();
             stateMachine.ReusableData.MovementSpeedModifier = dashData.SpeedModifier;
+
+            base.Enter();
+
 
             stateMachine.ReusableData.CurrentJumpForce = airboneData.JumpData.StrongForce;
 
             stateMachine.ReusableData.RotationData = dashData.RotationData;
 
-            AddForceOnTransitionFromStationaryState();
+            Dash();
 
             shouldKeepRotating = stateMachine.ReusableData.MovementInput != Vector2.zero;
 
@@ -66,19 +68,23 @@ namespace Movementsystem
         #endregion
 
         #region Main Method
-        private void AddForceOnTransitionFromStationaryState()
+        private void Dash()
         {
-            if(stateMachine.ReusableData.MovementInput != Vector2.zero)
+            Vector3 dashDirection = stateMachine.Player.transform.forward;
+            dashDirection.y = 0f;
+
+            UpdateTargetRotation(dashDirection, false);
+
+
+            if (stateMachine.ReusableData.MovementInput != Vector2.zero)
             {
-                return;
+                UpdateTargetRotation(GetMovementInputDirection());
+
+                dashDirection = GetTargetRotationDirection(stateMachine.ReusableData.CurrentTargetRotation.y);
             }
 
-            Vector3 characterRotationDirection = stateMachine.Player.transform.forward;
-            characterRotationDirection.y = 0f;
+            stateMachine.Player.Rigidbody.velocity = dashDirection * GetMovementSpeed(false);
 
-            UpdateTargetRotation(characterRotationDirection, false);
-
-            stateMachine.Player.Rigidbody.velocity = characterRotationDirection * GetMovementSpeed();
         }
 
         private void UpdateConsecutiveDashes()
@@ -123,10 +129,6 @@ namespace Movementsystem
 
         #region Input Method
 
-        protected override void OnMovementCanceled(InputAction.CallbackContext context)
-        {
-            base.OnMovementCanceled(context);
-        }
         protected override void OnDashStarted(InputAction.CallbackContext context)
         {
         }
