@@ -15,7 +15,7 @@ public class KeepDistance : MonoBehaviour
     Vector3 hitVec;
     private SimpleFSM2 sfm;
 
-    private float radius;
+    public float radius;
     private float yPos;
     private Transform tCrossbowFront = null;
     private Transform tCrossbowEnd =null;
@@ -47,7 +47,15 @@ public class KeepDistance : MonoBehaviour
 
         yPos = gameObject.transform.position.y;
         sfm = this.GetComponent<SimpleFSM2>();
-        radius = this.GetComponent<SimpleFSM2>().m_Data.m_fRadius;
+
+        if (this.TryGetComponent<SimpleFSM2>(out SimpleFSM2 sfm2))
+        {
+            radius = sfm2.m_Data.m_fRadius;
+        }
+        else if (this.TryGetComponent<CharacterController>(out CharacterController controller))
+        {
+            radius = controller.radius;
+        }
 
         GameObject[] allenemy = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -55,7 +63,7 @@ public class KeepDistance : MonoBehaviour
         {
             foreach (GameObject go in allenemy)
             {
-                if (go.GetComponent<SimpleFSM2>() != null)
+                if (go.GetComponent<KeepDistance>() != null)
                 {
                     enemyAround.Add(go);
                 }
@@ -137,11 +145,10 @@ public class KeepDistance : MonoBehaviour
         {
             foreach (var go in enemyAround)
             {
-                Debug.Log("EnemyaroundName: " + go.name);
                 Vector3 vDis = go.transform.position - transform.position;
                 float fDis = vDis.magnitude;
                 vDis.Normalize();
-                float otherR = go.GetComponent<SimpleFSM2>().m_Data.m_fRadius;
+                float otherR = go.GetComponent<KeepDistance>().radius;
 
                 if (fDis < radius + otherR +0.1f)
                 {
