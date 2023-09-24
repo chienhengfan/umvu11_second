@@ -9,6 +9,10 @@ public class MobEvent : MonoBehaviour
     public GameObject AttackWeapon;
 
     private List<GameObject> AttackItems;
+    private List<GameObject> arrowList;
+    private int weaponNum = 10;
+    private int shootwpNum = 0;
+    ObjManager objM = new ObjManager();
     private GameObject player;
     private Transform tShootStart;
     // Start is called before the first frame update
@@ -27,7 +31,15 @@ public class MobEvent : MonoBehaviour
                 }
             }
         }
-        GameObject arrow =  Instantiate(AttackWeapon,this.transform);
+        arrowList = new List<GameObject>();
+        for (int i = 0; i < weaponNum; i++)
+        {
+            GameObject arrow = Instantiate(AttackWeapon, transform.position, Quaternion.identity);
+            arrow.SetActive(false);
+            //objM.AddToList(arrow);
+            arrowList.Add(arrow);
+        }
+        Debug.Log("arrowListCount: " + arrowList.Count);
     }
 
     // Update is called once per frame
@@ -38,27 +50,26 @@ public class MobEvent : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("Shoot Sth from Mob");
-        if (AttackWeapon != null)
+        shootwpNum = shootwpNum % weaponNum;
+
+        if (arrowList.Count > 0)
         {
-            Debug.Log("Mob Shoot Arrow");
-
-            float fArrowToPlayer = Vector3.Distance(AttackWeapon.transform.position, player.transform.position);
-
-            //Instantiate(AttackWeapon, arrowStart.position, transform.rotation);
-            AttackWeapon.transform.forward = transform.forward;
-            Debug.Log("Shoot Sth");
-            //iceArrow.transform.forward = arrowStart.forward;
-
-            if (fArrowToPlayer < 0.001f)
+            Debug.Log("Get arrowList");
+            if (tShootStart == null)
             {
-                ThirdPersonController tpc = player.GetComponent<ThirdPersonController>();
-                if (tpc != null)
-                {
-                    Debug.Log("Player Get Hit");
-                    tpc.TakeDamage(5);
-                }
+                Debug.Log("Dont have shootStart");
+                return;
             }
+            GameObject curArrow = arrowList[shootwpNum];
+            curArrow.transform.position = tShootStart.transform.position;
+            Vector3 vPlayer = player.transform.position + player.transform.up*1.0f;
+            Vector3 vFor = vPlayer - tShootStart.transform.position;
+            curArrow.transform.forward = vFor;
+            curArrow.SetActive(true);
+
+            //objM.ActivateArrow(curArrow, tShootStart.position, vPlayer);
+            
         }
+        shootwpNum++;
     }
 }

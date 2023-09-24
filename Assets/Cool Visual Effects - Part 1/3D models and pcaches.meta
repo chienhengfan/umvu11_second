@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Characters/Player/Data/States/Airbone.meta
+guid: 5f64882e8e3154a47b1a9e20e72ffd44
+========
 guid: b0ae3d11d9feb9a4faa703ea8bac7ebb
+>>>>>>>> 29ea67010dd950f79f7021dddabcb5156171713e:Assets/Cool Visual Effects - Part 1/3D models and pcaches.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

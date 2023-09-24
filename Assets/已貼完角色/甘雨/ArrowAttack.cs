@@ -24,10 +24,23 @@ public class ArrowAttack : MonoBehaviour
         currentTime += Time.deltaTime;
         if (currentTime > lifeTime)
         {
-            
-            Destroy(gameObject);
+            if (this.name == "IceArrow")
+            {
+                Destroy(gameObject);
+                currentTime = 0;
+            }
+            this.gameObject.SetActive(true);
             currentTime = 0;
         }
-        transform.position += transform.forward * 20 * Time.deltaTime;
+
+        //Collider[] colliders = Physics.OverlapSphere(transform.position, 1.0f);
+        //foreach (Collider col in colliders)
+        //{
+        //    if (col.gameObject.CompareTag("Player"))
+        //    {
+
+        //    }
+        //}
+        transform.position += transform.forward  *20* Time.deltaTime;
     }
 }

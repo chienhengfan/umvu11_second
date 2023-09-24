@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/Physics.meta
+guid: 520af9b1236314043ac80263c7474d8f
+folderAsset: yes
+========
 guid: cfc19e816741f0943bd9aefb31d19c4b
+>>>>>>>> 29ea67010dd950f79f7021dddabcb5156171713e:Assets/Cool Visual Effects - Part 1/Example Scene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

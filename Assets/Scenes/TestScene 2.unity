@@ -6107,6 +6107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4160418641106213217, guid: 9af902542211a2f42968d0a4eab9a53d,
         type: 3}
+<<<<<<< HEAD
       propertyPath: ShapeModule.type
       value: 18
       objectReference: {fileID: 0}
@@ -6230,6 +6231,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 10
       objectReference: {fileID: 0}
+=======
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 6
+      objectReference: {fileID: 0}
+>>>>>>> c0f5bc8d3b99e4bb705b2f9980778f0771f684c7
     - target: {fileID: 7103114149335515659, guid: 9af902542211a2f42968d0a4eab9a53d,
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
@@ -6245,6 +6251,14 @@ PrefabInstance:
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Value
       value: 2
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 7103114149335515659, guid: 9af902542211a2f42968d0a4eab9a53d,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Overridden
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> c0f5bc8d3b99e4bb705b2f9980778f0771f684c7
     - target: {fileID: 7210844541091216793, guid: 9af902542211a2f42968d0a4eab9a53d,
         type: 3}
       propertyPath: m_LocalPosition.x

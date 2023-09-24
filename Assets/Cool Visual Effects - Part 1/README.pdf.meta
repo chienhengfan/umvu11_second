@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ScriptableObjects.meta
+guid: 0c8cb57ea33634740a7e471d6b73e54b
+folderAsset: yes
+========
 guid: 1eb20b75a081bb74689dbffe24ea8954
+>>>>>>>> 29ea67010dd950f79f7021dddabcb5156171713e:Assets/Cool Visual Effects - Part 1/README.pdf.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

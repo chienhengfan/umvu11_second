@@ -122,8 +122,5 @@ public class BallControl : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Collider[] cols = Physics.OverlapSphere(transform.position, radius);
-        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
