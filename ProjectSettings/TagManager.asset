@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Attack
   - CinemachineTarget
+  - Item
   layers:
   - Default
   - TransparentFX
