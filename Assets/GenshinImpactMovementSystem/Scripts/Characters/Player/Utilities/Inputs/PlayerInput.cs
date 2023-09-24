@@ -6,6 +6,7 @@ namespace GenshinImpactMovementSystem
 {
     public class PlayerInput : MonoBehaviour
     {
+        public bool IsAttacking { get; private set; }
         public PlayerInputActions InputActions { get; private set; }
         public PlayerInputActions.PlayerActions PlayerActions { get; private set; }
 
@@ -38,6 +39,18 @@ namespace GenshinImpactMovementSystem
             yield return new WaitForSeconds(seconds);
 
             action.Enable();
+        }
+
+        public void OnAttack(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                IsAttacking = true;
+            }
+            else if (context.canceled)
+            {
+                IsAttacking = false;
+            }
         }
     }
 }

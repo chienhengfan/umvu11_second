@@ -27,6 +27,9 @@ namespace GenshinImpactMovementSystem
         [Header("Airborne Parameter Names")]
         [SerializeField] private string fallParameterName = "isFalling";
 
+        [Header("Combat Parameter Names")]
+        [SerializeField] private string impactHash = "Impact";
+
         public int GroundedParameterHash { get; private set; }
         public int MovingParameterHash { get; private set; }
         public int StoppingParameterHash { get; private set; }
@@ -44,6 +47,8 @@ namespace GenshinImpactMovementSystem
         public int HardLandParameterHash { get; private set; }
 
         public int FallParameterHash { get; private set; }
+
+        public int ImpactHash { get; private set; }
 
         public void Initialize()
         {
@@ -64,6 +69,8 @@ namespace GenshinImpactMovementSystem
             HardLandParameterHash = Animator.StringToHash(hardLandParameterName);
 
             FallParameterHash = Animator.StringToHash(fallParameterName);
+
+            ImpactHash = Animator.StringToHash(impactHash);
         }
     }
 }

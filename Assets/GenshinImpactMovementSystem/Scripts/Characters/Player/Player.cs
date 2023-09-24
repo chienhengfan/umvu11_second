@@ -28,7 +28,10 @@ namespace GenshinImpactMovementSystem
 
         private PlayerMovementStateMachine movementStateMachine;
 
-        public GameObject bowObject;
+        [field: SerializeField] public WeaponDamage Weapon { get; private set; }
+        [field: SerializeField] public Health Health { get; private set; }
+
+
 
         private void Awake()
         {
@@ -48,9 +51,6 @@ namespace GenshinImpactMovementSystem
 
         private void Start()
         {
-            bowObject = GameObject.Find("bow");
-            bowObject.SetActive(false);
-
             movementStateMachine.ChangeState(movementStateMachine.IdlingState);
         }
 
@@ -66,6 +66,31 @@ namespace GenshinImpactMovementSystem
             movementStateMachine.PhysicsUpdate();
         }
 
+        private void OnEnable()
+        {
+            Health.OnTakeDamage += HandleTakeDamage;
+            Health.OnDie += HandleDie;
+        }
+
+        private void OnDisable()
+        {
+            Health.OnTakeDamage -= HandleTakeDamage;
+            Health.OnDie -= HandleDie;
+        }
+
+
+
+        private void HandleDie()
+        {
+            movementStateMachine.ChangeState(movementStateMachine.DeadState);
+        }
+
+        private void HandleTakeDamage()
+        {
+            movementStateMachine.ChangeState(movementStateMachine.ImpactState);
+        }
+
+
         private void OnTriggerEnter(Collider collider)
         {
             movementStateMachine.OnTriggerEnter(collider);
@@ -75,6 +100,7 @@ namespace GenshinImpactMovementSystem
         {
             movementStateMachine.OnTriggerExit(collider);
         }
+
 
         public void OnMovementStateAnimationEnterEvent()
         {

@@ -9,9 +9,11 @@ namespace GenshinImpactMovementSystem
         public void ChangeState(IState newState)
         {
             currentState?.Exit();
+            Debug.Log("old: "+currentState);
 
             currentState = newState;
 
+            Debug.Log("nwe: "+currentState);
             currentState.Enter();
         }
 

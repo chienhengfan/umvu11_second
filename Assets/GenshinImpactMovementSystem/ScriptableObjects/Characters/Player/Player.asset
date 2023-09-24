@@ -114,6 +114,40 @@ MonoBehaviour:
       <HardDecelerationForce>k__BackingField: 5
     <RollData>k__BackingField:
       <SpeedModifier>k__BackingField: 1
+    <AttackData>k__BackingField:
+      <AnimationName>k__BackingField: 
+      <TransitionDuration>k__BackingField: 0
+      <ComboStateIndex>k__BackingField: -1
+      <ComboAttackTime>k__BackingField: 0
+      <ForceTime>k__BackingField: 0
+      <Force>k__BackingField: 0
+      <Damage>k__BackingField: 0
+      <Knockback>k__BackingField: 0
+    <AttackDataList>k__BackingField:
+    - <AnimationName>k__BackingField: QuickAttack01
+      <TransitionDuration>k__BackingField: 0.1
+      <ComboStateIndex>k__BackingField: 1
+      <ComboAttackTime>k__BackingField: 0.6
+      <ForceTime>k__BackingField: 0.36
+      <Force>k__BackingField: 15
+      <Damage>k__BackingField: 10
+      <Knockback>k__BackingField: 15
+    - <AnimationName>k__BackingField: QuickAttack02
+      <TransitionDuration>k__BackingField: 0.1
+      <ComboStateIndex>k__BackingField: 2
+      <ComboAttackTime>k__BackingField: 0
+      <ForceTime>k__BackingField: 0.35
+      <Force>k__BackingField: 15
+      <Damage>k__BackingField: 12
+      <Knockback>k__BackingField: 20
+    - <AnimationName>k__BackingField: QuickAttack03
+      <TransitionDuration>k__BackingField: 0.1
+      <ComboStateIndex>k__BackingField: -1
+      <ComboAttackTime>k__BackingField: 0
+      <ForceTime>k__BackingField: 0.35
+      <Force>k__BackingField: 15
+      <Damage>k__BackingField: 15
+      <Knockback>k__BackingField: 10
   <AirborneData>k__BackingField:
     <JumpData>k__BackingField:
       <JumpToGroundRayDistance>k__BackingField: 2

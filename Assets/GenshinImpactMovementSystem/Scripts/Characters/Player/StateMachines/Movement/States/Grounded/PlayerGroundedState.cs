@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -102,7 +103,12 @@ namespace GenshinImpactMovementSystem
             stateMachine.Player.Input.PlayerActions.Dash.started += OnDashStarted;
 
             stateMachine.Player.Input.PlayerActions.Jump.started += OnJumpStarted;
+
+            stateMachine.Player.Input.PlayerActions.BasicAttack.started += OnBasicAttackStared;
+
+            stateMachine.Player.Input.PlayerActions.UltimateSkill.started += OnUltimateSkill;
         }
+
 
         protected override void RemoveInputActionsCallbacks()
         {
@@ -111,6 +117,10 @@ namespace GenshinImpactMovementSystem
             stateMachine.Player.Input.PlayerActions.Dash.started -= OnDashStarted;
 
             stateMachine.Player.Input.PlayerActions.Jump.started -= OnJumpStarted;
+
+            stateMachine.Player.Input.PlayerActions.BasicAttack.started -= OnBasicAttackStared;
+
+            stateMachine.Player.Input.PlayerActions.UltimateSkill.started -= OnUltimateSkill;
         }
 
         protected virtual void OnDashStarted(InputAction.CallbackContext context)
@@ -121,6 +131,16 @@ namespace GenshinImpactMovementSystem
         protected virtual void OnJumpStarted(InputAction.CallbackContext context)
         {
             stateMachine.ChangeState(stateMachine.JumpingState);
+        }
+
+        private void OnBasicAttackStared(InputAction.CallbackContext context)
+        {
+            stateMachine.ChangeState(new PlayerBasicAttackState(stateMachine, 0));
+        }
+
+        private void OnUltimateSkill(InputAction.CallbackContext context)
+        {
+            stateMachine.ChangeState(stateMachine.UltimateSkillState);
         }
 
         protected virtual void OnMove()

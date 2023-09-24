@@ -40,7 +40,7 @@ namespace GenshinImpactMovementSystem
                 return;
             }
 
-            ResetVelocity();
+            //ResetVelocity();
         }
 
         public override void OnAnimationTransitionEvent()
