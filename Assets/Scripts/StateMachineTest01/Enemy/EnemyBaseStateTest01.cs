@@ -15,6 +15,13 @@ public abstract class EnemyBaseStateTest01 : StateTest01
         return playerDistanceSqr <= stateMachine.PlayerChasingRange * stateMachine.PlayerChasingRange;
     }
 
+    protected bool IsInAttackingRange()
+    {
+        float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
+
+        return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
+    }
+
     protected void Move(float deltaTime)
     {
         Move(Vector3.zero, deltaTime);

@@ -2706,7 +2706,7 @@ PrefabInstance:
     - target: {fileID: 5641874614410664115, guid: b006d099e98a4ee47ab52aab2199d816,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636793599081976301, guid: b006d099e98a4ee47ab52aab2199d816,
         type: 3}
@@ -3068,6 +3068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u722A\u64CA_R"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5572424482514789949, guid: b006d099e98a4ee47ab52aab2199d816,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5572424482514789949, guid: b006d099e98a4ee47ab52aab2199d816,
         type: 3}

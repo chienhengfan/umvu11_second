@@ -52,10 +52,5 @@ public class EnemyChasingStateTest01 : EnemyBaseStateTest01
         stateMachine.transform.position += newFor * stateMachine.MovementSpeed * deltaTime;
     }
 
-    private bool IsInAttackingRange()
-    {
-        float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
-
-        return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
-    }
+    
 }

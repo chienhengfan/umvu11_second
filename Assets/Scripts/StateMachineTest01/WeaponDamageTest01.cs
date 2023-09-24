@@ -40,7 +40,10 @@ public class WeaponDamageTest01 : MonoBehaviour
 
     private void PhysicsCollide()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.1f);
+        Vector3 bocCenter = transform.position - transform.forward * 0.5f;
+        Debug.DrawLine(transform.position, bocCenter);
+        Debug.Log("1111" + bocCenter);
+        Collider[] colliders = Physics.OverlapBox(bocCenter, new Vector3(1,1,1), transform.rotation);
         foreach (Collider collider in colliders)
         {
             if (collider.gameObject.CompareTag("Enemy"))
@@ -91,7 +94,10 @@ public class WeaponDamageTest01 : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, 0.1f);
+        //Gizmos.color = Color.yellow;
+        //Gizmos.DrawWireSphere(transform.position, 0.1f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+        Gizmos.DrawLine(transform.position, transform.position + transform.right);
     }
 }
