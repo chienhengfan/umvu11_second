@@ -93,7 +93,7 @@ namespace test
             // 触发死亡动画、播放音效、显示游戏结束界面或其他死亡相关操作
 
             // 可以在这里写额外的死亡逻辑
-            Debug.Log("Dead moment");
+
 
             if (this.gameObject.name == "LaSignora_Harbinger")
             {

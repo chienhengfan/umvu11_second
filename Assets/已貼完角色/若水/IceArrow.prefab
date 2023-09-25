@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1260597353148723270
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7888185296437121462}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000056965874, y: 0.8555477, z: -0.0000000941371, w: 0.517724}
+  m_LocalRotation: {x: -0.000000019651162, y: 0.89054745, z: 0.00000003847144, w: 0.45489046}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.31}
   m_ConstrainProportionsScale: 0
@@ -120,4 +120,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCollider: {fileID: 0}
   damage: 10
-  knockback: 15

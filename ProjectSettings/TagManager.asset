@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Obstacle
-  - WanderPoint
-  - Enemy
-  - Attack
-  - CinemachineTarget
-  - Item
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -17,18 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Terrain
-<<<<<<< HEAD
   - 
   - 
   - 
   - 
-=======
-  - Environment
-  - Player
-  - GroundCheck
-  - UnwalkLayer
->>>>>>> ecc60abc53d8dd8df62ad1db3331fbeff1705e69
+  - 
   - 
   - 
   - 
