@@ -6,6 +6,9 @@ public class WeaponDamageTest01 : MonoBehaviour
 {
     private float lifeTime = 2.0f;
     private float currentTime = 0;
+    private Transform playerT;
+    private Vector3 vToPlayer;
+    private float ballSpeed = 5.0f;
 
     [SerializeField] private Collider myCollider;
 
@@ -14,35 +17,28 @@ public class WeaponDamageTest01 : MonoBehaviour
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
 
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
-        PhysicsCollide();
-
-        //currentTime += Time.deltaTime;
-        //if (currentTime > lifeTime)
-        //{
-        //    if (this.name == "IceArrow(Clone)")
-        //    {
-        //        Destroy(gameObject);
-        //        currentTime = 0;
-        //    }
-        //    this.gameObject.SetActive(true);
-        //    currentTime = 0;
-        //}
-
-        //transform.position += transform.forward * 20 * Time.deltaTime;
+        WeaponMove();
     }
 
     private void OnEnable()
     {
         alreadyCollidedWith.Clear();
+        playerT = GameObject.FindGameObjectWithTag("Player").transform;
+        Vector3 vPlayerChasePoint = playerT.transform.position + playerT.transform.up * 1.0f; //玩家中心點
+        Vector3 vToPlayer = vPlayerChasePoint - transform.position;
     }
 
     private void PhysicsCollide()
     {
         Vector3 bocCenter = transform.position - transform.forward * 0.5f;
         Debug.DrawLine(transform.position, bocCenter);
-        Debug.Log("1111" + bocCenter);
         Collider[] colliders = Physics.OverlapBox(bocCenter, new Vector3(1,1,1), transform.rotation);
         foreach (Collider collider in colliders)
         {
@@ -77,6 +73,58 @@ public class WeaponDamageTest01 : MonoBehaviour
         {
             Vector3 direction = (other.transform.position - myCollider.transform.position).normalized;
             //forceReceiver.AddForce(direction * knockback);
+        }
+    }
+
+    private void WeaponMove()
+    {
+        if (this.name == "IceArrow(Clone)" || this.name == "Arrow(Clone)")
+        {
+            currentTime += Time.deltaTime;
+            if (currentTime > lifeTime)
+            {
+                this.gameObject.SetActive(false);
+                currentTime = 0;
+            }
+            PhysicsCollide();
+
+            transform.position += transform.forward * 20 * Time.deltaTime;
+        }
+        else if (this.name == "爪擊_R" || this.name == "爪擊_L")
+        {
+            PhysicsCollide();
+        }
+        else if (this.name == "CFXR Fireball(Clone)")
+        {
+            //Life Time
+            currentTime += Time.deltaTime;
+            if (currentTime > lifeTime)
+            {
+                this.gameObject.SetActive(false);
+                currentTime = 0;
+            }
+
+            //Fly Toward Player
+            Vector3 vFOr = transform.forward;
+
+
+            vFOr = Vector3.Lerp(vFOr, vToPlayer, 0.1f);
+
+            //Make ball Drop
+            vToPlayer.y -= Time.deltaTime;
+            vToPlayer = vToPlayer + vFOr;
+            vToPlayer.Normalize();
+            transform.forward = vToPlayer;
+            transform.position = transform.position + vToPlayer * Time.deltaTime * ballSpeed;
+
+            //Very Close to Player
+            if (vToPlayer.sqrMagnitude < 0.05f)
+            {
+                Debug.Log("FireBallClose");
+                PhysicsCollide();
+            }
+
+            //Deal Player Damage，PhysicsCollide有寫了
         }
     }
 

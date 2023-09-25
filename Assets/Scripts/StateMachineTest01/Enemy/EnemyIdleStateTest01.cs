@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyIdleStateTest01 : EnemyBaseStateTest01
 {
     private readonly int LocomotionHash = Animator.StringToHash("Locomotion");
+    private readonly int LocomotionMageHash = Animator.StringToHash("Locomotion_Mage");
     private readonly int SpeedHash = Animator.StringToHash("Speed");
 
     private const float CrossFadeDuration = 0.1f;
@@ -14,7 +15,15 @@ public class EnemyIdleStateTest01 : EnemyBaseStateTest01
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
+        int mobIndex = stateMachine.MobEnumIndex;
+        if (mobIndex == EnemyStateMachineTest01.MobGroup.ChuCHu.GetHashCode())
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
+        }
+        else if (mobIndex == EnemyStateMachineTest01.MobGroup.AbyssMage.GetHashCode())
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(LocomotionMageHash, CrossFadeDuration);
+        }
 
     }
     public override void Tick(float deltaTime)
