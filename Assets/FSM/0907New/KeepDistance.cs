@@ -119,10 +119,10 @@ public class KeepDistance : MonoBehaviour
                     Vector3 vFor = transform.forward;
                     float fColWay = Vector3.Dot(vFor, vToCol); //判斷是否朝向碰撞體
                     float fDot = Vector3.Dot(vFor, hitVec);
-                    Vector3 vTurn = hitVec * fDot;
-                    Vector3 vFinal = vFor + vTurn;
+                    Vector3 vTurn = hitVec * fDot; //將碰撞點法向量減少存成新向量
+                    Vector3 vFinal = vFor + vTurn; //合併成新前進向量
                     Vector3 vFinalMove = vFinal * Time.deltaTime;
-                    transform.position -= vFinalMove;
+                    transform.position -= vFinalMove; //新前進位移限制不撞入空氣牆
 
                     //if (fDot > 0)
                     //{

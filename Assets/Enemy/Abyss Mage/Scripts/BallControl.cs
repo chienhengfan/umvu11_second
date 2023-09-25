@@ -111,7 +111,7 @@ public class BallControl : MonoBehaviour
             gameObject.SetActive(false);
         }
         ballDropTime += Time.deltaTime;
-        Debug.Log("ballDropTime: " + ballDropTime);
+        
         //Make ball Drop
         vToP.y -= Time.deltaTime;
         vToP = vToP + vFOr;

@@ -2,23 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyIdleState : EnemyBaseState
+public class EnemyChasingStateTest01 : EnemyBaseStateTest01
 {
     private readonly int LocomotionHash = Animator.StringToHash("Locomotion");
     private readonly int LocomotionMageHash = Animator.StringToHash("Locomotion_Mage");
+
     private readonly int SpeedHash = Animator.StringToHash("Speed");
-    
+
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
-    public EnemyIdleState(EnemyStateMachine stateMachine) : base(stateMachine) { }
-    
+    public EnemyChasingStateTest01(EnemyStateMachineTest01 stateMachine) : base(stateMachine) { }
+
 
     public override void Enter()
     {
-<<<<<<< HEAD:Assets/Scripts02/Enemy/EnemyIdleState.cs
-        stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
-        
-=======
         int mobIndex = stateMachine.MobEnumIndex;
         if (mobIndex == EnemyStateMachineTest01.MobGroup.ChuCHu.GetHashCode())
         {
@@ -29,26 +26,40 @@ public class EnemyIdleState : EnemyBaseState
             stateMachine.Animator.CrossFadeInFixedTime(LocomotionMageHash, CrossFadeDuration);
         }
 
->>>>>>> ecc60abc53d8dd8df62ad1db3331fbeff1705e69:Assets/Scripts/StateMachineTest01/Enemy/EnemyIdleStateTest01.cs
     }
     public override void Tick(float deltaTime)
     {
-        Move(deltaTime);
-
-        if (IsInChasingRange())
+        if (!IsInChasingRange())
         {
-            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            stateMachine.SwitchState(new EnemyIdleStateTest01(stateMachine));
+            return;
+        }
+        else if (IsInAttackingRange())
+        {
+            stateMachine.SwitchState(new EnemyAttackingStateTest01(stateMachine));
             return;
         }
 
+        MoveToPlayer(deltaTime);
+
         FacePlayer();
 
-        stateMachine.Animator.SetFloat(SpeedHash, 0f, AnimatorDampTime, deltaTime);
+        stateMachine.Animator.SetFloat(SpeedHash, 1f, AnimatorDampTime, deltaTime);
     }
 
     public override void Exit()
     {
         
+    }
+
+    private void MoveToPlayer(float deltaTime)
+    {
+        //往玩家移動的寫法參考老師的
+        Vector3 vPlayerPos = stateMachine.Player.transform.position;
+        Vector3 vPlayerFor = stateMachine.Player.transform.forward;
+        Vector3 nextPlayerPos = vPlayerPos + vPlayerFor * deltaTime;
+        Vector3 newFor = (nextPlayerPos-stateMachine.transform.position).normalized;
+        stateMachine.transform.position += newFor * stateMachine.MovementSpeed * deltaTime;
     }
 
     
