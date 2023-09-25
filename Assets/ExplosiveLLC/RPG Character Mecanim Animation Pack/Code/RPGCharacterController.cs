@@ -449,16 +449,23 @@ namespace RPGCharacterAnims
 			else { Debug.LogError("ERROR: No Target set for RPGCharacter."); }
 		}
 
-		#endregion
+        private void SetHandler(string attack1, Attack attack2)
+        {
+            throw new System.NotImplementedException();
+        }
 
-		#region ActionHandlers
 
-		/// <summary>
-		/// Set an action handler.
-		/// </summary>
-		/// <param name="action">Name of the action.</param>
-		/// <param name="handler">The handler associated with this action.</param>
-		public void SetHandler(string action, IActionHandler handler)
+
+        #endregion
+
+        #region ActionHandlers
+
+        /// <summary>
+        /// Set an action handler.
+        /// </summary>
+        /// <param name="action">Name of the action.</param>
+        /// <param name="handler">The handler associated with this action.</param>
+        public void SetHandler(string action, IActionHandler handler)
         { actionHandlers[action] = handler; }
 
         /// <summary>
