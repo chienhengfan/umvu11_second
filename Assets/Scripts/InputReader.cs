@@ -7,12 +7,15 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public bool IsAttacking {  get; private set; }
+
+
     public Vector2 MovementValue {  get; private set; }
 
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action CancelEvent;
+    public event Action SkillEvent;
 
 
     private Controls controls;
@@ -74,6 +77,12 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         {
             IsAttacking = false;
         }
+    }
+
+    public void OnUltimatrSkill(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+        SkillEvent?.Invoke();
     }
 }
 

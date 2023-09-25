@@ -51,12 +51,12 @@ public class WeaponDamage : MonoBehaviour
                 alreadyCollidedWith.Add(collider);
                 DealDamage(collider.gameObject);
             }
-            if (collider.gameObject.CompareTag("Player"))
-            {
-                if (alreadyCollidedWith.Contains(collider)) { return; }
-                alreadyCollidedWith.Add(collider);
-                DealDamage(collider.gameObject);
-            }
+            //if (collider.gameObject.CompareTag("Player"))
+            //{
+            //    if (alreadyCollidedWith.Contains(collider)) { return; }
+            //    alreadyCollidedWith.Add(collider);
+            //    DealDamage(collider.gameObject);
+            //}
         }
     }
 

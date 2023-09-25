@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    private readonly int DeadHash = Animator.StringToHash("Dead");
+    private Animator anim;
+
     public int maxHealth = 100;
 
     public int health;
@@ -20,6 +23,8 @@ public class Health : MonoBehaviour
     {
         health = maxHealth;
         Deadmenu.SetActive(false);
+
+        anim = GetComponent<Animator>();
     }
 
     public void DealDamage(int damage)
@@ -32,7 +37,9 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             OnDie?.Invoke();
+            anim.Play(DeadHash);
             Deadmenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

@@ -20,6 +20,10 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public Attack[] Attacks { get; private set; }
 
+    [field: SerializeField] public GameObject Player { get; private set; }
+
+    //temp ultimate skill
+    [field: SerializeField] public GameObject Ultimateskill { get; private set; }
     public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
 
     public Transform MainCameraTransform{ get; private set; }

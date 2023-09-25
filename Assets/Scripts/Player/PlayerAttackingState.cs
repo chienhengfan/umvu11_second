@@ -25,7 +25,7 @@ public class PlayerAttackingState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
         Move(deltaTime);
-
+        AutoAim();
         FaceTarget();
 
         float normalizedTime = GetNormalizedTime(stateMachine.Animator);
@@ -73,6 +73,32 @@ public class PlayerAttackingState : PlayerBaseState
                 attack.ComboStateIndex
             )
         );
+    }
+
+    private void AutoAim(float aimRadius = 30f)
+    {
+        float closeDistance = aimRadius * 10;
+        IDictionary<Collider, float> temp = new Dictionary<Collider, float>();
+        Collider[] colliders = Physics.OverlapSphere(stateMachine.Player.transform.position, aimRadius);
+        foreach (var hitcollider in colliders)
+        {
+            if (hitcollider.tag == "Enemy")
+            {
+                float distance = Vector3.Distance(stateMachine.Player.transform.position, hitcollider.transform.position);
+                temp.Add(hitcollider, distance);
+                closeDistance = Mathf.Min(distance, closeDistance);
+            }
+
+        }
+        foreach (var target in temp)
+        {
+            if (target.Value == closeDistance)
+            {
+                Vector3 aimPoint = new Vector3(target.Key.transform.position.x, stateMachine.Player.transform.position.y, target.Key.transform.position.z);
+                stateMachine.Player.transform.LookAt(aimPoint);
+            }
+        }
+
     }
 
 
