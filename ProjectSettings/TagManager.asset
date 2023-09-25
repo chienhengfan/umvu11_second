@@ -9,7 +9,7 @@ TagManager:
   - Enemy
   - Attack
   - CinemachineTarget
-  - Environment
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -18,9 +18,9 @@ TagManager:
   - Water
   - UI
   - Terrain
-  - Environment
-  - Player
-  - GroundCheck
+  - 
+  - 
+  - 
   - 
   - 
   - 

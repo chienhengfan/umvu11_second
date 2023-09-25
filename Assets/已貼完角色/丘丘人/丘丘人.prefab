@@ -5381,8 +5381,11 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   hpUI: {fileID: 3135400441731427152}
+  hpBarUI: {fileID: 0}
   fSM2: {fileID: 0}
+  hitNumberPrefab: {fileID: 0}
   TextPool: {fileID: 6670305480955287459}
+  bossFSM: {fileID: 0}
 --- !u!136 &6325206446561089435
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5454,6 +5457,7 @@ MonoBehaviour:
     m_fMoveAmount: 0
     m_fTimeCounter: 0
     m_bCol: 0
+  ChuNo: 0
   m_Am: {fileID: 0}
 --- !u!95 &6636793599081976301
 Animator:
