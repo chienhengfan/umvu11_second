@@ -89,10 +89,13 @@ public class EnemyChasingState : EnemyBaseState
     private void MoveToPlayer(float deltaTime)
     {
         //往玩家移動的寫法參考老師的
+        Debug.Log("PlayerName: " +stateMachine.Player.name);
         Vector3 vPlayerPos = stateMachine.Player.transform.position;
-        Vector3 vPlayerFor = stateMachine.Player.transform.forward;
-        Vector3 nextPlayerPos = vPlayerPos + vPlayerFor * deltaTime;
-        Vector3 newFor = (nextPlayerPos - stateMachine.transform.position).normalized;
+        //Vector3 vPlayerFor = stateMachine.Player.transform.forward;
+        //Vector3 nextPlayerPos = vPlayerPos + vPlayerFor * deltaTime;
+        //Vector3 newFor = (nextPlayerPos - stateMachine.transform.position).normalized;
+        Vector3 newFor = vPlayerPos - stateMachine.transform.position;
+        newFor.Normalize();
         stateMachine.transform.position += newFor * stateMachine.MovementSpeed * deltaTime;
     }
 }

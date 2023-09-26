@@ -43323,7 +43323,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.50382906
-    functionName: Hit
+    functionName: CrawlAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

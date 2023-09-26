@@ -149,7 +149,7 @@ public class WeaponDamage : MonoBehaviour
         
     }
 
-    private void DealDamage(GameObject Enemy)
+    public void DealDamage(GameObject Enemy)
     {
         // Enemy Health Decrease
         if (Enemy.TryGetComponent<Health>(out Health health))
@@ -169,4 +169,8 @@ public class WeaponDamage : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + transform.forward);
         Gizmos.DrawLine(transform.position, transform.position + transform.right);
     }
+
+
+
+
 }

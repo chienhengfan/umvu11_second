@@ -45,8 +45,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.99607843, g: 0.6039216, b: 0.3764706, a: 1}
-  m_Intensity: 0
-  m_Range: 8
+  m_Intensity: 3.5921671
+  m_Range: 7.0694537
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4970,8 +4970,9 @@ GameObject:
   - component: {fileID: 3247499530869390925}
   - component: {fileID: 6275501945909301656}
   - component: {fileID: 8609098803779744971}
-  - component: {fileID: 2048830815165566811}
   - component: {fileID: 5342271792491098844}
+  - component: {fileID: 675275420927910009}
+  - component: {fileID: 611673901941549898}
   m_Layer: 0
   m_Name: CFXR Fireball
   m_TagString: Attack
@@ -9922,25 +9923,6 @@ MonoBehaviour:
     perlinColor: 0
     perlinColorSpeed: 1
   fadeOutReference: {fileID: 3247499530869390925}
---- !u!114 &2048830815165566811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8409024376685952695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8070cef4775124387a9db1a55b1b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 1
-  radius: 0.43
-  firePlane: {fileID: 0}
-  explosion: {fileID: 4380587609628467686, guid: 621af617c197eaa4c828f39982842ab2,
-    type: 3}
 --- !u!135 &5342271792491098844
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9962,6 +9944,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.43
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &675275420927910009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409024376685952695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a39ac3cd8d18744bbc72192018f8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.43
+  weapon: {fileID: 611673901941549898}
+  explosion: {fileID: 2453164644435555084}
+  targetTag: Player
+  attackDamage: 15
+--- !u!114 &611673901941549898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409024376685952695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8882b7476a2c67b4e9d71e84b6727161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCollider: {fileID: 0}
+  damage: 0
 --- !u!1001 &2288773666011452468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10055,6 +10068,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 819a6128dcef2bd47a9c595b4171d3db, type: 3}
+--- !u!198 &2453164644435555084 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4451878303824963384, guid: 819a6128dcef2bd47a9c595b4171d3db,
+    type: 3}
+  m_PrefabInstance: {fileID: 2288773666011452468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2453164644435555087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4451878303824963387, guid: 819a6128dcef2bd47a9c595b4171d3db,

@@ -13,9 +13,9 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            transition.SetTrigger("Start");
-            SceneManager.LoadScene(1);
-            StartCoroutine(LoadLevel(1));
+            //transition.SetTrigger("Start");
+            //SceneManager.LoadScene(1);
+            //StartCoroutine(LoadLevel(1));
            
         }
     }

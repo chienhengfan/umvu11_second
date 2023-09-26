@@ -29,9 +29,9 @@ public class EffectLife : MonoBehaviour
         if (timer < fadeDuration)
         {
             float alpha = 1.0f - (timer / fadeDuration);
-            Color objectColor = objectRenderer.material.color;
-            objectColor.a = alpha;
-            objectRenderer.material.color = objectColor;
+            //Color objectColor = objectRenderer.material.color;
+            //objectColor.a = alpha;
+            //objectRenderer.material.color = objectColor;
         }
     }
 }
