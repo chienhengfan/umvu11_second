@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class PlayerUltimateSkillState : PlayerBaseState
 {
-    private GameObject genyuBall;
-    private float frozenMoveTime = 1f;
 
     private readonly int UltimateSkillHash = Animator.StringToHash("UltimateSkill");
     private const float CrossFadeDuration = 0.1f;
+    private bool IsAnimationPlaying= false;
 
-    public PlayerUltimateSkillState(PlayerStateMachine stateMachine) : base(stateMachine)
-    {
-        genyuBall = stateMachine.GenyuBall;
-    }
+    public PlayerUltimateSkillState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(UltimateSkillHash, CrossFadeDuration);
-        genyuBall.SetActive(true);
+        IsAnimationPlaying = IsInAnimation(stateMachine.Animator, "UltimateSkill");
 
     }
 
     public override void Tick(float deltaTime)
     {
-        Move(frozenMoveTime);
-        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+        Move(deltaTime);
+
+        Debug.LogError(IsAnimationPlaying);
+        //if(CheckAnimationIsOver(stateMachine.Animator, "UltimateSkill"))
+        //{
+        //    stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+        //}
 
     }
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+
     }
 
 

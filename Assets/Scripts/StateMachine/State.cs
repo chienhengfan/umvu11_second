@@ -24,4 +24,15 @@ public abstract class State
         else { return 0f; }
 
     }
+
+    protected bool IsInAnimation(Animator animator, string animationName)
+    {
+        AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (currentInfo.IsName(animationName))
+        {
+            return true;
+        }
+        return false;
+    }
 }

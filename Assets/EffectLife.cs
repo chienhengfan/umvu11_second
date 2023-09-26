@@ -22,7 +22,7 @@ public class EffectLife : MonoBehaviour
         // 如果计时器超过生存时间，销毁物体
         if (timer >= lifetime)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         // 如果计时器小于渐隐持续时间，逐渐减小透明度
