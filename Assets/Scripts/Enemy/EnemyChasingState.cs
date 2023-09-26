@@ -21,10 +21,6 @@ public class EnemyChasingState : EnemyBaseState
 
     public override void Enter()
     {
-        if (stateMachine.transform.name == "LaSignora_Harbinger")
-        {
-            stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
-        }
 
         int mobIndex = stateMachine.MobEnumIndex;
         if (mobIndex == EnemyStateMachine.MobGroup.ChuCHu.GetHashCode())
@@ -34,6 +30,10 @@ public class EnemyChasingState : EnemyBaseState
         else if (mobIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
         {
             stateMachine.Animator.CrossFadeInFixedTime(LocomotionMageHash, CrossFadeDuration);
+        }
+        else if (mobIndex == EnemyStateMachine.MobGroup.BossLady.GetHashCode())
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
         }
         randNum = UnityEngine.Random.Range(0, 5);
 
@@ -49,18 +49,23 @@ public class EnemyChasingState : EnemyBaseState
         {
             if (stateMachine.name == "LaSignora_Harbinger")
             {
+                Debug.Log("INChasing");
                 switch (randNum) 
                 {
                 case 1:
                         stateMachine.SwitchState(new EnemyLadyAttacking01State(stateMachine));
                         break;
                 case 2:
+                        stateMachine.SwitchState(new EnemyLadyAttacking02State(stateMachine));
                         break;
                 case 3:
+                        stateMachine.SwitchState(new EnemyLadyAttacking03State(stateMachine));
                         break;
                 case 4:
+                        stateMachine.SwitchState(new EnemyLadyAttacking04State(stateMachine));
                         break;
-                    default:
+                default:
+                        stateMachine.SwitchState(new EnemyLadySkill01State(stateMachine));
                         break;
                 }
             }

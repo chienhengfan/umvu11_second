@@ -30,6 +30,7 @@ public class EnemyLadyAttacking04State : EnemyBaseState
         if (GetNormalizedTime(stateMachine.Animator) >= 1)
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            Debug.Log("ChangeToChase");
             return;
         }
     }

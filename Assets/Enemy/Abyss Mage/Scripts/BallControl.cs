@@ -101,7 +101,7 @@ public class BallControl : MonoBehaviour
             Debug.Log("FireBallHit Sth");
             //¤õ²y¸I¨ìª±®aÃz¬µ
             Instantiate(explosion, transform.position, Quaternion.identity);
-            playerScript.TakeDamage(10);
+            //playerScript.TakeDamage(10);
             Debug.Log("explosionInstance: " +explosion.transform.position);
             gameObject.SetActive(false);
         }

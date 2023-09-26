@@ -21,7 +21,7 @@ public class EnemyStateMachine : StateMachine
 
     public enum MobGroup
     {
-        ChuCHu, CHuCHuCrossbow, AbyssMage
+        ChuCHu, CHuCHuCrossbow, AbyssMage, BossLady
     }
 
     private void Start()

@@ -43,16 +43,20 @@ public class Main : MonoBehaviour
 
     private void Update()
     {
-        ThirdPersonController playerT = m_Player.GetComponent<ThirdPersonController>();
-        float pHp = playerT.playerHP;
-        if(pHp <= 0)
+
+        if(m_Player.TryGetComponent<Health>(out Health health))
         {
-            foreach(var go in _enemies)
+            float pHp = health.health;
+            if (pHp <= 0)
             {
-                Animator an = go.GetComponent<Animator>();
-                an.enabled = false;
+                foreach (var go in _enemies)
+                {
+                    Animator an = go.GetComponent<Animator>();
+                    an.enabled = false;
+                }
             }
         }
+        
     }
 
     private void GenerateEnemies(int num)
