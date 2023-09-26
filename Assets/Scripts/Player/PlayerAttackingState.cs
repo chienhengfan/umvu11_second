@@ -12,7 +12,7 @@ public class PlayerAttackingState : PlayerBaseState
 
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
-        Debug.Log(attackIndex);
+        //Debug.Log(attackIndex);
         attack = stateMachine.Attacks[attackIndex];
     }
 

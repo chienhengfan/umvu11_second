@@ -15,7 +15,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action CancelEvent;
-    public event Action SkillEvent;
+    public event Action UltimatrSkillEvent;
 
 
     private Controls controls;
@@ -82,7 +82,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnUltimatrSkill(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
-        SkillEvent?.Invoke();
+        UltimatrSkillEvent?.Invoke();
     }
 }
 

@@ -7,6 +7,7 @@ public class PlayerAnimationEvent1 : MonoBehaviour
     [SerializeField] private GameObject weaponLogic;
     public GameObject iceArrow;
     private Transform arrowStart;
+    [field: SerializeField] public ParticleSystem GenyuSkill { get; private set; }
 
     private void Start()
     {
@@ -26,5 +27,10 @@ public class PlayerAnimationEvent1 : MonoBehaviour
     public void DisableWeapon()
     {
         weaponLogic.SetActive(false);
+    }
+
+    public void UltimateSkill()
+    {
+        GenyuSkill.Play();
     }
 }

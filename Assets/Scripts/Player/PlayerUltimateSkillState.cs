@@ -4,29 +4,34 @@ using UnityEngine;
 
 public class PlayerUltimateSkillState : PlayerBaseState
 {
-    private GameObject skill;
-    private ParticleSystem particle;
+    private GameObject genyuBall;
+    private float frozenMoveTime = 1f;
+
+    private readonly int UltimateSkillHash = Animator.StringToHash("UltimateSkill");
+    private const float CrossFadeDuration = 0.1f;
 
     public PlayerUltimateSkillState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        skill = stateMachine.Ultimateskill;
-        Debug.LogError(skill);
+        genyuBall = stateMachine.GenyuBall;
     }
 
     public override void Enter()
     {
-        skill.SetActive(true);
+        stateMachine.Animator.CrossFadeInFixedTime(UltimateSkillHash, CrossFadeDuration);
+        genyuBall.SetActive(true);
+
     }
 
+    public override void Tick(float deltaTime)
+    {
+        Move(frozenMoveTime);
+        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+
+    }
     public override void Exit()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void Tick(float deltaTime)
-    {
-        particle = skill.GetComponentInChildren<ParticleSystem>();
-        Debug.LogError(particle);
-        particle.Play();
-    }
+
 }
