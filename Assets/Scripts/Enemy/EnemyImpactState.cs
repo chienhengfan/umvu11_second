@@ -23,8 +23,10 @@ public class EnemyImpactState : EnemyBaseState
 
         duration -= Time.deltaTime;
 
+        Debug.Log("Duration: " + duration);
         if (duration <= 0f)
         {
+            Debug.Log("DurationEnd");
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }

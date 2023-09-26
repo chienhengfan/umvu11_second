@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6020872558147309233}
   - component: {fileID: 6541368480200809492}
   - component: {fileID: 1584390299993553775}
+  - component: {fileID: 438397787712981715}
+  - component: {fileID: 3313977804297106331}
   m_Layer: 0
   m_Name: ChuChuArrow
   m_TagString: Untagged
@@ -91,8 +93,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119038299158603793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c112b7a89f6f9344b4a02191bcc788c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &438397787712981715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119038299158603793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067e71bfa7ac8474cb8f623b4c5d9b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 3313977804297106331}
+  targetTag: Player
+  moveSpeed: 20
+  attackDamage: 10
+  judgementHitDistance: 0.1
+--- !u!114 &3313977804297106331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119038299158603793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8882b7476a2c67b4e9d71e84b6727161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCollider: {fileID: 0}
+  damage: 0

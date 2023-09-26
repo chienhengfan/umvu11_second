@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAnimationEvent : MonoBehaviour
 {
     [SerializeField] private List<GameObject> weaponLogic;
+    public CloseAttack closeAttack;
 
     public void EnableWeapon()
     {
@@ -20,6 +21,11 @@ public class EnemyAnimationEvent : MonoBehaviour
         {
             weapon.SetActive(false);
         }
+    }
+
+    public void CrawlAttack()
+    {
+        closeAttack.JudgeAttack();
     }
 
     public void Hit()

@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleMenu();
+            //ToggleMenu();
         }
 
         // 检查是否要暂停游戏时间

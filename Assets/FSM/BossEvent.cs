@@ -60,4 +60,10 @@ public class BossEvent : MonoBehaviour
 
         }
     }
+
+    //¹k¥Û¤j©Û
+    void MeteoriteAttack()
+    {
+
+    }
 }
