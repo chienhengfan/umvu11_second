@@ -231,7 +231,7 @@ public class BossFSM : MonoBehaviour
             return;
         }
         // Wait to move.
-        Debug.Log(m_fCurrentTime + ":" + m_fIdleTime);
+        //Debug.Log(m_fCurrentTime + ":" + m_fIdleTime);
         if (m_fCurrentTime > m_fIdleTime)
         {
             m_fCurrentTime = 0.0f;

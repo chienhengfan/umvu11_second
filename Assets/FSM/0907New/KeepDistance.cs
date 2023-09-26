@@ -31,18 +31,18 @@ public class KeepDistance : MonoBehaviour
             if(t.transform.name == "bowFront")
             {
                 tCrossbowFront = t.transform;
-                Debug.Log("bowFront add: " + tCrossbowFront.transform.position);
+                //Debug.Log("bowFront add: " + tCrossbowFront.transform.position);
             }
             if (t.transform.name == "bowSite")
             {
                 tCrossbowEnd = t.transform;
-                Debug.Log("bowSite add: " + tCrossbowEnd.transform.position);
+                //Debug.Log("bowSite add: " + tCrossbowEnd.transform.position);
             }
 
         }
         
         unwalkLayerMask = LayerMask.GetMask("UnwalkLayer");
-        Debug.Log("unwalkLayerMaskValue:  " +unwalkLayerMask);
+        //Debug.Log("unwalkLayerMaskValue:  " +unwalkLayerMask);
         
 
         yPos = gameObject.transform.position.y;
@@ -91,7 +91,7 @@ public class KeepDistance : MonoBehaviour
         if(tCrossbowFront!= null & tCrossbowEnd!= null)
         {
             Vector3 vBowFromTo = tCrossbowFront.position - tCrossbowEnd.position;
-            Debug.Log("bowForwardVec: " + vBowFromTo);
+            //Debug.Log("bowForwardVec: " + vBowFromTo);
             if (crossbowObj != null)
             {
                 crossbowObj.transform.right = -vBowFromTo;
@@ -181,7 +181,7 @@ public class KeepDistance : MonoBehaviour
                 
                 if (1<< hitInfo.collider.gameObject.layer == unwalkLayerMask)
                 {
-                    Debug.Log("hitInfolayer: " + hitInfo.collider.gameObject.layer);
+                    //Debug.Log("hitInfolayer: " + hitInfo.collider.gameObject.layer);
                     Gizmos.DrawSphere(transform.position, rayRange);
                 }
             }

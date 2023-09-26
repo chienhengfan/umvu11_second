@@ -4,29 +4,32 @@ using UnityEngine;
 
 public class PlayerUltimateSkillState : PlayerBaseState
 {
+    private float previousFrameTime;
 
     private readonly int UltimateSkillHash = Animator.StringToHash("UltimateSkill");
     private const float CrossFadeDuration = 0.1f;
-    private bool IsAnimationPlaying= false;
+    
 
     public PlayerUltimateSkillState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(UltimateSkillHash, CrossFadeDuration);
-        IsAnimationPlaying = IsInAnimation(stateMachine.Animator, "UltimateSkill");
 
     }
 
     public override void Tick(float deltaTime)
     {
-        Move(deltaTime);
 
-        Debug.LogError(IsAnimationPlaying);
-        //if(CheckAnimationIsOver(stateMachine.Animator, "UltimateSkill"))
-        //{
-        //    stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-        //}
+        float normalizedTime = stateMachine.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+
+        if (normalizedTime >= 1f)
+        {
+            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            return;
+        }
+
+
 
     }
     public override void Exit()

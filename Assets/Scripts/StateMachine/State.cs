@@ -25,14 +25,14 @@ public abstract class State
 
     }
 
-    protected bool IsInAnimation(Animator animator, string animationName)
-    {
-        AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
-
-        if (currentInfo.IsName(animationName))
-        {
-            return true;
-        }
-        return false;
-    }
+    //protected float PlayingNormalizedTime(Animator animator)
+    //{
+    //    AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
+        
+    //    if (animator.IsInTransition(0))
+    //    {
+    //        return currentInfo.normalizedTime;
+    //    }
+    //    return 0f;
+    //}
 }

@@ -17,8 +17,8 @@ public class EnemyHP : MonoBehaviour
     void Update()
     {
         enemyCurrentHp = enemy.GetComponent<Health>().health;
-        Debug.Log("current+" + enemyCurrentHp);
-        Debug.Log("max" + enemyMaxHP);
+        //Debug.Log("current+" + enemyCurrentHp);
+        //Debug.Log("max" + enemyMaxHP);
 
         this.transform.localPosition = new Vector3((-267 + 267*(enemyCurrentHp / enemyMaxHP)), 0.0f, 0.0f);
     }
