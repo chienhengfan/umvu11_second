@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3962ccae7fec00947bc5c09118b724f2
   - enabled: 1
-    path: Assets/Scenes/DemoScene package_chienheng.unity
+    path: Assets/Scenes/DemoScene package.unity
     guid: 71e48b0c9cf1dde4e9c7dc29d07536b4
   - enabled: 1
     path: Assets/Scenes/DemoScene package 2.unity
