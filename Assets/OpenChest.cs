@@ -12,12 +12,6 @@ public class OpenChest : MonoBehaviour
 
     void Update()
     {
-        // 显示或隐藏UI提示
-        if (interactionUI != null)
-        {
-            interactionUI.SetActive(isPlayerNearby && !isBoxOpen);
-        }
-
         // 如果玩家靠近物体并按下"E"键，触发事件
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isBoxOpen)
         {

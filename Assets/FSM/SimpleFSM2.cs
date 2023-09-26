@@ -39,7 +39,7 @@ public class SimpleFSM2 : MonoBehaviour{
 		m_fCurrentTime = 0.0f;
 		m_fIdleTime = Random.Range(3.0f, 5.0f);
 		m_iCurrentWanderPt = -1;
-		m_WanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
+		//m_WanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
         m_Am = GetComponent<Animator>();
         m_DoState = DoIdleState;
         m_CheckState = CheckIdleState;
