@@ -44,12 +44,20 @@ public class BossEvent : MonoBehaviour
         currentBallNum++;
     }
 
+
+
     void DirectAttack()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if(Vector3.Distance(gameObject.transform.position, player.transform.position) < directAttackRange)
         {
-            playerScript.TakeDamage(10f);
+            //playerScript.TakeDamage(10f);
+            if(player.TryGetComponent<Health>(out Health health))
+            {
+                health.DealDamage(10);
+                Debug.Log("playerGetHitByBoss");
+            }
+
         }
     }
 }

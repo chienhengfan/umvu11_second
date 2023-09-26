@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemyChasingState : EnemyBaseState
@@ -8,16 +9,19 @@ public class EnemyChasingState : EnemyBaseState
 
     private readonly int LocomotionHash = Animator.StringToHash("Locomotion");
     private readonly int LocomotionMageHash = Animator.StringToHash("Locomotion_Mage");
+    
 
     private readonly int SpeedHash = Animator.StringToHash("Speed");
 
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
+    private int randNum = 0;
     public EnemyChasingState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
 
     public override void Enter()
     {
+
         int mobIndex = stateMachine.MobEnumIndex;
         if (mobIndex == EnemyStateMachine.MobGroup.ChuCHu.GetHashCode())
         {
@@ -27,6 +31,11 @@ public class EnemyChasingState : EnemyBaseState
         {
             stateMachine.Animator.CrossFadeInFixedTime(LocomotionMageHash, CrossFadeDuration);
         }
+        else if (mobIndex == EnemyStateMachine.MobGroup.BossLady.GetHashCode())
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
+        }
+        randNum = UnityEngine.Random.Range(0, 5);
 
     }
     public override void Tick(float deltaTime)
@@ -38,6 +47,29 @@ public class EnemyChasingState : EnemyBaseState
         }
         else if (IsInAttackingRange())
         {
+            if (stateMachine.name == "LaSignora_Harbinger")
+            {
+                Debug.Log("INChasing");
+                switch (randNum) 
+                {
+                case 1:
+                        stateMachine.SwitchState(new EnemyLadyAttacking01State(stateMachine));
+                        break;
+                case 2:
+                        stateMachine.SwitchState(new EnemyLadyAttacking02State(stateMachine));
+                        break;
+                case 3:
+                        stateMachine.SwitchState(new EnemyLadyAttacking03State(stateMachine));
+                        break;
+                case 4:
+                        stateMachine.SwitchState(new EnemyLadyAttacking04State(stateMachine));
+                        break;
+                default:
+                        stateMachine.SwitchState(new EnemyLadySkill01State(stateMachine));
+                        break;
+                }
+            }
+
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
         }
