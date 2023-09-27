@@ -23,8 +23,8 @@ public class PlayerAnimationEvent1 : MonoBehaviour
     {
         //iceArrow.transform.position = arrowStart.position;
         //iceArrow.SetActive(true);
-        Instantiate(iceArrow, arrowStart.position, transform.rotation);
-        iceArrow.transform.forward = transform.forward;
+        GameObject arow =  Instantiate(iceArrow, arrowStart.position, transform.rotation);
+        arow.transform.forward = transform.forward;
     }
 
     public void EnableWeapon()

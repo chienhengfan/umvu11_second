@@ -16,6 +16,7 @@ public class EnemyChasingState : EnemyBaseState
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
     private int randNum = 0;
+    private float verticalVelocity = 0f;
     public EnemyChasingState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
 
@@ -40,6 +41,17 @@ public class EnemyChasingState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
+
+        if (verticalVelocity < 0f && stateMachine.Controller.isGrounded)
+        {
+            verticalVelocity = Physics.gravity.y * Time.deltaTime;
+        }
+        else
+        {
+            verticalVelocity += Physics.gravity.y * Time.deltaTime;
+        }
+        Move(Vector3.up * verticalVelocity, Time.deltaTime);
+
         if (!IsInChasingRange())
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
@@ -47,6 +59,7 @@ public class EnemyChasingState : EnemyBaseState
         }
         else if (IsInAttackingRange())
         {
+
             if (stateMachine.name == "LaSignora_Harbinger")
             {
                 Debug.Log("INChasing");
@@ -73,6 +86,8 @@ public class EnemyChasingState : EnemyBaseState
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
         }
+
+        
 
         MoveToPlayer(deltaTime);
 

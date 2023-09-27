@@ -49,8 +49,8 @@ public class RangedAttack : MonoBehaviour
             {
                 weapon.SetAttack(attackDamage);
                 weapon.DealDamage(go);
-                Destroy(go);
-                gameObject.SetActive(false);
+                Destroy(gameObject);
+                //gameObject.SetActive(false);
             }
         }
        
