@@ -44,7 +44,8 @@ public class TipS : MonoBehaviour
             if (Text != null)
             {
                 Text.SetActive(false);
-            }
+            }           
         }
+        Destroy(gameObject);
     }
 }
