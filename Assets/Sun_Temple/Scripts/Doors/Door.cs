@@ -10,15 +10,17 @@ namespace SunTemple
     {
 		public bool IsLocked = false;
         public bool DoorClosed = true;
-        public float OpenRotationAmount = 90;
-        public float RotationSpeed = 1f;
+        public float OpenRotationAmount = -90;
+        public float RotationSpeed = -1f;
         public float MaxDistance = 3.0f;
 		public string playerTag = "Player";
 		private Collider DoorCollider;
+        public GameObject interactionUI;
 
-		private GameObject Player;
+        private GameObject Player;
 		private Camera Cam;
 		private CursorManager cursor;
+        private bool isPlayerNearby = false;
 
         Vector3 StartRotation;
         float StartAngle = 0;
@@ -26,7 +28,6 @@ namespace SunTemple
         float LerpTime = 1f;
         float CurrentLerpTime = 0;
         bool Rotating;
-
 
 		private bool scriptIsEnabled = true;
 
@@ -48,21 +49,7 @@ namespace SunTemple
 				Debug.LogWarning (this.GetType ().Name + ".cs on " + this.name + ", No object tagged with " + playerTag + " found in Scene", gameObject);
 				scriptIsEnabled = false;
 				return;
-			}
-
-			Cam = Camera.main;
-			if (!Cam) {
-				Debug.LogWarning (this.GetType ().Name + ", No objects tagged with MainCamera in Scene", gameObject);
-				scriptIsEnabled = false;
-			}
-		
-			cursor = CursorManager.instance;
-
-			if (cursor != null) {
-				cursor.SetCursorToDefault ();
-			}
-
-					
+			}				
         }
 
 
@@ -74,22 +61,41 @@ namespace SunTemple
 					Rotate ();
 				}
 
-				if (Input.GetKeyDown (KeyCode.Mouse0)) {
-					TryToOpen ();
-				}
+                if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
+                {
+                    Open(); // 触发事件的方法
+                }
 
-
-				if (cursor != null) {
-					CursorHint ();
-				}
 			}
 
-		} 
+		}
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                isPlayerNearby = true;
+                if (interactionUI != null)
+                {
+                    interactionUI.SetActive(true);
+                }
+            }
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                isPlayerNearby = false;
+                if (interactionUI != null)
+                {
+                    interactionUI.SetActive(false);
+                }
+            }
+        }
 
 
-
-
-		void TryToOpen(){
+        void TryToOpen(){
 			if (Mathf.Abs(Vector3.Distance(transform.position, Player.transform.position)) <= MaxDistance){	
 
 				Ray ray = Cam.ScreenPointToRay (new Vector3 (Screen.width / 2, Screen.height / 2, 0));
@@ -133,9 +139,17 @@ namespace SunTemple
                 Close();
         }
 
+        void PerformInteraction()
+        {
+            if (interactionUI != null)
+            {
+                interactionUI.SetActive(false);
+            }
+            Destroy(gameObject);
+            Debug.Log("Player interacted with the object.");
+        }
 
 
-       
 
 
 
