@@ -10,6 +10,7 @@ public class EnemyAttackingState : EnemyBaseState
     private const float TransitionDuration = 0.1f;
 
     private int howDice = 0;
+    private float verticalVelocity = 0f;
 
     public EnemyAttackingState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
@@ -36,12 +37,26 @@ public class EnemyAttackingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        if (verticalVelocity < 0f && stateMachine.Controller.isGrounded)
+        {
+            verticalVelocity = Physics.gravity.y * Time.deltaTime;
+        }
+        else
+        {
+            verticalVelocity += Physics.gravity.y * Time.deltaTime;
+        }
+        Debug.Log(stateMachine.gameObject.name + verticalVelocity);
+        Move(Vector3.up * verticalVelocity, deltaTime);
+
+
         if (GetNormalizedTime(stateMachine.Animator) >= 1)
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             return;
             howDice = Random.Range(0, 2);
         }
+
+        
 
         //攻擊一次後，切換位置
         //if (howDice == 1)

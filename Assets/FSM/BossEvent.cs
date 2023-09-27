@@ -14,9 +14,8 @@ public class BossEvent : MonoBehaviour
     private int ballNum = 10;
     private int currentBallNum = 0;
 
-    public float directAttackRange = 7f;
+    public float directAttackRange = 15f;
 
-    public ThirdPersonController playerScript;
     private void Start()
     {
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class EnemyIdleState : EnemyBaseState
 {
@@ -11,11 +12,13 @@ public class EnemyIdleState : EnemyBaseState
 
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
+    private float verticalVelocity = 0f;
     public EnemyIdleState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
 
     public override void Enter()
     {
+        
         int mobIndex = stateMachine.MobEnumIndex;
         if (mobIndex == EnemyStateMachine.MobGroup.ChuCHu.GetHashCode())
         {
@@ -29,7 +32,15 @@ public class EnemyIdleState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
-        Move(deltaTime);
+        if (verticalVelocity < 0f && stateMachine.Controller.isGrounded)
+        {
+            verticalVelocity = Physics.gravity.y * Time.deltaTime;
+        }
+        else
+        {
+            verticalVelocity += Physics.gravity.y * Time.deltaTime;
+        }
+        Move(Vector3.up * verticalVelocity, Time.deltaTime);
 
         if (IsInChasingRange())
         {
