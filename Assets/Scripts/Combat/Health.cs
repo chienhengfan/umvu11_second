@@ -62,6 +62,7 @@ public class Health : MonoBehaviour
         {
             OnDie?.Invoke();
             anim.Play(DeadHash);
+            StartCoroutine(DisableObject());
             Deadmenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             hpBarUI.SetActive(false);
@@ -76,6 +77,12 @@ public class Health : MonoBehaviour
         {
             textComponent.text = damage.ToString();
         }
+    }
+
+    public IEnumerator DisableObject()
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
     }
 
 
