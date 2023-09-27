@@ -6,7 +6,8 @@ public class RangedAttack : MonoBehaviour
 {
     public WeaponDamage weapon;
     [SerializeField] private string targetTag;
-    private GameObject target;
+    private List<GameObject > targets;
+    private bool isShoot = false;
 
     private float lifeTime = 2.0f;
     private float currentTime = 0;
@@ -16,29 +17,43 @@ public class RangedAttack : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag(targetTag);
+        targets = new List<GameObject>();
+
+        GameObject[] gos  = GameObject.FindGameObjectsWithTag(targetTag);
+        foreach (GameObject go in gos)
+        {
+            targets.Add(go);
+        }
     }
 
     private void Update()
     {
+
         currentTime += Time.deltaTime;
         if (currentTime > lifeTime)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            Destroy(gameObject);
             currentTime = 0;
         }
 
 
+
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
-        float distanceToTarget = Vector3.Distance(target.transform.position, gameObject.transform.position);
-
-        if(distanceToTarget <= judgementHitDistance)
+        foreach(GameObject go in targets)
         {
-            weapon.SetAttack(attackDamage);
-            weapon.DealDamage(target);
-            gameObject.SetActive(false);
+            float distanceToTarget = Vector3.Distance(go.transform.position, gameObject.transform.position);
+
+            if (distanceToTarget <= judgementHitDistance)
+            {
+                weapon.SetAttack(attackDamage);
+                weapon.DealDamage(go);
+                Destroy(go);
+                gameObject.SetActive(false);
+            }
         }
+       
     }
 
 

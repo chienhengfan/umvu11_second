@@ -21,6 +21,8 @@ public class PlayerAnimationEvent1 : MonoBehaviour
     }
     void Shoot()
     {
+        //iceArrow.transform.position = arrowStart.position;
+        //iceArrow.SetActive(true);
         Instantiate(iceArrow, arrowStart.position, transform.rotation);
         iceArrow.transform.forward = transform.forward;
     }
