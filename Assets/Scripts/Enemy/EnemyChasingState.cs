@@ -111,6 +111,7 @@ public class EnemyChasingState : EnemyBaseState
         //Vector3 newFor = (nextPlayerPos - stateMachine.transform.position).normalized;
         Vector3 newFor = vPlayerPos - stateMachine.transform.position;
         newFor.Normalize();
-        stateMachine.transform.position += newFor * stateMachine.MovementSpeed * deltaTime;
+        //stateMachine.transform.position += newFor * stateMachine.MovementSpeed * deltaTime;
+        stateMachine.Controller.Move(newFor * stateMachine.MovementSpeed * deltaTime);
     }
 }

@@ -9,7 +9,7 @@ public class EnemyAttackingState : EnemyBaseState
 
     private const float TransitionDuration = 0.1f;
 
-    private int howDice = 0;
+    private float howDice = 0f;
     private float verticalVelocity = 0f;
 
     public EnemyAttackingState(EnemyStateMachine stateMachine) : base(stateMachine)
@@ -51,26 +51,23 @@ public class EnemyAttackingState : EnemyBaseState
 
         if (GetNormalizedTime(stateMachine.Animator) >= 1)
         {
-            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
-            return;
-            howDice = Random.Range(0, 2);
+            howDice = Random.Range(0f, 2f);
+
+            //攻擊一次後，切換位置
+            if (howDice <= 1f)
+            {
+                stateMachine.SwitchState(new EnemyAttackingMoveToState(stateMachine));
+                howDice = 0;
+                return;
+            }
+            else if ((howDice <= 2f && howDice >1f))
+            {
+                stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+                howDice = 0;
+                return;
+            }
         }
 
-        
-
-        //攻擊一次後，切換位置
-        //if (howDice == 1)
-        //{
-        //    stateMachine.SwitchState(new EnemyAttackingMoveToStateTest01(stateMachine));
-        //    howDice = 0;
-        //    return;
-        //}
-        //else if ((howDice == 2))
-        //{
-        //    stateMachine.SwitchState(new EnemyAttackingMoveToStateTest01(stateMachine));
-        //    howDice = 0;
-        //    return;
-        //}
     }
 
     public override void Exit()
