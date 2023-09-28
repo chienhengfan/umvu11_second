@@ -60,7 +60,7 @@ public class EnemyChasingState : EnemyBaseState
         else if (IsInAttackingRange())
         {
 
-            if (stateMachine.name == "LaSignora_Harbinger")
+            if (stateMachine.name == "LaSignora_Harbinger_NewVersion")
             {
                 Debug.Log("INChasing");
                 switch (randNum) 

@@ -8,6 +8,7 @@ public class PortalTransport : MonoBehaviour
 {
     public GameObject transPortal;
     public GameObject player;
+    [SerializeField] private string playerName = "Ganyu";
 
     private bool battleDone = false;
 
@@ -40,7 +41,7 @@ public class PortalTransport : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Portal Trigger" + other.gameObject.name);
-        if (other.gameObject.name == ("PlayerArmature"))
+        if (other.gameObject.name == (playerName))
         {
             Debug.Log("Player Transport");
             Debug.Log(transPortal.transform.name);
@@ -52,7 +53,7 @@ public class PortalTransport : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Debug.Log("Portal Trigger" + other.gameObject.name);
-        if (other.gameObject.name == ("PlayerArmature"))
+        if (other.gameObject.name == (playerName))
         {
             Debug.Log("Player Transport");
             Debug.Log(transPortal.transform.name);
