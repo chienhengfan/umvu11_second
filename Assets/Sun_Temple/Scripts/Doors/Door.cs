@@ -38,7 +38,7 @@ namespace SunTemple
 			DoorCollider = GetComponent<BoxCollider> ();
 
 			if (!DoorCollider) {
-				Debug.LogWarning (this.GetType ().Name + ".cs on " + gameObject.name + "door has no collider", gameObject);
+				//Debug.LogWarning (this.GetType ().Name + ".cs on " + gameObject.name + "door has no collider", gameObject);
 				scriptIsEnabled = false;
 				return;
 			}
@@ -46,7 +46,7 @@ namespace SunTemple
 			Player = GameObject.FindGameObjectWithTag (playerTag);
 
 			if (!Player) {
-				Debug.LogWarning (this.GetType ().Name + ".cs on " + this.name + ", No object tagged with " + playerTag + " found in Scene", gameObject);
+				//Debug.LogWarning (this.GetType ().Name + ".cs on " + this.name + ", No object tagged with " + playerTag + " found in Scene", gameObject);
 				scriptIsEnabled = false;
 				return;
 			}				
@@ -164,7 +164,7 @@ namespace SunTemple
             float _Perc = CurrentLerpTime / LerpTime;
 
             float _Angle = CircularLerp.Clerp(StartAngle, EndAngle, _Perc);
-            transform.localEulerAngles = new Vector3(transform.eulerAngles.x, _Angle, transform.eulerAngles.z);
+            transform.localEulerAngles = new Vector3(transform.eulerAngles.x, -_Angle, transform.eulerAngles.z);
 
 			if (CurrentLerpTime == LerpTime) {
 				Rotating = false;
