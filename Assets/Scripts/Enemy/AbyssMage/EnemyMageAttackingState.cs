@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class EnemyMageAttackingState : EnemyBaseState
 {
     private readonly int MageAttackHash = Animator.StringToHash("MageAttack");
 
     private const float TransitionDuration = 0.1f;
-
-    private float howDice = 0f;
     private float verticalVelocity = 0f;
 
     public EnemyMageAttackingState(EnemyStateMachine stateMachine) : base(stateMachine)
@@ -38,24 +38,11 @@ public class EnemyMageAttackingState : EnemyBaseState
         Debug.Log(stateMachine.gameObject.name + verticalVelocity);
         Move(Vector3.up * verticalVelocity, deltaTime);
 
-
-        if (GetNormalizedTime(stateMachine.Animator) >= 1)
+        float normalizedTime = stateMachine.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        if(normalizedTime >= 1f)
         {
-            howDice = Random.Range(0f, 2f);
-
-            //攻擊一次後，切換位置
-            if (howDice <= 1f)
-            {
-                stateMachine.SwitchState(new EnemyMageAttackingMoveToState(stateMachine));
-                howDice = 0;
-                return;
-            }
-            else if ((howDice <= 2f && howDice > 1f))
-            {
-                stateMachine.SwitchState(new EnemyChasingState(stateMachine));
-                howDice = 0;
-                return;
-            }
+            stateMachine.SwitchState(new EnemyMageAttackingIdleState(stateMachine));
+            return;
         }
 
     }
