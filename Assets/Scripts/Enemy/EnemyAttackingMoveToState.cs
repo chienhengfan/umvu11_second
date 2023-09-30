@@ -7,8 +7,7 @@ public class EnemyAttackingMoveToState : EnemyBaseState
 {
     private readonly int AttackMoveToLeftHash = Animator.StringToHash("MoveToLeft");
     private readonly int AttackMoveToRightHash = Animator.StringToHash("MoveToRight");
-    private readonly int MageAttackMoveToLeftHash = Animator.StringToHash("MageMoveToLeft");
-    private readonly int MageAttackMoveToRightHash = Animator.StringToHash("MageMoveToRight");
+    
     private const float TransitionDuration = 0.1f;
     private float timer = 3.0f;
 
@@ -43,17 +42,17 @@ public class EnemyAttackingMoveToState : EnemyBaseState
                 stateMachine.Animator.CrossFadeInFixedTime(AttackMoveToLeftHash, TransitionDuration);
             }
         }
-        else if (mobIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
+        else if (mobIndex == EnemyStateMachine.MobGroup.CHuCHuCrossbow.GetHashCode())
         {
             if (fDotRight >= 0f)
             {
                 //在右邊
-                stateMachine.Animator.CrossFadeInFixedTime(MageAttackMoveToRightHash, TransitionDuration);
+                stateMachine.Animator.CrossFadeInFixedTime(AttackMoveToRightHash, TransitionDuration);
             }
             else
             {
                 //在左邊，與 AttackMoveToHash 動畫方向一致
-                stateMachine.Animator.CrossFadeInFixedTime(MageAttackMoveToLeftHash, TransitionDuration);
+                stateMachine.Animator.CrossFadeInFixedTime(AttackMoveToLeftHash, TransitionDuration);
             }
         }
         timer = 3.0f;

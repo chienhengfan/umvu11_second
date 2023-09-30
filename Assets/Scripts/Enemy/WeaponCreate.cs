@@ -74,4 +74,8 @@ public class WeaponCreate : MonoBehaviour
         }
 
     }
+    public GameObject[] GetArrowArr()
+    {
+        return arrowArr;
+    }
 }

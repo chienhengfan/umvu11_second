@@ -38,7 +38,7 @@ public abstract class EnemyBaseState : State
 
         Vector3 lookPos = stateMachine.Player.transform.position - stateMachine.transform.position;
         lookPos.y = 0f;
-
+        Debug.Log("FacePlayer");
         stateMachine.transform.rotation = Quaternion.LookRotation(lookPos);
     }
 }

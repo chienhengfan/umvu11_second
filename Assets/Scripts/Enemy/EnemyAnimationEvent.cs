@@ -5,14 +5,22 @@ using UnityEngine;
 public class EnemyAnimationEvent : MonoBehaviour
 {
     [SerializeField] private List<GameObject> weaponLogic;
+    [Tooltip("ˋ專屬於crossbow丘丘人子物件的bowFront")]
+    [SerializeField]private Transform bowShootStart;
+    [SerializeField]private GameObject ChuChuArow;
+    private GameObject player;
+    private int weaponNum = 0;
+
     //public CloseAttack closeAttack;
     [SerializeField] private float sectorAngle = 60f;
     [SerializeField] private float sectorRadius = 15f;
     [SerializeField] private int crawlAttackDamage = 5;
     public WeaponDamage weaponDamage;
 
-    [SerializeField] private ParticleSystem deadSmoke;
-
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     public void EnableWeapon()
     {
@@ -53,6 +61,14 @@ public class EnemyAnimationEvent : MonoBehaviour
         //
     }
 
+    public void Shoot()
+    {
+        GameObject shootGo = Instantiate(ChuChuArow, transform.position, Quaternion.identity);
+        shootGo.transform.position = bowShootStart.position;
+        Vector3 toP = player.transform.position - bowShootStart.position + player.transform.up* 0.5f;
+        shootGo.transform.forward = toP;
+    }
+
     public bool IsInRange(float sectorAngle, float sectorRadius, GameObject attacker, GameObject target)
     {
 
@@ -68,11 +84,5 @@ public class EnemyAnimationEvent : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, sectorRadius);
-    }
-
-    private void DeadEffect()
-    {
-        deadSmoke.transform.position = gameObject.transform.position;
-        deadSmoke.Play();
     }
 }

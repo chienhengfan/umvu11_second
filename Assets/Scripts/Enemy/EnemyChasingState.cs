@@ -15,7 +15,6 @@ public class EnemyChasingState : EnemyBaseState
 
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
-    private int randNum = 0;
     private float verticalVelocity = 0f;
     public EnemyChasingState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
@@ -36,7 +35,10 @@ public class EnemyChasingState : EnemyBaseState
         {
             stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
         }
-        randNum = UnityEngine.Random.Range(0, 5);
+        else if (mobIndex == EnemyStateMachine.MobGroup.CHuCHuCrossbow.GetHashCode())
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
+        }
 
     }
     public override void Tick(float deltaTime)
@@ -59,16 +61,20 @@ public class EnemyChasingState : EnemyBaseState
         }
         else if (IsInAttackingRange())
         {
-            if(stateMachine.MobEnumIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
+
+            if (stateMachine.MobEnumIndex == EnemyStateMachine.MobGroup.BossLady.GetHashCode())
+            {
+                stateMachine.SwitchState(new EnemyLadyAttackingBaseState(stateMachine));
+                return;
+            }
+            else if(stateMachine.MobEnumIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
             {
                 stateMachine.SwitchState(new EnemyMageAttackingState(stateMachine));
                 return;
             }
 
-
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
-
-
+            return;
         }
 
         
