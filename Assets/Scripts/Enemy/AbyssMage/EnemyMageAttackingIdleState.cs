@@ -9,6 +9,7 @@ public class EnemyMageAttackingIdleState : EnemyBaseState
     private const float TransitionDuration = 0.1f;
 
     private float howDice = 0f;
+
     public EnemyMageAttackingIdleState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -26,8 +27,7 @@ public class EnemyMageAttackingIdleState : EnemyBaseState
         float normalizedTime = stateMachine.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
         if (normalizedTime >= 1f)
         {
-            Debug.Log("normalizedTime: " + normalizedTime);
-            howDice = Random.Range(0f, 2f);
+            //Debug.Log("normalizedTime: " + normalizedTime);
             //攻擊一次後，切換位置
             if (howDice <= 1f)
             {

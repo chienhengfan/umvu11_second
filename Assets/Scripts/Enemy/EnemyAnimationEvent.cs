@@ -11,6 +11,8 @@ public class EnemyAnimationEvent : MonoBehaviour
     [SerializeField] private int crawlAttackDamage = 5;
     public WeaponDamage weaponDamage;
 
+    [SerializeField] private ParticleSystem deadSmoke;
+
 
     public void EnableWeapon()
     {
@@ -66,5 +68,11 @@ public class EnemyAnimationEvent : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, sectorRadius);
+    }
+
+    private void DeadEffect()
+    {
+        deadSmoke.transform.position = gameObject.transform.position;
+        deadSmoke.Play();
     }
 }

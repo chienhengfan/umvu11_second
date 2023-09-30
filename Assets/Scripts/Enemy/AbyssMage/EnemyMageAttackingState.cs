@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,6 +10,7 @@ public class EnemyMageAttackingState : EnemyBaseState
 
     private const float TransitionDuration = 0.1f;
     private float verticalVelocity = 0f;
+    private float stiffTime;
 
     public EnemyMageAttackingState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
@@ -21,12 +22,23 @@ public class EnemyMageAttackingState : EnemyBaseState
         {
             weapon.SetAttack(stateMachine.AttackDamage);
         }
-        stateMachine.Animator.CrossFadeInFixedTime(MageAttackHash, TransitionDuration);
+        if(stiffTime <= 0)
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(MageAttackHash, TransitionDuration);
+            stiffTime = stateMachine.maxStiffTime;
+            //Debug.LogError(stiffTime);
+        }
+
+
 
     }
 
     public override void Tick(float deltaTime)
     {
+        stiffTime = stateMachine.maxStiffTime;
+        stiffTime -= Time.deltaTime;
+        //Debug.LogError("now" + stiffTime);
+
         if (verticalVelocity < 0f && stateMachine.Controller.isGrounded)
         {
             verticalVelocity = Physics.gravity.y * Time.deltaTime;
@@ -35,7 +47,7 @@ public class EnemyMageAttackingState : EnemyBaseState
         {
             verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
-        Debug.Log(stateMachine.gameObject.name + verticalVelocity);
+        //Debug.Log(stateMachine.gameObject.name + verticalVelocity);
         Move(Vector3.up * verticalVelocity, deltaTime);
 
         float normalizedTime = stateMachine.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime;

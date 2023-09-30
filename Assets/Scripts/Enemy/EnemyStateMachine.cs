@@ -16,6 +16,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public float AttackRange { get; private set; }
     [field: SerializeField] public int AttackDamage { get; private set; }
     [field: SerializeField] public int MobEnumIndex { get; private set; }
+    [field: SerializeField] public float maxStiffTime { get; private set; } = 5f;
 
     public GameObject Player { get; private set; }
 
@@ -27,7 +28,6 @@ public class EnemyStateMachine : StateMachine
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-
         SwitchState(new EnemyIdleState(this));
     }
 
@@ -51,6 +51,7 @@ public class EnemyStateMachine : StateMachine
     {
         SwitchState(new EnemyDeadState(this));
     }
+
 
     private void OnDrawGizmosSelected()
     {

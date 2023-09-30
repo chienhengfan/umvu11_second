@@ -59,37 +59,16 @@ public class EnemyChasingState : EnemyBaseState
         }
         else if (IsInAttackingRange())
         {
-
-            if (stateMachine.name == "LaSignora_Harbinger_NewVersion")
-            {
-                Debug.Log("INChasing");
-                switch (randNum) 
-                {
-                case 1:
-                        stateMachine.SwitchState(new EnemyLadyAttacking01State(stateMachine));
-                        break;
-                case 2:
-                        stateMachine.SwitchState(new EnemyLadyAttacking02State(stateMachine));
-                        break;
-                case 3:
-                        stateMachine.SwitchState(new EnemyLadyAttacking03State(stateMachine));
-                        break;
-                case 4:
-                        stateMachine.SwitchState(new EnemyLadyAttacking04State(stateMachine));
-                        break;
-                default:
-                        stateMachine.SwitchState(new EnemyLadySkill01State(stateMachine));
-                        break;
-                }
-            }
-            else if(stateMachine.MobEnumIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
+            if(stateMachine.MobEnumIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
             {
                 stateMachine.SwitchState(new EnemyMageAttackingState(stateMachine));
                 return;
             }
 
+
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
-            return;
+
+
         }
 
         
