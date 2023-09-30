@@ -28,6 +28,10 @@ public class EnemyIdleState : EnemyBaseState
         {
             stateMachine.Animator.CrossFadeInFixedTime(LocomotionMageHash, CrossFadeDuration);
         }
+        else if(mobIndex == EnemyStateMachine.MobGroup.CHuCHuCrossbow.GetHashCode())
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
+        }
 
     }
     public override void Tick(float deltaTime)

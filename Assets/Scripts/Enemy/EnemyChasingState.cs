@@ -15,7 +15,6 @@ public class EnemyChasingState : EnemyBaseState
 
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
-    private int randNum = 0;
     private float verticalVelocity = 0f;
     public EnemyChasingState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
@@ -36,7 +35,10 @@ public class EnemyChasingState : EnemyBaseState
         {
             stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
         }
-        randNum = UnityEngine.Random.Range(0, 5);
+        else if (mobIndex == EnemyStateMachine.MobGroup.CHuCHuCrossbow.GetHashCode())
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(LocomotionHash, CrossFadeDuration);
+        }
 
     }
     public override void Tick(float deltaTime)
@@ -60,27 +62,10 @@ public class EnemyChasingState : EnemyBaseState
         else if (IsInAttackingRange())
         {
 
-            if (stateMachine.name == "LaSignora_Harbinger_NewVersion")
+            if (stateMachine.MobEnumIndex == EnemyStateMachine.MobGroup.BossLady.GetHashCode())
             {
-                Debug.Log("INChasing");
-                switch (randNum) 
-                {
-                case 1:
-                        stateMachine.SwitchState(new EnemyLadyAttacking01State(stateMachine));
-                        break;
-                case 2:
-                        stateMachine.SwitchState(new EnemyLadyAttacking02State(stateMachine));
-                        break;
-                case 3:
-                        stateMachine.SwitchState(new EnemyLadyAttacking03State(stateMachine));
-                        break;
-                case 4:
-                        stateMachine.SwitchState(new EnemyLadyAttacking04State(stateMachine));
-                        break;
-                default:
-                        stateMachine.SwitchState(new EnemyLadySkill01State(stateMachine));
-                        break;
-                }
+                stateMachine.SwitchState(new EnemyLadyAttackingBaseState(stateMachine));
+                return;
             }
             else if(stateMachine.MobEnumIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
             {

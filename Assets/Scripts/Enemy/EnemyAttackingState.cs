@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyAttackingState : EnemyBaseState
 {
     private readonly int AttackHash = Animator.StringToHash("Attack");
-    private readonly int MageAttackHash = Animator.StringToHash("MageAttack");
 
     private const float TransitionDuration = 0.1f;
 
@@ -28,9 +27,9 @@ public class EnemyAttackingState : EnemyBaseState
         {
             stateMachine.Animator.CrossFadeInFixedTime(AttackHash, TransitionDuration);
         }
-        else if (mobIndex == EnemyStateMachine.MobGroup.AbyssMage.GetHashCode())
+        else if (mobIndex == EnemyStateMachine.MobGroup.CHuCHuCrossbow.GetHashCode())
         {
-            stateMachine.Animator.CrossFadeInFixedTime(MageAttackHash, TransitionDuration);
+            stateMachine.Animator.CrossFadeInFixedTime(AttackHash, TransitionDuration);
         }
 
     }
@@ -48,6 +47,7 @@ public class EnemyAttackingState : EnemyBaseState
         Debug.Log(stateMachine.gameObject.name + verticalVelocity);
         Move(Vector3.up * verticalVelocity, deltaTime);
 
+        FacePlayer();
 
         if (GetNormalizedTime(stateMachine.Animator) >= 1)
         {
