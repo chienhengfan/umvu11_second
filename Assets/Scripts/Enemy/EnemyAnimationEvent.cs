@@ -61,4 +61,10 @@ public class EnemyAnimationEvent : MonoBehaviour
         float offsetAngle = Mathf.Acos(dot) * Mathf.Rad2Deg;
         return offsetAngle < sectorAngle * .5f && direction.magnitude < sectorRadius;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, sectorRadius);
+    }
 }

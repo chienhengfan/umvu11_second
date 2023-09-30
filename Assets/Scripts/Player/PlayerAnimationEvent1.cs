@@ -22,7 +22,7 @@ public class PlayerAnimationEvent1 : MonoBehaviour
     void Shoot()
     {
         //iceArrow.transform.position = arrowStart.position;
-        //iceArrow.SetActive(true);
+        iceArrow.SetActive(true);
         GameObject arow =  Instantiate(iceArrow, arrowStart.position, transform.rotation);
         arow.transform.forward = transform.forward;
     }

@@ -564,8 +564,8 @@ ModelImporter:
       name: Mage_RunForward
       takeName: BasicMotions@Sprint01 - Forwards
       internalID: 0
-      firstFrame: 3.5
-      lastFrame: 5.52
+      firstFrame: 0
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

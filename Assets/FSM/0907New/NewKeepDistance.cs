@@ -47,20 +47,14 @@ public class NewKeepDistance : MonoBehaviour
                     if (fDotRight < 0f)
                     {
                         //¸I¼²ª«¦b¥ª°¼
-                        myCC.Move(transform.right);
+                        myCC.Move(transform.right * myRadius);
                     }
                     else
                     {
-                        myCC.Move(-transform.right);
+                        myCC.Move(-transform.right * myRadius);
                     }
                 }
             }
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(this.transform.position, myCC.radius );
     }
 }

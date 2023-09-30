@@ -29,6 +29,9 @@ public class TraceAttack : MonoBehaviour
         Vector3 vFOr = transform.forward;
         Vector3 vPlayerChasePoint = target.transform.position + target.transform.up * 1.0f;
         Vector3 vToP = vPlayerChasePoint - transform.position;
+        Vector3 vToPWithoutY = new Vector3(vToP.x, 0, vToP.z);
+        float fDot = Vector3.Dot(vFOr, vToPWithoutY);
+        vToP.Normalize();
         vFOr = Vector3.Lerp(vFOr, vToP, 0.1f);
 
 
@@ -38,6 +41,7 @@ public class TraceAttack : MonoBehaviour
 
             weapon.SetAttack(attackDamage);
             weapon.DealDamage(target);
+            ballDropTime = 0.0f;
 
             gameObject.SetActive(false);
         }
@@ -51,7 +55,7 @@ public class TraceAttack : MonoBehaviour
         //Make ball Drop
         vToP.y -= Time.deltaTime;
         vToP = vToP + vFOr;
-        vToP.Normalize();
+        
         transform.forward = vToP;
         transform.position = transform.position + vToP * Time.deltaTime * ballSpeed;
     }
