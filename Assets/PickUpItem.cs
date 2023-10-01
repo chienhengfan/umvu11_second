@@ -7,7 +7,7 @@ public class PickUpItem : MonoBehaviour
 {
     public GameObject interactionUI; // 可以按"E"的UI元素
     private bool isPlayerNearby = false;
-
+    public IPM IPM;
     void Update()
     {
         // 显示或隐藏UI提示
@@ -42,11 +42,16 @@ public class PickUpItem : MonoBehaviour
     }
 
     // 触发事件的方法
-    void PerformInteraction()
+    public void PerformInteraction()
     {
         if (interactionUI != null)
         {
             interactionUI.SetActive(false);
+        }
+        // 通知ItemPickupManager处理拾取
+        if (IPM != null)
+        {
+            //IPM.AddMessage(messageIndex); // 这里你需要提供消息索引
         }
         Destroy(gameObject);
         Debug.Log("Player interacted with the object.");
