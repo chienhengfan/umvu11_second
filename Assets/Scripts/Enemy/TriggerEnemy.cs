@@ -9,6 +9,7 @@ public class TriggerEnemy : MonoBehaviour
     private Dictionary<Transform, MobGroup> mobDic;
     public GameObject airWall;
     public GameObject enemy;
+    public GameObject bossHP;
     public string enemytag = "Enemy";
     //public MobPoolManager mobPoolManager;
 
@@ -22,6 +23,7 @@ public class TriggerEnemy : MonoBehaviour
 
     void Start()
     {
+        //bossHP = GameObject.Find("BossHp");
         enemy.SetActive(false);
         airWall.SetActive(false);
         mobDic = new Dictionary<Transform,MobGroup>();
@@ -33,6 +35,10 @@ public class TriggerEnemy : MonoBehaviour
         if(enemy.GetComponentInChildren<EnemyStateMachine>() == null)
         {
             airWall.SetActive(false);
+            if (bossHP.activeSelf)
+            {
+                bossHP.SetActive(false);
+            }
         }
     }
 
@@ -59,6 +65,10 @@ public class TriggerEnemy : MonoBehaviour
         {
             airWall.SetActive(true);
             enemy.SetActive(true);
+            if(enemy.GetComponentInChildren<BossEvent>() != null)
+            {
+                bossHP.SetActive(true);
+            }
 
         }
     }
