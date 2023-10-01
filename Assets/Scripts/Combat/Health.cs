@@ -40,6 +40,7 @@ public class Health : MonoBehaviour
         Deadmenu.SetActive(false);
 
         anim = GetComponent<Animator>();
+        Debug.LogError(anim);
         if(this.TryGetComponent<EnemyStateMachine>(out EnemyStateMachine esm))
         {
             mobIndex = esm.MobEnumIndex;
