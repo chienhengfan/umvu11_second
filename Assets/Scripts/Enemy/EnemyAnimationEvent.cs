@@ -17,6 +17,7 @@ public class EnemyAnimationEvent : MonoBehaviour
     [SerializeField] private int crawlAttackDamage = 5;
     public WeaponDamage weaponDamage;
     [SerializeField] private AudioClipsPlayer audioPlayer;
+    public ParticleSystem deadEffect;
 
     private void Start()
     {
@@ -79,6 +80,11 @@ public class EnemyAnimationEvent : MonoBehaviour
 
         float offsetAngle = Mathf.Acos(dot) * Mathf.Rad2Deg;
         return offsetAngle < sectorAngle * .5f && direction.magnitude < sectorRadius;
+    }
+
+    private void DeadEffect()
+    {
+        deadEffect.Play();
     }
 
     public void IntroAudio()
