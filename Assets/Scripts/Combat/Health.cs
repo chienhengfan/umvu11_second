@@ -40,7 +40,6 @@ public class Health : MonoBehaviour
         Deadmenu.SetActive(false);
 
         anim = GetComponent<Animator>();
-        Debug.LogError(anim);
         if(this.TryGetComponent<EnemyStateMachine>(out EnemyStateMachine esm))
         {
             mobIndex = esm.MobEnumIndex;
@@ -59,7 +58,6 @@ public class Health : MonoBehaviour
     {
         if (health <= 0) { return; }
         health = Mathf.Max(health - damage, 0);
-        Debug.Log(this.name + ": " + health);
         float healthRatio = (float)health / maxHealth;
         if(mobIndex == EnemyStateMachine.MobGroup.BossLady.GetHashCode())
         {
