@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCollider: {fileID: 0}
-  damage: 10
+  damage: 15
 --- !u!114 &4534265070786824614
 MonoBehaviour:
   m_ObjectHideFlags: 0

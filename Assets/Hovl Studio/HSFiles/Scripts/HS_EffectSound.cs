@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HS_EffectSound : MonoBehaviour
 {
-    public bool Repeating = true;
+    public bool Repeating = false;
     public float RepeatTime = 2.0f;
     public float StartTime = 0.0f;
     public bool RandomVolume;
