@@ -20,7 +20,6 @@ public class CloseAttack : MonoBehaviour
     void Update()
     {
         target = GameObject.FindGameObjectWithTag(targetTag);
-        JudgeAttack();
     }
 
     public bool IsInRange(float sectorAngle, float sectorRadius, GameObject attacker, GameObject target)
