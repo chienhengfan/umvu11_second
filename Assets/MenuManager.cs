@@ -2,18 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
     public GameObject menuUI;
     private bool isPaused = false;
     public GameObject cameraController; // 引用相机控制脚本所在的物体
+    public GameObject player;
+    public GameObject deadmenu;
     private void Start()
     {
         menuUI.SetActive(false);
+        deadmenu.SetActive(false);
     }
     void Update()
     {
+        if (player.TryGetComponent<Health>(out Health health))
+        {
+            float playerHp = health.health;
+            if(playerHp == 0)
+            {
+                {
+                    deadmenu.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                }
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleMenu();
