@@ -77,8 +77,11 @@ public class Health : MonoBehaviour
             OnDie?.Invoke();
             anim.Play(DeadHash);
             StartCoroutine(DisableObject());
-            Deadmenu.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            if (this.CompareTag("Player"))
+            {
+                Deadmenu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+            }
             hpBarUI.SetActive(false);
         }
     }

@@ -11,7 +11,8 @@ public class TriggerEnemy : MonoBehaviour
     public GameObject enemy;
     public string enemytag = "Enemy";
     //public MobPoolManager mobPoolManager;
-
+    public List<GameObject> enemiesList = new List<GameObject>();
+    private bool stepInTrigger = false;
 
 
 
@@ -22,20 +23,72 @@ public class TriggerEnemy : MonoBehaviour
 
     void Start()
     {
-        enemy.SetActive(false);
+        //enemy.SetActive(false);
         airWall.SetActive(false);
         mobDic = new Dictionary<Transform,MobGroup>();
         sprawnPoints = gameObject.GetComponentsInChildren<Transform>();
+        
+        foreach(GameObject go in enemiesList)
+        {
+            if (go.CompareTag(enemytag))
+            {
+                go.SetActive(false);
+            }
+        }
     }
 
     private void Update()
     {
-        if(enemy.GetComponentInChildren<EnemyStateMachine>() == null)
+
+        if (stepInTrigger)
+        {
+            if (enemiesList.Count > 0)
+            {
+                foreach (GameObject go in enemiesList)
+                {
+                    go.SetActive(true);
+                    if (go.TryGetComponent<EnemyAnimationEvent>(out EnemyAnimationEvent enemyEvent))
+                    {
+                        //Play Spawn effect
+                        enemyEvent.deadEffect.Play();
+                    }
+                }
+                StartCoroutine("WaitForWallClose", 2);
+            }
+        }
+
+        bool enemyAlive = EnemyAlive();
+        if (!enemyAlive)
         {
             airWall.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
+    private bool EnemyAlive()
+    {
+        if (enemiesList != null && enemiesList.Count > 0)
+        {
+            foreach (GameObject go in enemiesList)
+            {
+                if (go.TryGetComponent<Health>(out Health health))
+                {
+                    if (health.health > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    IEnumerator WaitForWallClose(int sec)
+    {
+        yield return new WaitForSeconds(sec);
+        airWall.SetActive(true);
+        stepInTrigger = false;
+    }
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -57,9 +110,9 @@ public class TriggerEnemy : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            airWall.SetActive(true);
-            enemy.SetActive(true);
-
+            //airWall.SetActive(true);
+            //enemy.SetActive(true);
+            stepInTrigger = true;
         }
     }
 
