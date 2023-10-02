@@ -9,10 +9,11 @@ public class TriggerEnemy : MonoBehaviour
     private Dictionary<Transform, MobGroup> mobDic;
     public GameObject airWall;
     public GameObject enemy;
-    public GameObject bossHP;
     public string enemytag = "Enemy";
     //public MobPoolManager mobPoolManager;
-
+    public List<GameObject> enemiesList = new List<GameObject>();
+    private bool stepInTrigger = false;
+    public GameObject bossHp;
 
 
 
@@ -23,25 +24,81 @@ public class TriggerEnemy : MonoBehaviour
 
     void Start()
     {
-        //bossHP = GameObject.Find("BossHp");
-        enemy.SetActive(false);
+        //enemy.SetActive(false);
         airWall.SetActive(false);
         mobDic = new Dictionary<Transform,MobGroup>();
         sprawnPoints = gameObject.GetComponentsInChildren<Transform>();
-    }
-
-    private void Update()
-    {
-        if(enemy.GetComponentInChildren<EnemyStateMachine>() == null)
+        
+        foreach(GameObject go in enemiesList)
         {
-            airWall.SetActive(false);
-            if (bossHP.activeSelf)
+            if (go.CompareTag(enemytag))
             {
-                bossHP.SetActive(false);
+                go.SetActive(false);
             }
         }
     }
 
+    private void Update()
+    {
+
+        if (stepInTrigger)
+        {
+            if (enemiesList.Count > 0)
+            {
+                foreach (GameObject go in enemiesList)
+                {
+                    go.SetActive(true);
+                    if (go.TryGetComponent<EnemyAnimationEvent>(out EnemyAnimationEvent enemyEvent))
+                    {
+                        //Play Spawn effect
+                        enemyEvent.deadEffect.Play();
+                    }
+                    if(go.GetComponent<BossEvent>() != null)
+                    {
+                        bossHp.SetActive(true);
+                    }
+
+                }
+                StartCoroutine("WaitForWallClose", 2);
+            }
+        }
+
+        bool enemyAlive = EnemyAlive();
+        if (!enemyAlive)
+        {
+            if(bossHp != null)
+            {
+                bossHp.SetActive(false);
+            }
+            airWall.SetActive(false);
+            gameObject.SetActive(false);
+        }
+    }
+
+    private bool EnemyAlive()
+    {
+        if (enemiesList.Count > 0)
+        {
+            foreach (GameObject go in enemiesList)
+            {
+                if (go.TryGetComponent<Health>(out Health health))
+                {
+                    if (health.health > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    IEnumerator WaitForWallClose(int sec)
+    {
+        yield return new WaitForSeconds(sec);
+        airWall.SetActive(true);
+        stepInTrigger = false;
+    }
 
     //private void OnTriggerEnter(Collider other)
     //{
@@ -63,13 +120,9 @@ public class TriggerEnemy : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            airWall.SetActive(true);
-            enemy.SetActive(true);
-            if(enemy.GetComponentInChildren<BossEvent>() != null)
-            {
-                bossHP.SetActive(true);
-            }
-
+            //airWall.SetActive(true);
+            //enemy.SetActive(true);
+            stepInTrigger = true;
         }
     }
 

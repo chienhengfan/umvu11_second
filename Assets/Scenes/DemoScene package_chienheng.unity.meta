@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/DemoScene package_chienheng.unity.meta
 guid: 361fbfe0ba7c3d949a83910af43bbe77
 DefaultImporter:
+========
+guid: f787370aec74ddb4faed07bf1418ee74
+PrefabImporter:
+>>>>>>>> 7583935ed72f68535a0a4e40e40b02379237ca3a:Assets/Models/Arrow/GuildArrow.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
