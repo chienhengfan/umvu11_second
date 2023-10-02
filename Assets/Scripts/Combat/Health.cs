@@ -26,8 +26,7 @@ public class Health : MonoBehaviour
     [Header("傷害跳數字")]
     [Tooltip("跳出傷害數字的面板，取用 TMP_Text 元件改變傷害數字")]
     [SerializeField] GameObject hitNumberPrefab;
-
-    [SerializeField] GameObject Deadmenu = null;
+    private int mobIndex;
 
     public event Action OnTakeDamage;
     public event Action OnDie;
@@ -37,9 +36,12 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        Deadmenu.SetActive(false);
 
         anim = GetComponent<Animator>();
+        if(this.TryGetComponent<EnemyStateMachine>(out EnemyStateMachine esm))
+        {
+            mobIndex = esm.MobEnumIndex;
+        }
     }
 
     private void Update()
@@ -54,8 +56,18 @@ public class Health : MonoBehaviour
     {
         if (health <= 0) { return; }
         health = Mathf.Max(health - damage, 0);
-        Debug.Log(this.name + ": " + health);
-        OnTakeDamage?.Invoke();
+        float healthRatio = (float)health / maxHealth;
+        if(mobIndex == EnemyStateMachine.MobGroup.BossLady.GetHashCode())
+        {
+            if(healthRatio <= 0.5f && healthRatio > 0.3f)
+            {
+                OnTakeDamage?.Invoke();
+            }
+        }
+        else
+        {
+            OnTakeDamage?.Invoke();
+        }
         GenerateHitNumber(damage, this.transform.position + Vector3.up * 0.5f);
 
         if (health <= 0)
@@ -63,8 +75,8 @@ public class Health : MonoBehaviour
             OnDie?.Invoke();
             anim.Play(DeadHash);
             StartCoroutine(DisableObject());
-            Deadmenu.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            if (this.CompareTag("Player"))
+            
             hpBarUI.SetActive(false);
         }
     }

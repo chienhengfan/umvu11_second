@@ -10,7 +10,7 @@ public class Main : MonoBehaviour
     public Object enemyObject;
     private GameObject m_Player;
 
-    private GameObject[] _enemies;
+    [SerializeField]private GameObject[] _enemies;
     private List<Obstacle> m_Obstacles;
     
 
@@ -49,11 +49,13 @@ public class Main : MonoBehaviour
             float pHp = health.health;
             if (pHp <= 0)
             {
-                foreach (var go in _enemies)
+                GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach (GameObject go in gos)
                 {
                     Animator an = go.GetComponent<Animator>();
                     an.enabled = false;
                 }
+                Time.timeScale = 0;
             }
         }
         

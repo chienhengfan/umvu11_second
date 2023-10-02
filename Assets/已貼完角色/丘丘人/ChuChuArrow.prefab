@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 408064344778684581}
   - component: {fileID: 6020872558147309233}
   - component: {fileID: 6541368480200809492}
-  - component: {fileID: 1584390299993553775}
   - component: {fileID: 438397787712981715}
   - component: {fileID: 3313977804297106331}
   m_Layer: 0
@@ -86,18 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1584390299993553775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119038299158603793}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c112b7a89f6f9344b4a02191bcc788c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &438397787712981715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +101,7 @@ MonoBehaviour:
   targetTag: Player
   moveSpeed: 20
   attackDamage: 10
-  judgementHitDistance: 0.1
+  judgementHitDistance: 1
 --- !u!114 &3313977804297106331
 MonoBehaviour:
   m_ObjectHideFlags: 0

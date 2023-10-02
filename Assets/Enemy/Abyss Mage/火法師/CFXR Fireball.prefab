@@ -9958,7 +9958,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.43
   weapon: {fileID: 611673901941549898}
-  explosion: {fileID: 2453164644435555084}
+  explosion: {fileID: 4380587609628467686, guid: 621af617c197eaa4c828f39982842ab2,
+    type: 3}
   targetTag: Player
   attackDamage: 15
 --- !u!114 &611673901941549898
@@ -10068,12 +10069,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 819a6128dcef2bd47a9c595b4171d3db, type: 3}
---- !u!198 &2453164644435555084 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4451878303824963384, guid: 819a6128dcef2bd47a9c595b4171d3db,
-    type: 3}
-  m_PrefabInstance: {fileID: 2288773666011452468}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2453164644435555087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4451878303824963387, guid: 819a6128dcef2bd47a9c595b4171d3db,

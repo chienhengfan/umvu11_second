@@ -5,7 +5,7 @@ using StarterAssets;
 
 public class BossEvent : MonoBehaviour
 {
-
+    public WeaponDamage weaponDamage;
     public ParticleSystem energyBall;
     public Vector3 vMove;
 
@@ -14,7 +14,20 @@ public class BossEvent : MonoBehaviour
     private int ballNum = 10;
     private int currentBallNum = 0;
 
-    public float directAttackRange = 15f;
+    public float AttackLady02Angle = 60f;
+    public float dAttackLady02Radius = 15f;
+    public int AttackLady02Damage = 35;
+    public ParticleSystem AttackLady02Effect;
+
+
+    public float AttackLady04Angle = 360f;
+    public float dAttackLady04Radius = 20f;
+    public int AttackLady04Damage = 17;
+    public ParticleSystem AttackLady04Effect;
+
+    public ParticleSystem LadySkill01Effect;
+    public ParticleSystem deadEffect;
+
 
     private void Start()
     {
@@ -45,24 +58,57 @@ public class BossEvent : MonoBehaviour
 
 
 
-    void DirectAttack()
+    void AttackLady02()
     {
+        AttackLady02Effect.gameObject.SetActive(true);
+        AttackLady02Effect.Play();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(Vector3.Distance(gameObject.transform.position, player.transform.position) < directAttackRange)
+        if (IsInRange(AttackLady02Angle, dAttackLady02Radius, gameObject, player))
         {
-            //playerScript.TakeDamage(10f);
-            if(player.TryGetComponent<Health>(out Health health))
-            {
-                health.DealDamage(10);
-                Debug.Log("playerGetHitByBoss");
-            }
-
+            weaponDamage.SetAttack(AttackLady02Damage);
+            weaponDamage.DealDamage(player);
         }
     }
 
-    //¹k¥Û¤j©Û
-    void MeteoriteAttack()
+    void AttackLady04()
+    {
+        AttackLady04Effect.gameObject.SetActive(true);
+        AttackLady04Effect.Play();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (IsInRange(AttackLady04Angle, dAttackLady04Radius, gameObject, player))
+        {
+            weaponDamage.SetAttack(AttackLady04Damage);
+            weaponDamage.DealDamage(player);
+        }
+    }
+
+    void LadySkill01()
+    {
+        LadySkill01Effect.gameObject.SetActive(true);
+        LadySkill01Effect.Play();
+    }
+
+    void CloseEffect()
+    {
+        AttackLady02Effect.gameObject.SetActive(false);
+        AttackLady04Effect.gameObject.SetActive(false);
+        LadySkill01Effect.gameObject.SetActive(false);
+    }
+
+
+    public bool IsInRange(float sectorAngle, float sectorRadius, GameObject attacker, GameObject target)
     {
 
+        Vector3 direction = target.transform.position - attacker.transform.position;
+
+        float dot = Vector3.Dot(direction.normalized, transform.forward);
+
+        float offsetAngle = Mathf.Acos(dot) * Mathf.Rad2Deg;
+        return offsetAngle < sectorAngle * .5f && direction.magnitude < sectorRadius;
+    }
+
+    void DeadEffect()
+    {
+        deadEffect.Play();
     }
 }
