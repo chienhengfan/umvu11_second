@@ -2638,7 +2638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6110321841801426251
 Transform:
   m_ObjectHideFlags: 0
@@ -2676,8 +2676,11 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   hpUI: {fileID: 2824011284352244891}
+  hpBarUI: {fileID: 0}
   fSM2: {fileID: 0}
+  hitNumberPrefab: {fileID: 0}
   TextPool: {fileID: 2718355883283237629}
+  bossFSM: {fileID: 0}
 --- !u!136 &5772276410883985845
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2820,6 +2823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90cec2eaf9c84a40b877bc6e0759d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 0
   crossbowObj: {fileID: 1490330415080489897}
 --- !u!114 &4583037626921111600
 MonoBehaviour:

@@ -35,7 +35,7 @@ public class TraceAttack : MonoBehaviour
         if (vToP.magnitude < 0.1f)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
-
+            ballDropTime = 0.0f;
             weapon.SetAttack(attackDamage);
             weapon.DealDamage(target);
 

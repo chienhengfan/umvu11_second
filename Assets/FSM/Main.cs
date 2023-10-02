@@ -10,7 +10,7 @@ public class Main : MonoBehaviour
     public Object enemyObject;
     private GameObject m_Player;
 
-    private GameObject[] _enemies;
+    [SerializeField]private GameObject[] _enemies;
     private List<Obstacle> m_Obstacles;
     
 
@@ -51,8 +51,8 @@ public class Main : MonoBehaviour
             {
                 foreach (var go in _enemies)
                 {
-                    Animator an = go.GetComponent<Animator>();
-                    an.enabled = false;
+                    Debug.Log("EnemyAnimStop");
+                    go.SetActive(false);
                 }
             }
         }
