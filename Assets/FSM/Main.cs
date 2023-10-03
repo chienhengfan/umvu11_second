@@ -49,11 +49,13 @@ public class Main : MonoBehaviour
             float pHp = health.health;
             if (pHp <= 0)
             {
-                foreach (var go in _enemies)
+                GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach (GameObject go in gos)
                 {
-                    Debug.Log("EnemyAnimStop");
-                    go.SetActive(false);
+                    Animator an = go.GetComponent<Animator>();
+                    an.enabled = false;
                 }
+                Time.timeScale = 0;
             }
         }
         

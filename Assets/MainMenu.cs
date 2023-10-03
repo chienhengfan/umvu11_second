@@ -4,9 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    FadeInOut fade;
+
+
+    private void Start()
+    {
+        fade = FindObjectOfType<FadeInOut>();
+    }
+
+    public IEnumerator SwitchScene(string scene)
+    {
+        fade.FadeIn();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(scene);
+    }
     public void PlayGame() 
     {
-        SceneManager.LoadScene("DemoScene package");
+        StartCoroutine(SwitchScene("DemoScene package"));
     }
     public void QuitGame() 
     {
@@ -14,10 +28,10 @@ public class MainMenu : MonoBehaviour
     }
     public void resurrect()
     {
-        SceneManager.LoadScene("DemoScene package 1");
+        StartCoroutine(SwitchScene("DemoScene package 1"));
     }
     public void ToTitle()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(SwitchScene("MainMenu"));
     }
 }

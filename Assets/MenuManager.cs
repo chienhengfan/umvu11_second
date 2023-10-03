@@ -2,28 +2,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
     public GameObject menuUI;
-    public GameObject PauseUI;
     private bool isPaused = false;
     public GameObject cameraController; // 引用相机控制脚本所在的物体
+    public GameObject player;
+    public GameObject deadmenu;
     private void Start()
     {
         menuUI.SetActive(false);
-        PauseUI.SetActive(false);
+        deadmenu.SetActive(false);
     }
     void Update()
     {
+        if (player.TryGetComponent<Health>(out Health health))
+        {
+            float playerHp = health.health;
+            if(playerHp == 0)
+            {
+                {
+                    deadmenu.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                }
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleMenu();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PauseMenu();
         }
 
         // 检查是否要暂停游戏时间
@@ -46,20 +55,6 @@ public class MenuManager : MonoBehaviour
         if (menuUI != null)
         {
             menuUI.SetActive(!menuUI.activeSelf); // 切换菜单UI的激活状态
-            isPaused = !isPaused; // 切换暂停状态
-
-            // 切换相机控制脚本的激活状态
-            if (cameraController != null)
-            {
-                cameraController.SetActive(!isPaused);
-            }
-        }
-    }
-    void PauseMenu()
-    {
-        if (PauseUI != null)
-        {
-            PauseUI.SetActive(!PauseUI.activeSelf); // 切换菜单UI的激活状态
             isPaused = !isPaused; // 切换暂停状态
 
             // 切换相机控制脚本的激活状态

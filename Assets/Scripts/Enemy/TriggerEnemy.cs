@@ -13,6 +13,7 @@ public class TriggerEnemy : MonoBehaviour
     //public MobPoolManager mobPoolManager;
     public List<GameObject> enemiesList = new List<GameObject>();
     private bool stepInTrigger = false;
+    public GameObject bossHp;
 
 
 
@@ -52,6 +53,11 @@ public class TriggerEnemy : MonoBehaviour
                         //Play Spawn effect
                         enemyEvent.deadEffect.Play();
                     }
+                    if(go.GetComponent<BossEvent>() != null)
+                    {
+                        bossHp.SetActive(true);
+                    }
+
                 }
                 StartCoroutine("WaitForWallClose", 2);
             }
@@ -60,6 +66,10 @@ public class TriggerEnemy : MonoBehaviour
         bool enemyAlive = EnemyAlive();
         if (!enemyAlive)
         {
+            if(bossHp != null)
+            {
+                bossHp.SetActive(false);
+            }
             airWall.SetActive(false);
             gameObject.SetActive(false);
         }
@@ -67,7 +77,7 @@ public class TriggerEnemy : MonoBehaviour
 
     private bool EnemyAlive()
     {
-        if (enemiesList != null && enemiesList.Count > 0)
+        if (enemiesList.Count > 0)
         {
             foreach (GameObject go in enemiesList)
             {

@@ -26,6 +26,7 @@ public class BossEvent : MonoBehaviour
     public ParticleSystem AttackLady04Effect;
 
     public ParticleSystem LadySkill01Effect;
+    public ParticleSystem deadEffect;
 
 
     private void Start()
@@ -104,5 +105,10 @@ public class BossEvent : MonoBehaviour
 
         float offsetAngle = Mathf.Acos(dot) * Mathf.Rad2Deg;
         return offsetAngle < sectorAngle * .5f && direction.magnitude < sectorRadius;
+    }
+
+    void DeadEffect()
+    {
+        deadEffect.Play();
     }
 }
