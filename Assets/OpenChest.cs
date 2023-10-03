@@ -23,10 +23,14 @@ public class OpenChest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerNearby = true;
-            if (interactionUI != null)
+            if (!isBoxOpen)
             {
-                interactionUI.SetActive(true);
+                if (interactionUI != null)
+                {
+                    interactionUI.SetActive(true);
+                }
             }
+            
         }
     }
 

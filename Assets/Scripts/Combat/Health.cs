@@ -31,10 +31,13 @@ public class Health : MonoBehaviour
     public event Action OnTakeDamage;
     public event Action OnDie;
 
+    private GameObject bossHP;
+
 
 
     void Start()
     {
+        //bossHP = GameObject.Find("BossHp");
         health = maxHealth;
 
         anim = GetComponent<Animator>();
@@ -74,10 +77,17 @@ public class Health : MonoBehaviour
         {
             OnDie?.Invoke();
             anim.Play(DeadHash);
-            StartCoroutine(DisableObject());
-            if (this.CompareTag("Player"))
             
-            hpBarUI.SetActive(false);
+            if (!this.CompareTag("Player"))
+            {
+                StartCoroutine(DisableObject());
+                hpBarUI.SetActive(false);
+            }
+            //if (bossHP.activeSelf)
+            //{
+            //    bossHP.SetActive(false);
+            //}
+
         }
     }
 

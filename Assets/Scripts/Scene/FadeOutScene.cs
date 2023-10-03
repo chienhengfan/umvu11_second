@@ -13,4 +13,7 @@ public class FadeOutScene : MonoBehaviour
         fade.FadeOut();
     }
 
+
 }
+
+
