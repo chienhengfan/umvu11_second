@@ -137,8 +137,8 @@ MonoBehaviour:
   weapon: {fileID: 5919222913537788695}
   targetTag: Enemy
   moveSpeed: 20
-  attackDamage: 20
-  judgementHitDistance: 5
+  attackDamage: 15
+  judgementHitDistance: 2
 --- !u!82 &-6135402122902784626
 AudioSource:
   m_ObjectHideFlags: 0

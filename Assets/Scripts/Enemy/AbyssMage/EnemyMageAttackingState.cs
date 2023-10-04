@@ -35,8 +35,8 @@ public class EnemyMageAttackingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        stiffTime = stateMachine.maxStiffTime;
-        stiffTime -= Time.deltaTime;
+        //stiffTime = stateMachine.maxStiffTime;
+        //stiffTime -= Time.deltaTime;
         //Debug.LogError("now" + stiffTime);
 
         if (verticalVelocity < 0f && stateMachine.Controller.isGrounded)

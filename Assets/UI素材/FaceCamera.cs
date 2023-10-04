@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class FaceCamera : MonoBehaviour
 {
     private Camera mainCamera; // 参考主摄像机
 
