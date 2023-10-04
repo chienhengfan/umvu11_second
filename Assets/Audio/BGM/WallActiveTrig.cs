@@ -11,37 +11,48 @@ public class WallActiveTrig : MonoBehaviour
 
     private void Update()
     {
-        if (musicForFadeIn)
-        {
-            BGM_Manager fadeInManager = fadeinBGM.GetComponent<BGM_Manager>();
-            fadeInManager.PlayMusic();
-            Debug.Log("PlayMusic");
-            musicForFadeIn = false;
-        }
+        //if (musicForFadeIn)
+        //{
+        //    BGM_Manager fadeInManager = fadeinBGM.GetComponent<BGM_Manager>();
+        //    fadeInManager.PlayMusic();
+        //    Debug.Log("PlayMusic");
+        //    musicForFadeIn = false;
+        //}
 
-        if(musicForFadeOut)
-        {
-            BGM_Manager fadeOutManager = fadeinBGM.GetComponent<BGM_Manager>();
-            fadeOutManager.FadeOut(2f);
-            fadeoutBGM.SetActive(false);
-            Debug.Log("fadeoutBGM");
-            musicForFadeOut = false;
-        }
+        //if(musicForFadeOut)
+        //{
+        //    BGM_Manager fadeOutManager = fadeinBGM.GetComponent<BGM_Manager>();
+        //    fadeOutManager.FadeOut(2f);
+        //    fadeoutBGM.SetActive(false);
+        //    Debug.Log("fadeoutBGM");
+        //    musicForFadeOut = false;
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            //if (fadeinBGM != null)
+            //{
+            //    musicForFadeIn = true;
+            //}
+
+            //if (fadeoutBGM != null)
+            //{
+            //    musicForFadeOut = true;
+            //}
+
             if (fadeinBGM != null)
             {
-                musicForFadeIn = true;
+                fadeinBGM.GetComponent<AudioSource>().Play();
             }
 
             if (fadeoutBGM != null)
             {
-                musicForFadeOut = true;
+                fadeoutBGM.GetComponent<AudioSource>().Stop();
             }
+
         }
     }
 }
