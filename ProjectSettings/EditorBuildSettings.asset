@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3962ccae7fec00947bc5c09118b724f2
   - enabled: 1
-    path: Assets/Scenes/DemoScene package.unity
-    guid: b920d779eafaed44db226aa642fa5ad8
+    path: Assets/Scenes/DemoScene package Henry1004.unity
+    guid: 7f455e8b86565d843937370e3ad9ccfa
   - enabled: 1
-    path: Assets/Scenes/DemoScene package 1.unity
-    guid: d70b0a26c4da2174fb8eb47b83260758
+    path: Assets/Scenes/DemoScene package Henry1004 (1).unity
+    guid: c28624f2f446d4749bc6414aa8038a1f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

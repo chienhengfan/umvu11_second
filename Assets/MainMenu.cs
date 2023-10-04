@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame() 
     {
-        StartCoroutine(SwitchScene("DemoScene package"));
+        StartCoroutine(SwitchScene("DemoScene package Henry1004"));
     }
     public void QuitGame() 
     {
@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     }
     public void resurrect()
     {
-        StartCoroutine(SwitchScene("DemoScene package 1"));
+        StartCoroutine(SwitchScene("DemoScene package Henry1004 (1)"));
     }
     public void ToTitle()
     {
