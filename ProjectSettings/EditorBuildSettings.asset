@@ -10,10 +10,10 @@ EditorBuildSettings:
     guid: 3962ccae7fec00947bc5c09118b724f2
   - enabled: 1
     path: Assets/Scenes/DemoScene package.unity
-    guid: 8bccea78039f9c44bbdd19d3dbc42e0b
+    guid: b920d779eafaed44db226aa642fa5ad8
   - enabled: 1
     path: Assets/Scenes/DemoScene package 1.unity
-    guid: eb45d41196ee19a479a3a6aeb171b59e
+    guid: d70b0a26c4da2174fb8eb47b83260758
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
