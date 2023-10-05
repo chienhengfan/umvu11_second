@@ -11,6 +11,9 @@ public class EnemyLadyAttacking01State : EnemyBaseState
     private int howDice = 0;
     int r;
 
+    private float tick = 0f;
+    private float bossActonFreezeTime = 1f;
+
     public EnemyLadyAttacking01State(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -21,13 +24,15 @@ public class EnemyLadyAttacking01State : EnemyBaseState
         {
             weapon.SetAttack(stateMachine.AttackDamage);
         }
-
+        tick = 0f;
         stateMachine.Animator.CrossFadeInFixedTime(AttackLady01Hash, TransitionDuration);
     }
 
     public override void Tick(float deltaTime)
     {
-        if (GetNormalizedTime(stateMachine.Animator) >= 1)
+        tick += Time.deltaTime;
+
+        if (GetNormalizedTime(stateMachine.Animator) >= 1 && tick >= bossActonFreezeTime)
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             Debug.Log("ChangeToChase");

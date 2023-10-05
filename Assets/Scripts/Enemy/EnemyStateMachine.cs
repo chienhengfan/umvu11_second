@@ -60,4 +60,5 @@ public class EnemyStateMachine : StateMachine
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
+
 }

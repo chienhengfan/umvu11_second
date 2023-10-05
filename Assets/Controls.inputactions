@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Heal",
+                    "type": "Button",
+                    "id": "20a71489-6962-4991-90de-e5fd69774b2c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -230,6 +239,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "UltimatrSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0e70e05c-7e7f-49e1-91c4-eb2b64ede773",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

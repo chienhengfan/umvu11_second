@@ -16,6 +16,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action TargetEvent;
     public event Action CancelEvent;
     public event Action UltimatrSkillEvent;
+    public event Action HealEvent;
 
 
     private Controls controls;
@@ -83,6 +84,13 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         if (!context.performed) { return; }
         UltimatrSkillEvent?.Invoke();
+    }
+
+
+    public void OnHeal(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+        HealEvent?.Invoke();
     }
 }
 
