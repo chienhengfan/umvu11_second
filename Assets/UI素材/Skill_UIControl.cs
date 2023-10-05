@@ -8,6 +8,7 @@ public class Skill_UIControl : MonoBehaviour
     public float cdTime = 2.0f;
     private bool isCold = false;
     private Image imageUI;
+    public KeyCode keyCode;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class Skill_UIControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !isCold)
+        if (Input.GetKeyDown(keyCode) && !isCold)
         {
             imageUI.fillAmount = 0f;
             isCold = true;
