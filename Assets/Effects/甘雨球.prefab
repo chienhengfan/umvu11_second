@@ -4877,6 +4877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 8
   fadeDuration: 2
+  objectRenderers: []
 --- !u!1 &4404747256654807185
 GameObject:
   m_ObjectHideFlags: 0
@@ -19615,3 +19616,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 9170810590802037325, guid: af7875b702d017c4f9c0295d33143ed1,
     type: 3}
+  damageAmount: 10

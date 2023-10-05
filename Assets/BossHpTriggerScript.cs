@@ -15,7 +15,12 @@ public class BossHpTriggerScript : MonoBehaviour
         if (!boss.activeSelf)
         {
             bossHp.SetActive(false);
-            BossBGM.SetActive(false);
+            AudioSource bossBGM = BossBGM.GetComponent<AudioSource>();
+            bossBGM.volume -= Time.deltaTime * 0.1f;
+            if (bossBGM.volume < 0)
+            {
+                bossBGM.volume = 0;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

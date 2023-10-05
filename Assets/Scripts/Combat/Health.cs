@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using test;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Health : MonoBehaviour
 {
@@ -32,7 +33,10 @@ public class Health : MonoBehaviour
     public event Action OnDie;
 
     private GameObject bossHP;
-
+    private bool isDamaged = false;
+    public float cannotHurtTime = 2.0f;
+    public float original_ctTime = 2.0f;
+    public ParticleSystem shield;
 
 
     void Start()
@@ -53,6 +57,25 @@ public class Health : MonoBehaviour
         float hpPercentage = (float)currentHealth / maxHealth;
         float newXPosition = -hpLocalNum + hpLocalNum * hpPercentage;
         hpImage.localPosition = new Vector3(newXPosition, hpImage.localPosition.y, hpImage.localPosition.z);
+        if(isDamaged == true)
+        {
+            if(shield != null)
+            {
+                shield.gameObject.transform.position = this.transform.position + this.transform.up;
+                shield.gameObject.SetActive(true);
+            }
+            
+            cannotHurtTime -= Time.deltaTime;
+            if (cannotHurtTime < 0)
+            {
+                if (shield != null)
+                {
+                    shield.gameObject.SetActive(false);
+                }
+                cannotHurtTime = original_ctTime;
+                isDamaged = false;
+            }
+        }
     }
 
     public void DealDamage(int damage)
@@ -60,17 +83,13 @@ public class Health : MonoBehaviour
         if (health <= 0) { return; }
         health = Mathf.Max(health - damage, 0);
         float healthRatio = (float)health / maxHealth;
-        if(mobIndex == EnemyStateMachine.MobGroup.BossLady.GetHashCode())
-        {
-            if(healthRatio <= 0.5f && healthRatio > 0.3f)
-            {
-                OnTakeDamage?.Invoke();
-            }
-        }
-        else
+
+        if (isDamaged == false)
         {
             OnTakeDamage?.Invoke();
+            isDamaged = true;
         }
+
         GenerateHitNumber(damage, this.transform.position + Vector3.up * 0.5f);
 
         if (health <= 0)

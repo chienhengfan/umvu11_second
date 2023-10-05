@@ -11,12 +11,14 @@ public class TraceAttack : MonoBehaviour
     public WeaponDamage weapon;
     public ParticleSystem explosion;
 
-    private float ballSpeed = 5.0f;
+    public float ballSpeed = 5.0f;
 
     [SerializeField] private string targetTag;
     private GameObject target;
     private float ballDropTime = 0.0f;
-    private float fLifeTime = 2.0f;
+    public float fLifeTime = 2.0f;
+    public float StopRotateAngle = 60.0f;
+    public bool isForMage = true;
 
     [SerializeField] private int attackDamage = 15;
 
@@ -34,21 +36,30 @@ public class TraceAttack : MonoBehaviour
         vToP.Normalize();
         float rightForward = Vector3.Dot(transform.right, vToP);
         float angle = Vector3.Angle(vToP, vFOr);
-        if (angle > 60f)
+        
+        if(isForMage)
         {
-            angle = 0f;
+            if (angle > StopRotateAngle)
+            {
+                angle = 0f;
+            }
+            if (angle > 30f)
+            {
+                angle = 30f;
+            }
+            if (rightForward < 0f)
+            {
+                angle = -angle;
+            }
+            Quaternion rotate = Quaternion.AngleAxis(angle, Vector3.up);
+            vFOr = rotate * vFOr;
+            transform.forward = vFOr;
         }
-        if (angle > 30f)
+        else if(isForMage == false)
         {
-            angle = 30f;
+            transform.forward = Vector3.Lerp(vToP, vFOr, 0.2f);
         }
-        if (rightForward < 0f)
-        {
-            angle = -angle;
-        }
-        Quaternion rotate = Quaternion.AngleAxis(angle, Vector3.up);
-        vFOr = rotate * vFOr;
-        transform.forward = Vector3.Lerp(transform.forward, vFOr, 0.1f);
+
         Debug.Log("fDis: " + fDis);
         if (fDis < 0.25f)
         {

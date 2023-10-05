@@ -28,7 +28,9 @@ public class MenuManager : MonoBehaviour
             {
                 {
                     deadmenu.SetActive(true);
-                    Cursor.lockState = CursorLockMode.None;
+                    Time.timeScale = 0f; // 游戏时间暂停
+                    Cursor.lockState = CursorLockMode.None; // 解锁鼠标
+                    Cursor.visible = true; // 显示鼠标
                 }
             }
         }
