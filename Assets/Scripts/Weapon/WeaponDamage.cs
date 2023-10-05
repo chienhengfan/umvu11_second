@@ -114,38 +114,38 @@ public class WeaponDamage : MonoBehaviour
         {
             PhysicsCollide();
         }
-        else if (this.name == "CFXR Fireball(Clone)")
-        {
-            //Life Time
-            currentTime += Time.deltaTime;
-            if (currentTime > lifeTime)
-            {
-                this.gameObject.SetActive(false);
-                currentTime = 0;
-            }
+        //else if (this.name == "CFXR Fireball(Clone)")
+        //{
+        //    //Life Time
+        //    currentTime += Time.deltaTime;
+        //    if (currentTime > lifeTime)
+        //    {
+        //        this.gameObject.SetActive(false);
+        //        currentTime = 0;
+        //    }
 
-            //Fly Toward Player
-            Vector3 vFOr = transform.forward;
+        //    //Fly Toward Player
+        //    Vector3 vFOr = transform.forward;
 
 
-            vFOr = Vector3.Lerp(vFOr, vToPlayer, 0.1f);
+        //    vFOr = Vector3.Lerp(vFOr, vToPlayer, 0.1f);
 
-            //Make ball Drop
-            vToPlayer.y -= Time.deltaTime;
-            vToPlayer = vToPlayer + vFOr;
-            vToPlayer.Normalize();
-            transform.forward = vToPlayer;
-            transform.position = transform.position + vToPlayer * Time.deltaTime * ballSpeed;
+        //    //Make ball Drop
+        //    vToPlayer.y -= Time.deltaTime;
+        //    vToPlayer = vToPlayer + vFOr;
+        //    vToPlayer.Normalize();
+        //    transform.forward = vToPlayer;
+        //    transform.position = transform.position + vToPlayer * Time.deltaTime * ballSpeed;
 
-            //Very Close to Player
-            if (vToPlayer.sqrMagnitude < 0.05f)
-            {
-                Debug.Log("FireBallClose");
-                PhysicsCollide();
-            }
+        //    //Very Close to Player
+        //    if (vToPlayer.sqrMagnitude < 0.05f)
+        //    {
+        //        Debug.Log("FireBallClose");
+        //        PhysicsCollide();
+        //    }
 
-            //Deal Player Damage，PhysicsCollide有寫了
-        }
+        //    //Deal Player Damage，PhysicsCollide有寫了
+        //}
         
     }
 

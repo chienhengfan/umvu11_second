@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TraceAttack : MonoBehaviour
@@ -29,10 +30,27 @@ public class TraceAttack : MonoBehaviour
         Vector3 vFOr = transform.forward;
         Vector3 vPlayerChasePoint = target.transform.position + target.transform.up * 1.0f;
         Vector3 vToP = vPlayerChasePoint - transform.position;
-        vFOr = Vector3.Lerp(vFOr, vToP, 0.1f);
-
-
-        if (vToP.magnitude < 0.1f)
+        float fDis = vToP.magnitude;
+        vToP.Normalize();
+        float rightForward = Vector3.Dot(transform.right, vToP);
+        float angle = Vector3.Angle(vToP, vFOr);
+        if (angle > 60f)
+        {
+            angle = 0f;
+        }
+        if (angle > 30f)
+        {
+            angle = 30f;
+        }
+        if (rightForward < 0f)
+        {
+            angle = -angle;
+        }
+        Quaternion rotate = Quaternion.AngleAxis(angle, Vector3.up);
+        vFOr = rotate * vFOr;
+        transform.forward = Vector3.Lerp(transform.forward, vFOr, 0.1f);
+        Debug.Log("fDis: " + fDis);
+        if (fDis < 0.25f)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             ballDropTime = 0.0f;
@@ -48,12 +66,7 @@ public class TraceAttack : MonoBehaviour
         }
         ballDropTime += Time.deltaTime;
 
-        //Make ball Drop
-        vToP.y -= Time.deltaTime;
-        vToP = vToP + vFOr;
-        vToP.Normalize();
-        transform.forward = vToP;
-        transform.position = transform.position + vToP * Time.deltaTime * ballSpeed;
+        transform.position = transform.position + transform.forward * Time.deltaTime * ballSpeed;
     }
 
 }
